@@ -5,6 +5,17 @@ Responda em português do Brasil.
 
 ## Instruções permanentes (valem para TODO pedido, em qualquer pasta)
 
+### 0. Apresentar o kit e fazer o tutorial com ela
+
+- **Antes de instalar** (quando ela pedir a instalação): leia o `TUTORIAL.md` e explique a ela, em palavras simples e em poucas linhas, o que o Gabriel preparou (a seção 1 do tutorial): a identidade da Gatoteca, as artes prontas, o jeito de fazer slides de aula, a edição de vídeo, os sons, os planos e as regras da memória. Diga também que, se ela precisar de mais alguma coisa, é só pedir à inteligência artificial. Só depois instale.
+- **Depois de instalar** (e sempre que ela disser "tutorial", "me ensina" ou "como uso isso?"): faça o **tutorial guiado**, conversando, uma parte por vez, esperando a resposta dela antes de seguir:
+  1. o que tem no kit (seção 1 do `TUTORIAL.md`), com um exemplo de pedido para cada coisa;
+  2. os modelos do AG e os modos Planning e Fast (seção 2). Antes, **pesquise na internet quais modelos o Antigravity oferece hoje** e confira o menu dela, para explicar com os nomes atuais: qual é o rápido, qual pensa mais e qual usar em cada tarefa do kit;
+  3. como pedir bem (seção 3);
+  4. **uma prática curtinha**: ela escolhe entre fazer um cartãozinho com o gatinho, o começo de um slide ou pesquisar uma dúvida. Você faz com ela, mostra o resultado e pergunta o que ela mudaria;
+  5. onde ficam as coisas e como atualizar o kit (seção 4).
+  No fim, pergunte se ficou alguma dúvida e lembre que ela pode pedir o tutorial de novo quando quiser.
+
 ### 1. Quem pede é leiga em tecnologia
 
 A Iara não é programadora. Então:
@@ -50,6 +61,13 @@ Leia `gatoteca/IDENTIDADE_VISUAL.md` (paleta, fontes, mascote, o que foi aprovad
 - Motor: `gatoteca/motor/`. Rode os scripts de dentro dessa pasta (`python divulga_post.py`). `montar.py` carrega as fontes e texturas e exporta o PNG.
 - Mascote: `gatoteca/motor/mascote/gato_banco.py` (poses 01-26) e `gato_banco2.py` (27-56); figuras de post 57-61 vêm de `post_lilith5.py`. ⛔ Rode `gato_banco.py` SEMPRE com os códigos das poses (`python gato_banco.py 04 11`): sem códigos ele reescreve o `banco.json` só com 01-26.
 - Planos do clube: `gatoteca/planos/`.
+
+## Slides de aula
+
+- Método: `slides/COMO_FAZER_SLIDES.md` (estrutura da aula, visual, arte). Ponto de partida: copie a pasta da aula de exemplo em `slides/` e troque o conteúdo. Skill: `slides-aula`.
+- Pesquise o conteúdo na internet antes (gramática, exemplos, curiosidades), em mais de uma fonte.
+- Arte: **gatinhos da Gatoteca** (banco de poses e elementos) ou **SVG novos desenhados no código, bem bonitos** (cenas, ícones, linha do tempo). Figura nova que pode voltar vai para o banco.
+- Gere com `slides/motor/fazer_slides.py <pasta da aula>`: sai PDF, PowerPoint (com as notas do professor) e uma prévia. Olhe a prévia e corrija o que estiver cortado ou feio antes de mostrar a ela.
 
 ## Edição de vídeo Iara
 

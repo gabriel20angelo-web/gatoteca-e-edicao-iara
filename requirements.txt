@@ -4,3 +4,5 @@ scipy
 shapely
 scikit-image
 playwright
+python-pptx
+pypdf

@@ -1,0 +1,135 @@
+/* ===== Base dos slides de aula (1920 x 1080) =====
+   Cada slide liga este arquivo:  <link rel="stylesheet" href="../../motor/base.css">
+   Paleta, fontes e classes ficam aqui, para cada slide ser curto. */
+
+@font-face { font-family: 'Fraunces'; src: url('fontes/Fraunces.ttf') format('truetype'); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: 'Fraunces'; src: url('fontes/Fraunces-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; }
+@font-face { font-family: 'Literata'; src: url('fontes/Literata.ttf') format('truetype'); font-weight: 200 900; font-style: normal; }
+@font-face { font-family: 'Literata'; src: url('fontes/Literata-Italic.ttf') format('truetype'); font-weight: 200 900; font-style: italic; }
+@font-face { font-family: 'Barlow'; src: url('fontes/Barlow-Regular.ttf') format('truetype'); font-weight: 400; }
+@font-face { font-family: 'Barlow'; src: url('fontes/Barlow-SemiBold.ttf') format('truetype'); font-weight: 600; }
+@font-face { font-family: 'Barlow'; src: url('fontes/Barlow-Bold.ttf') format('truetype'); font-weight: 700; }
+
+:root {
+  --areia: #E6D6B4;   /* fundo quente */
+  --creme: #F4ECDD;   /* fundo padrão */
+  --papel: #FBF6EC;   /* cartões e fundo claro */
+  --noite: #1E3328;   /* fundo escuro */
+  --musgo: #2A4537;   /* cartão no fundo escuro */
+  --azul: #2E4C7A;
+  --terra: #C8431F;   /* terracota: destaque, rótulo */
+  --laranja: #DE7A3C; /* rótulo no fundo escuro */
+  --verde: #3E6A47;
+  --cinza: #4A5A50;
+  --claro: #BFD0C4;   /* texto secundário no fundo escuro */
+  --tinta: #1E2A22;   /* texto principal */
+}
+
+@page { size: 1920px 1080px; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--creme); }
+
+/* ----- O slide ----- */
+section.slide {
+  position: relative; width: 1920px; height: 1080px; overflow: hidden;
+  padding: 128px 128px 160px;
+  display: flex; flex-direction: column; gap: 40px;
+  background: var(--creme); color: var(--tinta);
+  font-family: 'Literata', Georgia, serif; font-size: 34px; line-height: 1.35;
+}
+section.slide.areia { background: var(--areia); }
+section.slide.creme { background: var(--creme); }
+section.slide.claro { background: var(--papel); }
+section.slide.escuro { background: var(--noite); color: var(--creme); }
+section.slide.centro { justify-content: center; }
+
+/* ----- Escala de tipos ----- */
+h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 112px; line-height: 1.02; letter-spacing: -1px; }
+h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 72px; line-height: 1.08; letter-spacing: -0.5px; }
+h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 44px; line-height: 1.15; }
+.destaque { font-family: 'Fraunces', Georgia, serif; font-size: 44px; line-height: 1.25; }
+.texto { font-size: 34px; }
+.t32 { font-size: 32px; } .t30 { font-size: 30px; }
+.nota { font-size: 28px; color: var(--cinza); }
+.escuro .nota { color: var(--claro); }
+.rotulo {
+  font-family: 'Barlow', Arial, sans-serif; font-weight: 700; font-size: 26px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--terra);
+}
+.escuro .rotulo { color: var(--laranja); }
+em, .es { font-style: italic; }
+.es { color: var(--azul); }               /* equivalência em espanhol */
+.escuro .es { color: var(--claro); }
+
+/* cores de palavra */
+.ir { color: var(--terra); font-weight: 700; }   /* o verbo IR em destaque */
+.azul { color: var(--azul); } .terra { color: var(--terra); } .verde { color: var(--verde); } .cinza { color: var(--cinza); }
+.errado { color: var(--terra); text-decoration: line-through; text-decoration-thickness: 3px; }
+.certo { color: var(--verde); font-weight: 700; }
+
+/* ----- Blocos ----- */
+.linha { display: flex; gap: 40px; align-items: stretch; }
+.coluna { display: flex; flex-direction: column; gap: 24px; }
+.grade-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+.grade-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.grade-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.cresce { flex: 1; }
+
+.cartao { background: var(--papel); border-radius: 24px; padding: 36px 40px; display: flex; flex-direction: column; gap: 14px; }
+.areia .cartao.borda, .cartao.borda { border: 4px solid var(--terra); }
+.escuro .cartao { background: var(--musgo); color: var(--creme); }
+.cartao .num {
+  font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 56px; line-height: 1; color: var(--terra);
+}
+.escuro .cartao .num { color: var(--laranja); }
+.faixa { background: var(--papel); border-left: 10px solid var(--terra); border-radius: 0 20px 20px 0; padding: 24px 36px; }
+.escuro .faixa { background: var(--musgo); border-left-color: var(--laranja); }
+
+/* ----- Tabela ----- */
+table.tabela { width: 100%; border-collapse: collapse; font-size: 30px; }
+.tabela th {
+  font-family: 'Barlow', Arial, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--papel); background: var(--verde); text-align: left; padding: 14px 24px;
+}
+.tabela th:first-child { border-radius: 16px 0 0 0; } .tabela th:last-child { border-radius: 0 16px 0 0; }
+.tabela td { padding: 14px 24px; border-bottom: 2px solid #DCCBA8; background: var(--papel); }
+.tabela tr:nth-child(even) td { background: #F8F0E1; }
+
+/* ----- Balões de fala ----- */
+.balao {
+  position: relative; background: var(--papel); border: 3px solid var(--tinta); border-radius: 32px;
+  padding: 22px 32px; font-size: 32px; line-height: 1.3; max-width: 100%;
+}
+.balao::after {
+  content: ''; position: absolute; bottom: -22px; left: 48px; width: 34px; height: 34px;
+  background: inherit; border-right: 3px solid var(--tinta); border-bottom: 3px solid var(--tinta);
+  transform: skewX(30deg) rotate(45deg) scale(.8);
+}
+.balao.dir::after { left: auto; right: 48px; transform: skewX(-30deg) rotate(45deg) scale(.8); }
+.balao.sem-ponta::after { display: none; }
+.balao .quem { font-family: 'Barlow', Arial, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 2px; text-transform: uppercase; color: var(--terra); display: block; margin-bottom: 4px; }
+.balao.azul-claro { background: #E3EAF3; }
+.balao.verde-claro { background: #E4EDE2; }
+
+/* ----- Pílulas ----- */
+.pilulas { display: flex; flex-wrap: wrap; gap: 16px; }
+.pilula {
+  font-family: 'Barlow', Arial, sans-serif; font-weight: 600; font-size: 26px;
+  background: var(--papel); border: 3px solid var(--verde); color: var(--verde); border-radius: 999px; padding: 8px 24px;
+}
+.pilula.cheia { background: var(--verde); color: var(--papel); }
+.pilula.terra { border-color: var(--terra); color: var(--terra); }
+
+/* ----- Figuras ----- */
+.fig { position: absolute; pointer-events: none; }         /* posicione com left/top/right/bottom e width ou height */
+.elipse { position: absolute; border-radius: 50%; background: var(--creme); }
+
+/* ----- Rodapé (o fazer_slides.py escreve "Tema · n / total") ----- */
+.rodape {
+  position: absolute; left: 128px; bottom: 64px; width: 1664px;
+  font-family: 'Barlow', Arial, sans-serif; font-size: 24px; color: var(--cinza);
+}
+.escuro .rodape { color: var(--claro); }
+
+/* ----- Notas do professor: nunca aparecem no slide ----- */
+aside, aside.notas { display: none !important; }

@@ -13,11 +13,12 @@ Você não precisa entender de programação. O jeito mais fácil:
 
 1. Abra o **Antigravity**.
 2. Cole esta mensagem para o agente e envie:
-   > Instale para mim o repositório https://github.com/gabriel20angelo-web/gatoteca-e-edicao-iara seguindo o README dele. Instale o que faltar no computador, rode o instalar.ps1 e me avise, em palavras simples, quando terminar.
+   > Baixe o repositório https://github.com/gabriel20angelo-web/gatoteca-e-edicao-iara. Antes de instalar, leia o AGENTS.md e o TUTORIAL.md e me explique, em palavras simples, tudo o que o Gabriel preparou para mim. Depois instale seguindo o README (instale o que faltar e rode o instalar.ps1) e, quando terminar, faça o tutorial comigo.
 3. Ele vai pedir permissão algumas vezes para rodar comandos: pode aceitar. A instalação do editor de vídeo demora (pode levar mais de meia hora).
 4. Quando ele disser que terminou, **feche e abra o Antigravity de novo**. A partir daí ele já sabe as regras (estão gravadas na memória dele).
 5. Depois é só pedir em português, por exemplo:
    - "Faz um post de divulgação da Gatoteca com o gatinho lendo."
+   - "Faz os slides da aula de futuro com IR para meus alunos chilenos."
    - "Edita este vídeo no estilo Iara: C:\Users\...\meu-video.mp4"
 
 **O que o agente vai fazer sempre, sem você pedir:**
@@ -73,6 +74,8 @@ Abra o agente **dentro da pasta do repositório** e peça em português:
 | `gatoteca/motor/` | Motor em Python: `papel.py` (textura de papel), `cartinhas.py` e `envelope.py` (componentes), `mascote/gato_banco.py` e `gato_banco2.py` (o frajola em 56 poses), `elementos/` (recorte e catálogo), `divulga_post.py`, `divulga_perfil.py`, `post_lilith5.py` etc. |
 | `gatoteca/artes/` | As artes prontas: banco de poses do mascote (SVG + PNG), elementos recortados, identidade "cartinhas", posts, fotos de perfil, Reels |
 | `gatoteca/planos/` | O plano de ação da Gatoteca e do perfil Iara Entre Linhas (duas versões) |
+| `TUTORIAL.md` | O tutorial para o dia a dia: o que tem no kit, os modelos do AG, como pedir bem |
+| `slides/` | O jeito de fazer slides de aula: método (`COMO_FAZER_SLIDES.md`), gerador de PDF e PowerPoint (`motor/`) e uma aula de exemplo completa com os gatinhos |
 | `edicao-iara/GUIA_EDICAO_IARA.md` | **O método da edição**, passo a passo |
 | `edicao-iara/custom/` | Scripts próprios (`sobrepor_video.py`, `sons_v3.py`, `texto_animado.py`, `brilho.py`…), presets de legenda, fontes, teclas e brilho |
 | `edicao-iara/creator-teardowns/iara/` | O estilo da Iara para o editor (sem filtro de cor) |
