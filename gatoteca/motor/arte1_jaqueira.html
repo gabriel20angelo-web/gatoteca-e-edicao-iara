@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<!--ACERVO-->
+<style>
+:root{--ameixa:#3B2A33;--noite:#2F2229;--creme:#EFE4D0;--ocre:#E3B96A;--ocre2:#E8B84E;--vinho:#A8355D;--salvia:#A2C98C}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;background:var(--ameixa)}
+.peca{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--creme);
+  background:radial-gradient(ellipse 70% 52% at 50% 40%,#5A4350 0%,#45333D 42%,#3B2A33 70%,#2C1F26 100%)}
+.peca::before,.peca::after{content:"";position:absolute;inset:0;pointer-events:none;background-size:1080px 1440px;z-index:50}
+.peca::before{background-image:var(--grao-neg);mix-blend-mode:multiply;opacity:.9}
+.peca::after{background-image:var(--grao-pos);mix-blend-mode:plus-lighter;opacity:.75}
+.peca>*{position:absolute}
+svg{overflow:visible}
+
+/* marca: Entrelinhas escrito entre duas linhas */
+.marca{left:0;right:0;top:44px;display:flex;flex-direction:column;align-items:center}
+.marca .sobre{font-family:'Cinzel';font-weight:500;font-size:15px;letter-spacing:.42em;margin-right:-.42em;color:var(--ocre);opacity:.95}
+.marca .nome{position:relative;margin-top:10px;padding:6px 26px 9px;font-family:'Cormorant';font-style:italic;font-weight:500;font-size:50px;line-height:1;letter-spacing:.01em}
+.marca .nome::before,.marca .nome::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--creme) 12%,var(--creme) 88%,transparent);opacity:.75}
+.marca .nome::before{top:0}.marca .nome::after{bottom:0}
+
+.carta{left:280px;top:168px;width:520px;height:732px;filter:drop-shadow(0 26px 40px rgba(20,10,16,.55))}
+
+.texto{left:60px;right:60px;top:926px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.titulo{font-family:'Cormorant';font-style:italic;font-weight:600;font-size:72px;line-height:1;color:var(--ocre);letter-spacing:-.005em}
+.marcada{position:relative;display:inline-block}
+.marcada .gi{position:absolute;left:-4%;width:108%;bottom:-20px;height:30px;background:var(--ocre);opacity:.9;
+  -webkit-mask:var(--G-ondulado) center/100% 100% no-repeat;mask:var(--G-ondulado) center/100% 100% no-repeat}
+.sub{margin-top:30px;font-family:'Cormorant';font-weight:500;font-size:38px;line-height:1.1}
+.fio{margin:24px 0 20px;display:flex;align-items:center;gap:16px;color:var(--ocre)}
+.fio i{display:block;width:150px;height:1px;background:currentColor;opacity:.6}
+.info{display:flex;align-items:center;gap:22px;font-family:'Cinzel';font-weight:600;font-size:22px;letter-spacing:.12em}
+.info b{font-weight:700;font-size:30px;color:var(--ocre);letter-spacing:.06em}
+.info .losango{width:7px;height:7px;background:var(--ocre);transform:rotate(45deg);opacity:.8}
+.inclui{margin-top:22px;font-family:'Cormorant';font-style:italic;font-weight:500;font-size:29px;line-height:1.25;color:rgba(239,228,208,.88);max-width:820px}
+.cta{margin-top:20px;font-family:'Cinzel';font-weight:500;font-size:15px;letter-spacing:.3em;margin-right:-.3em;color:var(--ocre)}
+</style></head>
+<body><div class="peca">
+
+<!-- elemento grande e transparente no fundo: aneis celestes em volta da carta -->
+<svg class="aneis" style="left:0;top:0" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <g fill="none" stroke="#E3B96A" transform="translate(540 532)">
+    <circle r="402" stroke-width="1.2" opacity=".2"/>
+    <circle r="414" stroke-width=".6" opacity=".14"/>
+    <circle r="336" stroke-width="1" stroke-dasharray="2 9" opacity=".2"/>
+    <g id="raios" opacity=".13" stroke-width="1">
+    </g>
+  </g>
+  <g id="estrelas-fundo" fill="#EFE4D0"></g>
+</svg>
+
+<div class="marca"><div class="sobre">Clube do livro</div><div class="nome">Entrelinhas</div></div>
+
+<svg class="carta" viewBox="0 0 540 760">
+  <defs>
+    <filter id="mao" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="aguada" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="3" seed="9" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="2" seed="2" result="m"/>
+      <feColorMatrix in="m" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.5 1.32" result="ma"/>
+      <feComposite in="d" in2="ma" operator="in"/>
+    </filter>
+    <filter id="contorno" x="-5%" y="-5%" width="110%" height="110%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="1.25" result="dl"/>
+      <feComposite in="dl" in2="SourceAlpha" operator="out" result="o"/>
+      <feFlood flood-color="#3B2A33"/><feComposite in2="o" operator="in" result="c"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="c" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="brilho" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+    <radialGradient id="papel" cx="50%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#F5ECDB"/><stop offset=".7" stop-color="#EFE4D0"/><stop offset="1" stop-color="#E4D5BA"/>
+    </radialGradient>
+    <radialGradient id="luz" r=".5"><stop offset="0" stop-color="#F3C95C" stop-opacity=".75"/><stop offset=".45" stop-color="#E8B84E" stop-opacity=".28"/><stop offset="1" stop-color="#E8B84E" stop-opacity="0"/></radialGradient>
+    <radialGradient id="luar" r=".5"><stop offset=".6" stop-color="#E8B84E" stop-opacity=".32"/><stop offset="1" stop-color="#E8B84E" stop-opacity="0"/></radialGradient>
+    <radialGradient id="lunar" cx="42%" cy="40%" r="62%"><stop offset="0" stop-color="#FBF0CF"/><stop offset=".65" stop-color="#F1D894"/><stop offset="1" stop-color="#E3BC6C"/></radialGradient>
+    <linearGradient id="luarcarta" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7E6B4" stop-opacity=".55"/><stop offset=".55" stop-color="#F7E6B4" stop-opacity="0"/></linearGradient>
+    <pattern id="bolinhas" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1.05" fill="#3B2A33" opacity=".5"/><circle cx="4.5" cy="4.5" r="1.05" fill="#3B2A33" opacity=".5"/></pattern>
+    <pattern id="xadrez" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="skewX(-18)">
+      <rect width="14" height="14" fill="#F2DCE0"/><rect width="7" height="14" fill="#A8355D" opacity=".38"/><rect width="14" height="7" fill="#A8355D" opacity=".38"/></pattern>
+    <clipPath id="janela"><path d="M22,676 V270 A248,248 0 0 1 518,270 V676 Z"/></clipPath>
+    <mask id="mlua"><rect x="200" y="80" width="140" height="140" fill="#fff"/><circle cx="290" cy="138" r="38" fill="#000"/></mask>
+    <mask id="mlua2"><circle cx="270" cy="150" r="42" fill="#fff"/></mask>
+    <path id="br" d="M0,-10 Q0,0 10,0 Q0,0 0,10 Q0,0 -10,0 Q0,0 0,-10Z"/>
+    <path id="morcego" d="M-11,0 Q-7,-6 -3.5,-1.5 Q-1.5,-4 0,-3 Q1.5,-4 3.5,-1.5 Q7,-6 11,0 Q7,-1.6 4.5,1.8 Q2,0 0,1.6 Q-2,0 -4.5,1.8 Q-7,-1.6 -11,0Z"/>
+  </defs>
+
+  <!-- a carta -->
+  <path d="M0,760 V270 A270,270 0 0 1 540,270 V760 Z" fill="url(#papel)"/>
+
+  <g clip-path="url(#janela)">
+    <!-- luar descendo da lua -->
+    <rect x="22" y="22" width="496" height="654" fill="url(#luarcarta)"/>
+    <!-- chao -->
+    <path d="M22,604 C120,597 200,600 270,602 C350,604 430,598 518,604 V676 H22Z" fill="#8FA98A" opacity=".38" filter="url(#aguada)"/>
+
+    <!-- lua cheia com aureola de tarot -->
+    <g transform="translate(270 196)">
+      <g id="raioslua" stroke="#3B2A33" stroke-width=".8" opacity=".55" filter="url(#mao)"></g>
+      <circle r="150" fill="url(#luar)"/>
+      <circle r="104" fill="url(#lunar)" filter="url(#aguada)"/>
+      <g fill="#D9B46A" opacity=".35" filter="url(#aguada)"><circle cx="-34" cy="-30" r="16"/><circle cx="22" cy="-48" r="10"/><circle cx="40" cy="-8" r="13"/><circle cx="-12" cy="-62" r="7"/></g>
+      <g fill="none" stroke="#3B2A33" filter="url(#mao)">
+        <circle r="104" stroke-width="1.2"/>
+        <circle r="116" stroke-width=".7" opacity=".7"/>
+        <circle r="125" stroke-width=".9" stroke-dasharray="1.5 6" opacity=".7"/>
+      </g>
+    </g>
+    <!-- brilhos e morcegos -->
+    <g fill="#3B2A33">
+      <use href="#br" transform="translate(84 150) scale(.7)"/><use href="#br" transform="translate(458 134) scale(.62)"/>
+      <use href="#br" transform="translate(112 94) scale(.4)"/><use href="#br" transform="translate(432 84) scale(.36)"/>
+      <use href="#br" transform="translate(56 250) scale(.42)"/><use href="#br" transform="translate(486 236) scale(.42)"/>
+      <use href="#morcego" transform="translate(420 182) scale(1.15) rotate(-10)"/><use href="#morcego" transform="translate(448 210) scale(.78) rotate(12)"/>
+      <use href="#morcego" transform="translate(116 206) scale(.7) rotate(6)"/>
+    </g>
+
+    <!-- tronco e galho baixo -->
+    <path d="M222,606 C236,600 244,592 246,580 C244,560 250,500 252,440 C253,420 245,405 232,392 L250,385 C258,398 264,410 270,410 C276,410 282,398 290,385 L312,392 C297,405 289,420 290,440 C291,452 291,462 291,470 C312,462 334,450 360,436 L363,443 C338,460 314,476 292,486 C293,520 298,560 296,580 C298,592 304,600 318,606 Z"
+          fill="#8A6A62" opacity=".55" filter="url(#aguada)"/>
+    <g filter="url(#mao)" fill="none" stroke="#3B2A33" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M222,606 C236,600 244,592 246,580 C244,560 250,500 252,440 C253,420 245,405 232,392"/>
+      <path d="M318,606 C304,600 298,592 296,580 C298,560 293,520 292,486 C314,476 338,460 363,443"/>
+      <path d="M360,436 C334,450 312,462 291,470 C291,462 291,452 290,440 C289,420 297,405 312,392"/>
+      <path d="M250,385 C258,398 264,410 270,410 C276,410 282,398 290,385"/>
+      <path d="M262,592 C259,552 266,505 263,458" stroke-width=".8" opacity=".7"/>
+      <path d="M281,582 C283,546 278,512 281,494" stroke-width=".8" opacity=".7"/>
+      <path d="M272,520 C270,500 274,480 272,466" stroke-width=".7" opacity=".5"/>
+      <path d="M232,606 C238,610 246,610 252,606 M286,607 C294,611 302,611 308,606" stroke-width=".9"/>
+    </g>
+
+    <!-- copa em duas camadas (fundo mais escuro, frente mais clara) -->
+    <g id="copa">
+      <g filter="url(#contorno)">
+        <circle cx="118" cy="328" r="50"/><circle cx="422" cy="328" r="50"/><circle cx="178" cy="270" r="56"/>
+        <circle cx="362" cy="270" r="56"/><circle cx="270" cy="240" r="62"/><circle cx="220" cy="246" r="44"/><circle cx="320" cy="246" r="44"/>
+      </g>
+      <g fill="#ECE0C6">
+        <circle cx="118" cy="328" r="50"/><circle cx="422" cy="328" r="50"/><circle cx="178" cy="270" r="56"/>
+        <circle cx="362" cy="270" r="56"/><circle cx="270" cy="240" r="62"/><circle cx="220" cy="246" r="44"/><circle cx="320" cy="246" r="44"/>
+      </g>
+      <g fill="#6F8C74" filter="url(#aguada)">
+        <circle cx="118" cy="328" r="50"/><circle cx="422" cy="328" r="50"/><circle cx="178" cy="270" r="56"/>
+        <circle cx="362" cy="270" r="56"/><circle cx="270" cy="240" r="62"/><circle cx="220" cy="246" r="44"/><circle cx="320" cy="246" r="44"/>
+      </g>
+      <g filter="url(#contorno)">
+        <circle cx="150" cy="374" r="46"/><circle cx="390" cy="374" r="46"/><circle cx="212" cy="318" r="60"/>
+        <circle cx="328" cy="318" r="60"/><circle cx="270" cy="296" r="62"/><circle cx="270" cy="378" r="52"/>
+        <circle cx="206" cy="392" r="42"/><circle cx="334" cy="392" r="42"/>
+      </g>
+      <g fill="#ECE0C6">
+        <circle cx="150" cy="374" r="46"/><circle cx="390" cy="374" r="46"/><circle cx="212" cy="318" r="60"/>
+        <circle cx="328" cy="318" r="60"/><circle cx="270" cy="296" r="62"/><circle cx="270" cy="378" r="52"/>
+        <circle cx="206" cy="392" r="42"/><circle cx="334" cy="392" r="42"/>
+      </g>
+      <g fill="#A9C49C" filter="url(#aguada)">
+        <circle cx="150" cy="374" r="46"/><circle cx="390" cy="374" r="46"/><circle cx="212" cy="318" r="60"/>
+        <circle cx="328" cy="318" r="60"/><circle cx="270" cy="296" r="62"/><circle cx="270" cy="378" r="52"/>
+        <circle cx="206" cy="392" r="42"/><circle cx="334" cy="392" r="42"/>
+      </g>
+      <g fill="#4A5A4C" opacity=".22" filter="url(#aguada)">
+        <ellipse cx="270" cy="410" rx="150" ry="24"/><ellipse cx="150" cy="400" rx="36" ry="16"/><ellipse cx="390" cy="400" rx="36" ry="16"/>
+      </g>
+      <g fill="#E9EFCF" opacity=".55" filter="url(#aguada)">
+        <ellipse cx="252" cy="266" rx="34" ry="15"/><ellipse cx="196" cy="292" rx="24" ry="11"/><ellipse cx="312" cy="290" rx="24" ry="11"/>
+        <ellipse cx="146" cy="352" rx="18" ry="8"/><ellipse cx="380" cy="352" rx="18" ry="8"/>
+      </g>
+      <g fill="none" stroke="#4A5A4C" stroke-width="1" stroke-linecap="round" opacity=".55" filter="url(#mao)">
+        <path d="M150,300 q4,4 8,0 q4,4 8,0 M160,308 q4,4 8,0"/><path d="M384,296 q4,4 8,0 q4,4 8,0 M394,304 q4,4 8,0"/>
+        <path d="M240,232 q4,4 8,0 q4,4 8,0 M250,240 q4,4 8,0"/><path d="M300,330 q4,4 8,0 q4,4 8,0"/>
+        <path d="M196,350 q4,4 8,0 q4,4 8,0 M206,358 q4,4 8,0"/><path d="M118,350 q4,4 8,0 q4,4 8,0"/><path d="M412,350 q4,4 8,0 q4,4 8,0"/>
+        <path d="M262,394 q4,4 8,0 q4,4 8,0"/><path d="M340,262 q4,4 8,0 q4,4 8,0"/>
+      </g>
+      <g filter="url(#mao)" fill="none" stroke="#3B2A33" stroke-width=".9" stroke-linecap="round" opacity=".75">
+        <path d="M236,350 C248,358 262,360 274,356"/><path d="M296,344 C308,352 322,354 334,348"/>
+        <path d="M174,398 C184,404 196,405 206,401"/><path d="M340,404 C350,408 362,408 372,402"/>
+      </g>
+      <g fill="#3B2A33" opacity=".5">
+        <circle cx="206" cy="300" r="1.2"/><circle cx="213" cy="294" r="1"/><circle cx="340" cy="300" r="1.2"/><circle cx="347" cy="294" r="1"/>
+        <circle cx="128" cy="388" r="1.1"/><circle cx="292" cy="372" r="1.1"/><circle cx="299" cy="366" r="1"/><circle cx="404" cy="388" r="1.1"/>
+      </g>
+    </g>
+
+    <!-- folhas soltas ao vento -->
+    <g filter="url(#mao)" stroke="#3B2A33" stroke-width=".9">
+      <path d="M0,-7 C5,-3 5,3 0,7 C-5,3 -5,-3 0,-7Z M0,-7 L0,7" fill="#A9C49C" transform="translate(452 452) rotate(40)"/>
+      <path d="M0,-6 C4,-3 4,3 0,6 C-4,3 -4,-3 0,-6Z M0,-6 L0,6" fill="#7E9A80" transform="translate(484 512) rotate(-30)"/>
+      <path d="M0,-6 C4,-3 4,3 0,6 C-4,3 -4,-3 0,-6Z M0,-6 L0,6" fill="#A9C49C" transform="translate(96 470) rotate(70)"/>
+      <path d="M0,-5 C3.5,-2.5 3.5,2.5 0,5 C-3.5,2.5 -3.5,-2.5 0,-5Z" fill="#E3B96A" transform="translate(70 540) rotate(20)"/>
+    </g>
+
+    <!-- jacas: nascem direto do tronco -->
+    <g>
+      <g transform="translate(245 482) rotate(10)"><ellipse rx="14" ry="24" fill="#BDBF6A" filter="url(#aguada)"/><ellipse rx="14" ry="24" fill="url(#bolinhas)"/></g>
+      <g transform="translate(306 528) rotate(-10)"><ellipse rx="15" ry="25" fill="#BDBF6A" filter="url(#aguada)"/><ellipse rx="15" ry="25" fill="url(#bolinhas)"/></g>
+      <g transform="translate(262 560) rotate(5)"><ellipse rx="11" ry="18" fill="#CFC77A" filter="url(#aguada)"/><ellipse rx="11" ry="18" fill="url(#bolinhas)"/></g>
+      <g filter="url(#mao)" fill="none" stroke="#3B2A33" stroke-width="1.25" stroke-linecap="round">
+        <ellipse cx="245" cy="482" rx="14" ry="24" transform="rotate(10 245 482)"/><path d="M251,459 L253,455"/>
+        <ellipse cx="306" cy="528" rx="15" ry="25" transform="rotate(-10 306 528)"/><path d="M297,506 L294,502"/>
+        <ellipse cx="262" cy="560" rx="11" ry="18" transform="rotate(5 262 560)"/><path d="M263,542 L263,538"/>
+      </g>
+    </g>
+
+    <!-- a jaca-lanterna -->
+    <circle cx="350" cy="500" r="92" fill="url(#luz)"/>
+    <g>
+      <path d="M350,448 L350,466" stroke="#3B2A33" stroke-width="1.3" filter="url(#mao)"/>
+      <ellipse cx="350" cy="498" rx="22" ry="32" fill="#D7A84A" filter="url(#aguada)"/>
+      <ellipse cx="350" cy="498" rx="22" ry="32" fill="url(#bolinhas)" opacity=".55"/>
+      <g fill="#FFF3C6">
+        <path d="M337,486 L346,486 L341.5,476Z"/><path d="M354,486 L363,486 L358.5,476Z"/>
+        <path d="M335,500 L339.5,506 L344.5,501 L350,507 L355.5,501 L360.5,506 L365,500 C360,516 340,516 335,500Z"/>
+      </g>
+      <g fill="#FFE07A" opacity=".5" filter="url(#brilho)"><circle cx="350" cy="496" r="13"/></g>
+      <ellipse cx="350" cy="498" rx="22" ry="32" fill="none" stroke="#3B2A33" stroke-width="1.35" filter="url(#mao)"/>
+    </g>
+    <g fill="#E8B84E"><circle cx="402" cy="452" r="2"/><circle cx="388" cy="560" r="1.6"/><circle cx="312" cy="452" r="1.4"/><circle cx="420" cy="512" r="1.3"/></g>
+
+    <!-- piquenique: toalha, livro aberto e cafe -->
+    <path d="M62,630 L194,624 L218,654 L48,662 Z" fill="url(#xadrez)" opacity=".95" filter="url(#aguada)"/>
+    <path d="M62,630 L194,624 L218,654 L48,662 Z" fill="none" stroke="#3B2A33" stroke-width="1.2" stroke-linejoin="round" filter="url(#mao)"/>
+    <g filter="url(#mao)" stroke="#3B2A33" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M94,640 C107,629 120,629 131,636 L131,653 C120,646 107,646 94,655 Z" fill="#FBF6EA"/>
+      <path d="M131,636 C142,629 155,629 168,640 L168,655 C155,646 142,646 131,653 Z" fill="#FBF6EA"/>
+      <path d="M100,642 C108,637 117,637 125,640 M100,647 C108,642 117,642 125,645 M137,640 C145,637 153,637 161,642 M137,645 C145,642 153,642 161,647" fill="none" stroke-width=".7" opacity=".6"/>
+      <path d="M176,630 L194,630 L192,646 C190,650 180,650 178,646 Z" fill="#EFE4D0"/>
+      <path d="M194,634 C201,634 201,642 193,642" fill="none"/>
+      <path d="M182,624 C178,618 186,614 182,606 M189,624 C186,619 192,615 189,609" fill="none" stroke-width=".9" opacity=".75"/>
+    </g>
+    <!-- fatia de bolo e frutinhas -->
+    <g filter="url(#mao)" stroke="#3B2A33" stroke-width="1.1" stroke-linejoin="round">
+      <path d="M64,648 L86,640 L88,652 L66,658 Z" fill="#F2DDB0"/><path d="M64,648 L86,640 L86,644 L64,652Z" fill="#C4735C"/>
+      <circle cx="80" cy="636" r="2.4" fill="#A8355D"/>
+      <circle cx="200" cy="652" r="2.6" fill="#A8355D"/><circle cx="206" cy="648" r="2.4" fill="#955F8E"/><circle cx="205" cy="655" r="2.2" fill="#A8355D"/>
+    </g>
+
+    <!-- o gato preto, olhando a lanterna -->
+    <g filter="url(#mao)">
+      <path d="M428,644 C452,642 462,622 452,608 C449,603 443,605 445,611 C450,622 442,633 428,636" fill="#2A1E24"/>
+      <path d="M394,588 C384,604 382,628 386,646 L426,646 C430,626 426,602 414,588 Z" fill="#2A1E24"/>
+      <path d="M390,577 C387,567 390,557 394,549 L401,560 C405,558 409,558 413,560 L420,549 C424,557 426,567 422,577 C419,590 393,590 390,577 Z" fill="#2A1E24"/>
+      <g fill="#E8B84E"><ellipse cx="400" cy="571" rx="3.2" ry="2.7"/><ellipse cx="412" cy="571" rx="3.2" ry="2.7"/></g>
+      <g fill="#2A1E24"><ellipse cx="399.2" cy="570.6" rx=".9" ry="2.2"/><ellipse cx="411.2" cy="570.6" rx=".9" ry="2.2"/></g>
+    </g>
+
+    <!-- aboboras -->
+    <g transform="translate(478 646)">
+      <g fill="#C4735C" filter="url(#aguada)"><ellipse cx="-9" cy="0" rx="12" ry="11"/><ellipse cx="9" cy="0" rx="12" ry="11"/><ellipse cx="0" cy="0" rx="12" ry="12"/></g>
+      <g fill="none" stroke="#3B2A33" stroke-width="1.1" filter="url(#mao)"><ellipse cx="-9" cy="0" rx="12" ry="11"/><ellipse cx="9" cy="0" rx="12" ry="11"/><ellipse cx="0" cy="0" rx="9" ry="12"/><path d="M0,-12 C0,-17 2,-19 5,-20" stroke-linecap="round"/></g>
+    </g>
+    <g transform="translate(455 656) scale(.62)">
+      <g fill="#E3B96A" filter="url(#aguada)"><ellipse cx="-9" cy="0" rx="12" ry="11"/><ellipse cx="9" cy="0" rx="12" ry="11"/><ellipse cx="0" cy="0" rx="12" ry="12"/></g>
+      <g fill="none" stroke="#3B2A33" stroke-width="1.8" filter="url(#mao)"><ellipse cx="-9" cy="0" rx="12" ry="11"/><ellipse cx="9" cy="0" rx="12" ry="11"/><ellipse cx="0" cy="0" rx="9" ry="12"/><path d="M0,-12 C0,-17 2,-19 5,-20" stroke-linecap="round"/></g>
+    </g>
+
+    <!-- capim e linha do chao -->
+    <g filter="url(#mao)" fill="none" stroke="#3B2A33" stroke-linecap="round">
+      <path d="M22,604 C120,597 200,600 270,602 C350,604 430,598 518,604" stroke-width="1.15"/>
+      <path d="M40,612 c0,-4 -1,-7 -3,-9 M42,612 c0,-5 1,-8 3,-10 M44,612 c1,-3 3,-5 5,-6 M234,616 c0,-4 -1,-7 -3,-9 M236,616 c0,-5 1,-8 3,-10 M238,616 c1,-3 3,-5 5,-6 M330,620 c0,-4 -1,-7 -3,-9 M332,620 c0,-5 1,-8 3,-10 M334,620 c1,-3 3,-5 5,-6 M366,612 c0,-4 -1,-7 -3,-9 M368,612 c0,-5 1,-8 3,-10 M370,612 c1,-3 3,-5 5,-6 M502,616 c0,-4 -1,-7 -3,-9 M504,616 c0,-5 1,-8 3,-10 M506,616 c1,-3 3,-5 5,-6 M232,668 c0,-4 -1,-7 -3,-9 M234,668 c0,-5 1,-8 3,-10 M236,668 c1,-3 3,-5 5,-6 M300,664 c0,-4 -1,-7 -3,-9 M302,664 c0,-5 1,-8 3,-10 M304,664 c1,-3 3,-5 5,-6 M420,666 c0,-4 -1,-7 -3,-9 M422,666 c0,-5 1,-8 3,-10 M424,666 c1,-3 3,-5 5,-6 M150,616 c0,-4 -1,-7 -3,-9 M152,616 c0,-5 1,-8 3,-10 M154,616 c1,-3 3,-5 5,-6" stroke-width=".8"/>
+    </g>
+  </g>
+
+  <!-- molduras da carta -->
+  <g fill="none" stroke="#3B2A33" filter="url(#mao)">
+    <path d="M14,746 V270 A256,256 0 0 1 526,270 V746 Z" stroke-width="1.8"/>
+    <path d="M22,738 V270 A248,248 0 0 1 518,270 V738 Z" stroke-width=".8"/>
+    <path d="M22,676 H518" stroke-width="1.6"/><path d="M22,683 H518" stroke-width=".7"/>
+  </g>
+  <g fill="#3B2A33"><use href="#br" transform="translate(270 30) scale(.55)"/></g>
+  <text x="270" y="72" text-anchor="middle" font-family="Cinzel" font-weight="600" font-size="20" letter-spacing="5" fill="#3B2A33">XXXI</text>
+  <text x="270" y="721" text-anchor="middle" font-family="Cinzel" font-weight="600" font-size="25" letter-spacing="7" fill="#3B2A33">A JAQUEIRA</text>
+  <g fill="#3B2A33"><use href="#br" transform="translate(96 712) scale(.45)"/><use href="#br" transform="translate(444 712) scale(.45)"/></g>
+</svg>
+
+<div class="texto">
+  <div class="titulo">Edição de <span class="marcada">Halloween<i class="gi"></i></span></div>
+  <div class="sub">Piquenique literário no Parque da Jaqueira</div>
+  <div class="fio"><i></i><svg width="14" height="14" viewBox="-10 -10 20 20"><path d="M0,-10 Q0,0 10,0 Q0,0 0,10 Q0,0 -10,0 Q0,0 0,-10Z" fill="currentColor"/></svg><i></i></div>
+  <div class="info"><span>Sáb, 31 de outubro · 15h</span><span class="losango"></span><b>R$ 30</b><span class="losango"></span><span>20 vagas</span></div>
+  <div class="inclui">Ecobag, marcador de livro, café, bolo e frutinhas,<br>e sorteio de um livro entre os leitores</div>
+  <div class="cta">Comunidade no WhatsApp · link na bio</div>
+</div>
+
+</div>
+<script>
+// raios e estrelas do fundo, gerados com semente fixa
+let s=7;const r=()=>(s=(s*16807)%2147483647)/2147483647;
+const g=document.getElementById('raios');
+for(let a=0;a<360;a+=6){const t=a*Math.PI/180,l=(a%18===0)?474:452;
+  g.insertAdjacentHTML('beforeend',`<line x1="${Math.cos(t)*424}" y1="${Math.sin(t)*424}" x2="${Math.cos(t)*l}" y2="${Math.sin(t)*l}"/>`)}
+const rl=document.getElementById('raioslua');
+for(let a=0;a<360;a+=7.5){if(a>=255&&a<=285)continue;const t=a*Math.PI/180,l=(a%15===0)?172:156;
+  rl.insertAdjacentHTML('beforeend',`<line x1="${Math.cos(t)*134}" y1="${Math.sin(t)*134}" x2="${Math.cos(t)*l}" y2="${Math.sin(t)*l}"/>`)}
+const e=document.getElementById('estrelas-fundo');
+for(let i=0;i<70;i++){const x=r()*1080,y=r()*1350,k=r();
+  if(x>250&&x<830&&y>150&&y<910)continue;
+  e.insertAdjacentHTML('beforeend',`<circle cx="${x}" cy="${y}" r="${(.6+k*1.4).toFixed(2)}" opacity="${(.25+r()*.45).toFixed(2)}"/>`)}
+</script>
+</body></html>

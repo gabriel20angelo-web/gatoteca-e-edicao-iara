@@ -1,0 +1,429 @@
+[
+ {
+  "cod": "01",
+  "nome": "Sentado",
+  "grupo": "Descanso",
+  "nota": "A pose-base, de pudim, olhando para quem lê. Serve para assinatura, perfil e quando o post só precisa da presença dele.",
+  "arquivo": "01_sentado"
+ },
+ {
+  "cod": "02",
+  "nome": "Pão",
+  "grupo": "Descanso",
+  "nota": "Deitado de pão, patinhas escondidas, olhos de contentamento. Bom para «aconchego», leitura calma, aviso de pausa.",
+  "arquivo": "02_pao"
+ },
+ {
+  "cod": "03",
+  "nome": "Bolinha dormindo",
+  "grupo": "Descanso",
+  "nota": "Enrolado como uma bolinha, o rabo cobrindo o queixo. Para «boa noite», «até o próximo encontro», textos de descanso.",
+  "arquivo": "03_bolinha_dormindo"
+ },
+ {
+  "cod": "04",
+  "nome": "Barriga pra cima",
+  "grupo": "Descanso",
+  "nota": "De barriga pra cima, patinhas no ar e os feijõezinhos à mostra. O post de carinho, de alegria boba, de «chegou o livro».",
+  "arquivo": "04_barriga_pra_cima"
+ },
+ {
+  "cod": "05",
+  "nome": "Sentado largado",
+  "grupo": "Descanso",
+  "nota": "Sentado «de gente», barriguinha redonda e solas viradas pra frente. A pose mais dele: para «chegou sexta», «terminei o livro», conversa.",
+  "arquivo": "05_sentado_largado"
+ },
+ {
+  "cod": "06",
+  "nome": "Em pé comemorando",
+  "grupo": "Movimento",
+  "nota": "Em pé nas patas de trás, bracinhos pra cima, barriguinha à mostra. Anúncio, conquista, «inscrições abertas».",
+  "arquivo": "06_em_pe_comemorando"
+ },
+ {
+  "cod": "07",
+  "nome": "De lado andando",
+  "grupo": "Movimento",
+  "nota": "De perfil, andando com o rabo em gancho e o rosto virado pra quem lê. Para «a caminho do encontro», transições, setas de «arraste».",
+  "arquivo": "07_de_lado_andando"
+ },
+ {
+  "cod": "08",
+  "nome": "Olhando pra trás",
+  "grupo": "Movimento",
+  "nota": "De costas, virando a cabeça por cima do ombro. Para «e você, já leu?», chamadas de continuação, «deixa eu te contar».",
+  "arquivo": "08_olhando_pra_tras"
+ },
+ {
+  "cod": "09",
+  "nome": "Espreguiçando",
+  "grupo": "Movimento",
+  "nota": "Bumbum pra cima, patas da frente esticadas, bocejo. Para «bom dia», «segunda-feira», começo de leitura.",
+  "arquivo": "09_espreguicando"
+ },
+ {
+  "cod": "10",
+  "nome": "Deitado esticado",
+  "grupo": "Movimento",
+  "nota": "Deitado de lado, comprido, a cabeça apoiada nas patinhas. Para «domingo», «tempo de ler», textos longos.",
+  "arquivo": "10_deitado_esticado"
+ },
+ {
+  "cod": "11",
+  "nome": "Lendo",
+  "grupo": "Segurando",
+  "nota": "Sentado largado lendo um livro de capa vermelha, olhos nas páginas e as solas aparecendo. O mascote em serviço: indicação de leitura, «livro do mês».",
+  "arquivo": "11_lendo"
+ },
+ {
+  "cod": "12",
+  "nome": "Abraçando o livro",
+  "grupo": "Segurando",
+  "nota": "Em pé, abraçado num livro, olhos fechados de quem ama a história. Para «livro favorito», resenha, «a gente amou».",
+  "arquivo": "12_abracando_o_livro"
+ },
+ {
+  "cod": "13",
+  "nome": "Xícara de café",
+  "grupo": "Segurando",
+  "nota": "Sentado largado com a xícara quentinha nas duas patas. Para os encontros, o café do clube, «bora conversar».",
+  "arquivo": "13_xicara_de_cafe"
+ },
+ {
+  "cod": "14",
+  "nome": "Cartaz em branco",
+  "grupo": "Segurando",
+  "nota": "Em pé segurando um cartaz vazio por cima da cabeça: é o espaço para escrever o recado do post (data, livro, aviso).",
+  "arquivo": "14_cartaz_em_branco"
+ },
+ {
+  "cod": "15",
+  "nome": "Com a lanterna",
+  "grupo": "Segurando",
+  "nota": "Em pé com a lanterna acesa numa pata e acenando com a outra. Para «vem que o encontro é hoje à noite», Halloween, guia de leitura.",
+  "arquivo": "15_com_a_lanterna"
+ },
+ {
+  "cod": "16",
+  "nome": "Espiando atrás do livro",
+  "grupo": "Escondido",
+  "nota": "Só olhos, orelhas e patinhas aparecendo por cima de um livro em pé. Para spoiler, mistério, «adivinha o próximo livro».",
+  "arquivo": "16_espiando_atras_do_livro"
+ },
+ {
+  "cod": "17",
+  "nome": "Pendurado na borda",
+  "grupo": "Escondido",
+  "nota": "Pendurado pelas patinhas na borda de um livro deitado, barriguinha e solas no ar. Para «quase acabando», «segura aí», suspense.",
+  "arquivo": "17_pendurado_na_borda"
+ },
+ {
+  "cod": "18",
+  "nome": "Na ecobag",
+  "grupo": "Escondido",
+  "nota": "Saindo de dentro da ecobag do clube. Para divulgar o kit (ecobag, marcador), sorteio, «vem com a gente».",
+  "arquivo": "18_na_ecobag"
+ },
+ {
+  "cod": "19",
+  "nome": "Espiando de baixo",
+  "grupo": "Escondido",
+  "nota": "Só orelhas, olhos e patinhas subindo pela borda de baixo. Sticker de canto, fim de carrossel, «tô de olho».",
+  "arquivo": "19_espiando_de_baixo"
+ },
+ {
+  "cod": "20",
+  "nome": "Feliz",
+  "grupo": "Humores",
+  "nota": "Olhinhos fechados de alegria, boquinha aberta, rabo pra cima. Comemorações, boas notícias, «obrigado».",
+  "arquivo": "20_feliz"
+ },
+ {
+  "cod": "21",
+  "nome": "Assustado",
+  "grupo": "Humores",
+  "nota": "Pelo todo arrepiado (o pelo de risquinhos eriça de verdade), olhos arregalados, orelhas baixas, gota de suor. Para «prazo acabando», «últimas vagas», susto.",
+  "arquivo": "21_assustado"
+ },
+ {
+  "cod": "22",
+  "nome": "Bravo",
+  "grupo": "Humores",
+  "nota": "Orelhas pra trás, chiando de dentinhos, marca de raiva. Para «spoiler não!», regras do clube, humor.",
+  "arquivo": "22_bravo"
+ },
+ {
+  "cod": "23",
+  "nome": "Triste",
+  "grupo": "Humores",
+  "nota": "Orelhas caídas, lágrima e nuvenzinha de chuva. Para «acabou o livro», «encontro adiado», fim de série.",
+  "arquivo": "23_triste"
+ },
+ {
+  "cod": "24",
+  "nome": "Curioso",
+  "grupo": "Humores",
+  "nota": "Cabeça inclinada, olhar de lado e um ponto de interrogação. Para perguntas, enquetes, «qual livro vocês querem?».",
+  "arquivo": "24_curioso"
+ },
+ {
+  "cod": "25",
+  "nome": "Sonolento",
+  "grupo": "Humores",
+  "nota": "Bocejo enorme de olhos espremidos. Para «leitura até tarde», «modo sono», posts da noite.",
+  "arquivo": "25_sonolento"
+ },
+ {
+  "cod": "26",
+  "nome": "Apaixonado",
+  "grupo": "Humores",
+  "nota": "Olhos de coração, bochechas vermelhas e coraçõezinhos flutuando. Para livro favorito, depoimentos, «a gente ama vocês».",
+  "arquivo": "26_apaixonado"
+ },
+ {
+  "cod": "27",
+  "nome": "De óculos",
+  "grupo": "Acessórios",
+  "nota": "Óculos redondos dourados de leitor, ao lado de uma pilha de livros. O jeito «professor» do clube: indicação, curiosidade, «você sabia?».",
+  "arquivo": "27_de_oculos"
+ },
+ {
+  "cod": "28",
+  "nome": "Chapéu de bruxa",
+  "grupo": "Acessórios",
+  "nota": "Chapéu de bruxa roxo com faixa laranja e uma abóbora ao lado. Halloween, edições temáticas, leitura de terror.",
+  "arquivo": "28_chapeu_de_bruxa"
+ },
+ {
+  "cod": "29",
+  "nome": "De lenço e óculos escuros",
+  "grupo": "Acessórios",
+  "nota": "Lenço de bolinhas amarrado no queixo e óculos escuros de gatinho: a diva. Para fofoca literária, «spoiler? não sei de nada», looks de evento.",
+  "arquivo": "29_de_lenco_e_oculos_escuros"
+ },
+ {
+  "cod": "30",
+  "nome": "Coroado",
+  "grupo": "Acessórios",
+  "nota": "Coroinha dourada, capa vermelha e gola de arminho: o rei (ou rainha) do clube. Para «leitor do mês», vencedor do sorteio, aniversário do clube.",
+  "arquivo": "30_coroado"
+ },
+ {
+  "cod": "31",
+  "nome": "Poeta de boina",
+  "grupo": "Acessórios",
+  "nota": "Boina vermelha e cachecol listrado: o poeta. Para poesia, citações, sarau, leitura em voz alta.",
+  "arquivo": "31_poeta_de_boina"
+ },
+ {
+  "cod": "32",
+  "nome": "De gala",
+  "grupo": "Acessórios",
+  "nota": "Gravata-borboleta de bolinhas e cara de satisfeito. Para eventos especiais, convite formal, encerramento de ciclo.",
+  "arquivo": "32_de_gala"
+ },
+ {
+  "cod": "33",
+  "nome": "Ouvindo audiolivro",
+  "grupo": "Acessórios",
+  "nota": "Fone de ouvido e notas musicais em volta. Para audiolivro, podcast, playlist de leitura.",
+  "arquivo": "33_ouvindo_audiolivro"
+ },
+ {
+  "cod": "34",
+  "nome": "Com florzinha",
+  "grupo": "Acessórios",
+  "nota": "Florzinha rosa atrás da orelha e bochechas coradas. Para primavera, carinho, «mês das mulheres», delicadeza.",
+  "arquivo": "34_com_florzinha"
+ },
+ {
+  "cod": "35",
+  "nome": "No alto da pilha",
+  "grupo": "Objetos",
+  "nota": "Sentado no topo de uma pilha de livros coloridos. Para «metas de leitura», listas, «quantos livros você leu?».",
+  "arquivo": "35_no_alto_da_pilha"
+ },
+ {
+  "cod": "36",
+  "nome": "Comendo docinhos",
+  "grupo": "Objetos",
+  "nota": "Brigadeiro na boca, pratinho de doces do lado. Para o lanche do encontro, «tem docinho!», Dia das Crianças.",
+  "arquivo": "36_comendo_docinhos"
+ },
+ {
+  "cod": "37",
+  "nome": "Com cupcake",
+  "grupo": "Objetos",
+  "nota": "Cupcake de cereja nas duas patinhas. Para aniversário, comemoração, café com bolo do encontro.",
+  "arquivo": "37_com_cupcake"
+ },
+ {
+  "cod": "38",
+  "nome": "Com a bússola",
+  "grupo": "Objetos",
+  "nota": "Bússola dourada nas patas, olhando para ela. Para aventura, «qual o próximo destino de leitura?», roteiros.",
+  "arquivo": "38_com_a_bússola"
+ },
+ {
+  "cod": "39",
+  "nome": "Mago do castiçal",
+  "grupo": "Objetos",
+  "nota": "Chapéu de mago azul de estrelas e um castiçal de três velas acesas. Para mistério, fantasia, encontros à noite.",
+  "arquivo": "39_mago_do_castical"
+ },
+ {
+  "cod": "40",
+  "nome": "Bola de cristal",
+  "grupo": "Objetos",
+  "nota": "As patinhas sobre uma bola de cristal que brilha. Para «previsões do mês», «adivinha o livro», sorteios.",
+  "arquivo": "40_bola_de_cristal"
+ },
+ {
+  "cod": "41",
+  "nome": "Tirando cartas",
+  "grupo": "Objetos",
+  "nota": "Leque de três cartas de tarô (lua, sol, estrela) na pata e uma piscadinha. Para enquetes, «escolha uma carta», dinâmicas.",
+  "arquivo": "41_tirando_cartas"
+ },
+ {
+  "cod": "42",
+  "nome": "Brincando com novelo",
+  "grupo": "Objetos",
+  "nota": "De barriga pra cima segurando um novelo vermelho, o fio solto pela barriga. Para fim de semana, preguiça boa, «modo brincadeira».",
+  "arquivo": "42_brincando_com_novelo"
+ },
+ {
+  "cod": "43",
+  "nome": "Escrevendo",
+  "grupo": "Objetos",
+  "nota": "Escrevendo com pena numa folha, tinteiro do lado. Para «escreva com a gente», resenhas, oficinas de escrita.",
+  "arquivo": "43_escrevendo"
+ },
+ {
+  "cod": "44",
+  "nome": "Detetive de lupa",
+  "grupo": "Objetos",
+  "nota": "Lupa no olho direito, que aparece gigante através da lente. Para «lendo nas entrelinhas», pistas, livro de mistério.",
+  "arquivo": "44_detetive_de_lupa"
+ },
+ {
+  "cod": "45",
+  "nome": "Na chuva",
+  "grupo": "Objetos",
+  "nota": "Em pé debaixo de um guarda-chuva vermelho, gotas em volta. Para dia de chuva em Recife, «encontro mantido», aconchego.",
+  "arquivo": "45_na_chuva"
+ },
+ {
+  "cod": "46",
+  "nome": "Dentro da abóbora",
+  "grupo": "Objetos",
+  "nota": "Saindo de dentro de uma abóbora de Halloween entalhada e acesa. Para a edição de Halloween, convite de festa, «doces ou travessuras».",
+  "arquivo": "46_dentro_da_abobora"
+ },
+ {
+  "cod": "47",
+  "nome": "Com o filhote",
+  "grupo": "Com amigos",
+  "nota": "Ele e um filhotinho laranja que olha pra cima, com um coração entre os dois. Para família, «traga um amigo», cuidado.",
+  "arquivo": "47_com_o_filhote"
+ },
+ {
+  "cod": "48",
+  "nome": "A turma",
+  "grupo": "Com amigos",
+  "nota": "Três gatos lado a lado: ele no meio, um cinza contente e um laranja feliz. Para «somos um clube», boas-vindas, fotos de grupo.",
+  "arquivo": "48_a_turma"
+ },
+ {
+  "cod": "49",
+  "nome": "Juntinhos",
+  "grupo": "Com amigos",
+  "nota": "Dois gatos de bochecha colada, o frajola e um cinza, com um coração em cima. Para amizade, parceria (TULIPA!), «obrigado por virem».",
+  "arquivo": "49_juntinhos"
+ },
+ {
+  "cod": "50",
+  "nome": "Hora da história",
+  "grupo": "Com amigos",
+  "nota": "Lendo em voz alta para dois filhotes que escutam. Para leitura coletiva, clube infantil, «roda de leitura».",
+  "arquivo": "50_hora_da_historia"
+ },
+ {
+  "cod": "51",
+  "nome": "Pensando",
+  "grupo": "Pensando e brincando",
+  "nota": "Patinha no queixo, olhar pro alto e um balão de pensamento com um livro dentro. Para perguntas, reflexões, «o que você achou?».",
+  "arquivo": "51_pensando"
+ },
+ {
+  "cod": "52",
+  "nome": "Teve uma ideia",
+  "grupo": "Pensando e brincando",
+  "nota": "Lâmpada acesa sobre a cabeça e a patinha erguida. Para dicas, «ideia de leitura», sugestões do público.",
+  "arquivo": "52_teve_uma_ideia"
+ },
+ {
+  "cod": "53",
+  "nome": "Olhando as estrelas",
+  "grupo": "Pensando e brincando",
+  "nota": "Olhando pra cima, para a lua e uma constelação. Para «boa noite», poesia, sonhos, leitura de fantasia.",
+  "arquivo": "53_olhando_as_estrelas"
+ },
+ {
+  "cod": "54",
+  "nome": "Dançando",
+  "grupo": "Pensando e brincando",
+  "nota": "Dançando numa perna só, bracinhos abertos, notas no ar. Para festa, sexta-feira, comemoração, «bora!».",
+  "arquivo": "54_dancando"
+ },
+ {
+  "cod": "55",
+  "nome": "Caçando mariposa",
+  "grupo": "Pensando e brincando",
+  "nota": "Pulando com os bracinhos pra cima atrás de uma mariposa. Para curiosidade, «corre que acaba», energia.",
+  "arquivo": "55_cacando_mariposa"
+ },
+ {
+  "cod": "56",
+  "nome": "Na caixa",
+  "grupo": "Pensando e brincando",
+  "nota": "Dentro de uma caixa de papelão escrita «livros», as abas abertas. Para chegada de livros, doações, mudança, «caixa de surpresas».",
+  "arquivo": "56_na_caixa"
+ },
+ {
+  "cod": "57",
+  "nome": "Lilith de vestido",
+  "grupo": "Figuras de post",
+  "nota": "De pé, gigante, num vestido longo de noite com mangas e patas brancas na cintura; rosto de Bastet (olhos amendoados meio fechados, delineado, sem bochecha rosada: a versão «menos fofa»), lua crescente entre as orelhas, asas de coruja caídas, serpente enrolada no vestido e três corujinhas no chão. Feita para o post de Lilith (post_lilith5.py), que ele ADOROU; serve para mito, sombra, temas noturnos e qualquer arte em arco de tarô.",
+  "arquivo": "57_lilith_de_vestido"
+ },
+ {
+  "cod": "58",
+  "nome": "Carta de Lilith em arco",
+  "grupo": "Figuras de post",
+  "nota": "A carta inteira, sem o texto: arco vinho com moldura dupla de ouro, céu de pontinhos, lua clara com raios atrás da cabeça e a Lilith de vestido (57) com as corujinhas. Para stories, capa de destaque, ou para pôr outro texto ao lado no Canva.",
+  "arquivo": "58_carta_de_lilith_em_arco"
+ },
+ {
+  "cod": "59",
+  "nome": "Rosto de Bastet",
+  "grupo": "Figuras de post",
+  "nota": "Só a cabeça da versão «menos fofa»: olhos amendoados meio fechados, pupila em fenda, delineado de Bastet, sem bochecha rosada, com a lua crescente entre as orelhas. Para mito, mistério, ironia, «leitura de sombra», avatar sério do clube.",
+  "arquivo": "59_rosto_de_bastet"
+ },
+ {
+  "cod": "60",
+  "nome": "Corujinha de ouro",
+  "grupo": "Figuras de post",
+  "nota": "Corujinha no traço de ouro da arte 02 (corpo vinho, olhos creme e âmbar). Enfeite noturno: sabedoria, Lilith, leitura de madrugada; fica bem em par ou trio no pé de uma moldura.",
+  "arquivo": "60_corujinha_de_ouro"
+ },
+ {
+  "cod": "61",
+  "nome": "Asas de coruja caídas",
+  "grupo": "Figuras de post",
+  "nota": "Par de asas de coruja caídas (Relevo de Burney), penas vinho com contorno de ouro. Vai ATRÁS de qualquer figura (gato, pessoa, livro) para dar ar de ícone; foi usado atrás da 57.",
+  "arquivo": "61_asas_de_coruja"
+ }
+]

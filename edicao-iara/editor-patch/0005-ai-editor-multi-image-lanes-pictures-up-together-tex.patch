@@ -1,0 +1,120 @@
+From 07b98d1758ae766c0e9fcc71195f7fc783e1bc12 Mon Sep 17 00:00:00 2001
+From: gabriel20angelo-web <gabriel20angelo-web@users.noreply.github.com>
+Date: Sun, 22 Nov 2026 15:31:54 -0300
+Subject: [PATCH 5/9] ai-editor: multi* image lanes (pictures up together),
+ text shadow option, check treats multi* as logo lane
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+---
+ plugins/ai-editor/remotion/src/Texts.tsx          |  3 ++-
+ .../ai-editor/skills/style-edit/scripts/check.py  | 15 +++++++++++----
+ .../ai-editor/skills/style-edit/scripts/plan.py   | 11 ++++++++---
+ 3 files changed, 21 insertions(+), 8 deletions(-)
+
+diff --git a/plugins/ai-editor/remotion/src/Texts.tsx b/plugins/ai-editor/remotion/src/Texts.tsx
+index 8eefad8..efdd034 100644
+--- a/plugins/ai-editor/remotion/src/Texts.tsx
++++ b/plugins/ai-editor/remotion/src/Texts.tsx
+@@ -28,7 +28,7 @@ export type TextItem =
+   | { kind: "stamp"; start: number; end: number; box: [number, number, number, number] }
+   | { kind: "label"; text: string; style: "plain" | "outline" | "box" | "block"; start: number; end: number; x_pct: number; y_pct: number; size_pct: number;
+       font?: string; color?: string; width_pct?: number; rotation?: number; opacity?: number; anim?: "fade" | "pop" | "slide";
+-      align?: "left" | "right"; text_color?: string };
++      align?: "left" | "right"; text_color?: string; shadow?: boolean };
+ type Label = Extract<TextItem, { kind: "label" }>;
+ 
+ const POP_S = 0.18;
+@@ -138,6 +138,7 @@ const LabelText: React.FC<{ x: Label; t: number; width: number; height: number;
+     <div style={{ position: "absolute", left: `${x.x_pct}%`, top: `${x.y_pct}%`, transform: "translate(-50%, -50%)" + mv.transform, width: "max-content",
+       maxWidth: `${x.width_pct ?? 84}%`, textAlign: x.align ?? "center", fontFamily: `${family}, "Apple Color Emoji", "Noto Color Emoji"`, fontWeight: 700,
+       fontSize: fs, lineHeight: box ? 1.32 : 1.15, whiteSpace: "pre-wrap", overflowWrap: "anywhere", ...(mv.opacity < 1 ? { opacity: mv.opacity } : {}),
++      ...(x.shadow ? { textShadow: "0 3px 12px rgba(0,0,0,.55)" } : {}),
+       ...(block ? { background: c, color: on, padding: `${fs * 0.22}px ${fs * 0.4}px`, borderRadius: fs * 0.28 } : {}) }}>
+       <span style={{ color: block || box ? on : c, ...(box
+         ? { background: c, padding: `${fs * 0.06}px ${fs * 0.24}px`, borderRadius: fs * 0.18,
+diff --git a/plugins/ai-editor/skills/style-edit/scripts/check.py b/plugins/ai-editor/skills/style-edit/scripts/check.py
+index d886a96..35138cf 100644
+--- a/plugins/ai-editor/skills/style-edit/scripts/check.py
++++ b/plugins/ai-editor/skills/style-edit/scripts/check.py
+@@ -58,6 +58,13 @@ PLAN_FIX = ("plan again (plan.py fits a flow in the band beside or above the hea
+             "a flow of one node or a cluster of one logo is a logo card instead")
+ 
+ 
++
++def _logo_lane(c):
++    """The logo lane and the "multi*" lanes (pictures kept up together) sit beside the main card: tested as logo-like."""
++    lane = str(c.get("lane") or "")
++    return lane == "logo" or lane.startswith("multi")
++
++
+ def spread(c):
+     """A card laid round the head over the whole frame (logo_cluster): its content is placed by the head,
+     not centred, so the off-centre checks skip it."""
+@@ -276,7 +283,7 @@ def check_plan(plan, face=None, cuts=(), static_s=STATIC_S, visuals=None, brand=
+                                    f"{bx:.0f}-{bx + bw:.0f}%" if bw else "") + "): small and lopsided on a phone", PLAN_FIX))
+         if c.get("layout") == "scene" or spread(c):
+             continue    # a full-frame cut-away, or logos laid round the head: the renderer keeps them clear
+-        if aspect == "9:16" and c.get("lane") != "logo" and not spread(c) and abs(x + w / 2 - 50) > CENTRE_PLAN:
++        if aspect == "9:16" and not _logo_lane(c) and not spread(c) and abs(x + w / 2 - 50) > CENTRE_PLAN:
+             out.append(finding("FAIL", c["start"], f"{name} card centre at {x + w / 2:.1f}% of the width, not 50",
+                                "drop its box x in visuals.json/images.json so plan.py centres it"))
+         if heads:
+@@ -353,7 +360,7 @@ def check_plan(plan, face=None, cuts=(), static_s=STATIC_S, visuals=None, brand=
+         if x.get("kind") == "list" and (x.get("size_pct") or 0) < cap_size - 0.01:
+             out.append(finding("FAIL", x["start"], f"the list's type is {x.get('size_pct')}% of the frame, under the captions' "
+                                f"{cap_size}%: too small to read", "plan again with the current plan.py (lists match the captions)"))
+-    main = [c for c in cards if c.get("lane") != "logo"]
++    main = [c for c in cards if not _logo_lane(c)]
+     text = [c for c in main if (c.get("anim") or {}).get("type") in TEXT_ANIMS]
+     if len(text) > len(main) - len(text):
+         for c in text:
+@@ -671,7 +678,7 @@ def check_render(edit, plan, video):
+             rec["ink"] = [round(v, 1) for v in st["mid"][1]]
+             rec["ink_centre_x"] = round(cx, 1)
+             explain = (c.get("anim") or {}).get("type") in ("flow", "logo_cluster")
+-            if aspect_of(plan) == "9:16" and c.get("lane") != "logo" and (explain or not spread(c)) \
++            if aspect_of(plan) == "9:16" and not _logo_lane(c) and (explain or not spread(c)) \
+                     and (abs(cx - 50) > CENTRE_INK or explain and x1 - x0 < INK_MIN_W):
+                 out.append(finding("FAIL", st["mid"][0], f"{name} card is drawn {cx - 50:+.1f}% of the width off centre "
+                                    f"(its content spans {x0:.0f}-{x1:.0f}%)" if abs(cx - 50) > CENTRE_INK else
+@@ -684,7 +691,7 @@ def check_render(edit, plan, video):
+             rec["ink"] = None
+             out.append(finding("WARN", (c["start"] + c["end"]) / 2, f"{name} card: nothing drawn found in its box",
+                                "look at that frame: the card may be missing from the render"))
+-        rec["still"] = still_runs(st["diffs"], STILL_DIFF) if c.get("lane") != "logo" else []
++        rec["still"] = still_runs(st["diffs"], STILL_DIFF) if not _logo_lane(c) else []
+         for a, b in rec["still"]:
+             out.append(finding("WARN", a, f"{name} card holds still for {b - a + 1 / FPS:.1f} s ({a:.1f}-{b + 1 / FPS:.1f} s)",
+                                "give it motion: a highlight or a taller clip for a capture, words for a scene's parts"))
+diff --git a/plugins/ai-editor/skills/style-edit/scripts/plan.py b/plugins/ai-editor/skills/style-edit/scripts/plan.py
+index ad91e6d..f57d62a 100644
+--- a/plugins/ai-editor/skills/style-edit/scripts/plan.py
++++ b/plugins/ai-editor/skills/style-edit/scripts/plan.py
+@@ -837,7 +837,7 @@ def typed_texts(edit_dir):
+     if not f or not f.exists():
+         return []
+     keep = ("text", "style", "start", "end", "x_pct", "y_pct", "size_pct")
+-    extra = ("font", "color", "width_pct", "rotation", "opacity", "anim", "align", "text_color")   # set only when the user picked
++    extra = ("font", "color", "width_pct", "rotation", "opacity", "anim", "align", "text_color", "shadow")   # set only when the user picked
+     # them (review.py text_look, text_more)
+     from preview import laned, read_ov   # the Text lanes: a hidden one's texts out, a later lane's drawn on top
+     return [{"kind": "label", **{k: x[k] for k in keep}, **{k: x[k] for k in extra if x.get(k) is not None}}
+@@ -1098,8 +1098,13 @@ def place_cards(images, words, duration, style, aspect):
+     hold, ent, box = card_defaults(style)
+     out = []
+     logos = [i for i in images if i.get("lane") == "logo"]
+-    images = [i for i in images if i.get("lane") != "logo"]
+-    for lane in ([i for i in images if "anim" not in i] + [i for i in images if "anim" in i], logos):
++    # "multi*" lanes: pictures meant to stay up TOGETHER (a cascade, a pair); each name is its own lane
++    multis = {}
++    for i in images:
++        if str(i.get("lane") or "").startswith("multi"):
++            multis.setdefault(i["lane"], []).append(i)
++    images = [i for i in images if i.get("lane") != "logo" and not str(i.get("lane") or "").startswith("multi")]
++    for lane in ([i for i in images if "anim" not in i] + [i for i in images if "anim" in i], logos, *multis.values()):
+         cards = []
+         for group in ([i for i in lane if "anim" not in i], [i for i in lane if "anim" in i]):
+             cards += _place(group, words, duration, hold, ent, box, aspect)
+-- 
+2.53.0.windows.1
+

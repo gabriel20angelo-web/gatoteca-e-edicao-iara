@@ -1,0 +1,61 @@
+From 540f1f2f03afa6cbe9e1e377d04ebdd31f0a0a0a Mon Sep 17 00:00:00 2001
+From: gabriel20angelo-web <gabriel20angelo-web@users.noreply.github.com>
+Date: Fri, 20 Nov 2026 13:08:38 -0300
+Subject: [PATCH 2/9] plan: tecla em toda entrada (sound.key_every_card)
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+---
+ .../skills/style-edit/scripts/plan.py         | 23 ++++++++++++++++---
+ 1 file changed, 20 insertions(+), 3 deletions(-)
+
+diff --git a/plugins/ai-editor/skills/style-edit/scripts/plan.py b/plugins/ai-editor/skills/style-edit/scripts/plan.py
+index 4d13ff6..ad91e6d 100644
+--- a/plugins/ai-editor/skills/style-edit/scripts/plan.py
++++ b/plugins/ai-editor/skills/style-edit/scripts/plan.py
+@@ -1600,7 +1600,8 @@ def place_sfx(plan, words, kit, sound=None):
+     its hit is heard on the event. kit: sfx.py's kit.json.
+     sound: the creator's measured style.json "sound". Its sfx_per_min sets the budget (0 is allowed: she
+     uses none), its kinds keep only the cues that sound like hers, on_graphic_pct / on_cut_pct 0 drop the
+-    card / zoom cues."""
++    card / zoom cues. sound.key_every_card (style iara): a key / key-2 / key-3 cue takes turns on every non-scene
++    card and every text, outside the budget, kinds and on_graphic_pct; ordinary cues within SFX_GAP_S of one drop."""
+     words = [w for w in words if w.get("type", "word") == "word" and w["text"].strip()]
+     ev = []
+ 
+@@ -1661,8 +1662,22 @@ def place_sfx(plan, words, kit, sound=None):
+         kept = [k for i, k in enumerate(sorted(kept)) if i == 0 or k[1] != sorted(kept)[i - 1][1]]
+     # on the frame Sfx.tsx starts it on (round(t x fps)): the plan's t is when the cue really plays
+     fps = plan["fps"]
+-    return [{"t": round(round(max(0.0, t - kit["cues"][n]["attack_s"]) * fps) / fps, 4), "src": f".sfx/{n}.wav", "event": round(t, 3)}
+-            for t, n in kept]
++    def make(t, n):
++        return {"t": round(round(max(0.0, t - kit["cues"][n]["attack_s"]) * fps) / fps, 4), "src": f".sfx/{n}.wav", "event": round(t, 3)}
++    out = [make(t, n) for t, n in kept]
++    names = [n for n in ("key", "key-2", "key-3") if n in kit["cues"]]
++    if sound.get("key_every_card") and names:
++        # style iara: a keystroke on everything that lands (image card, title, label), outside the budget
++        times = sorted([c["start"] + CARD_LEAD_S for c in plan["cards"] if c.get("layout") != "scene"]
++                       + [x["start"] + CARD_LEAD_S for x in plan.get("texts") or []])
++        keys = []
++        for t in times:
++            if not keys or t - keys[-1] >= SFX_GAP_S:
++                keys.append(t)
++        keys = [make(t, names[i % len(names)]) for i, t in enumerate(keys)]
++        out = [o for o in out if all(abs(o["event"] - k["event"]) >= SFX_GAP_S for k in keys)]
++        out = sorted(out + keys, key=lambda o: o["t"])
++    return out
+ 
+ 
+ def with_sfx(build):
+@@ -3153,6 +3168,8 @@ def demo():
+     ntsc = 30000 / 1001
+     assert all(abs(c["t"] * ntsc - round(c["t"] * ntsc)) < 0.01 for c in place_sfx({**sp, "fps": ntsc}, sw, kit))
+     assert all(b["event"] - a["event"] >= SFX_GAP_S for a, b in zip(cues, cues[1:]))   # 1.25 zoom and 1.6 pop lost
++    kk = place_sfx(sp, sw, {**kit, "cues": {**kit["cues"], "key": {"attack_s": 0.0, "db": -30}}}, {"sfx_per_min": 0, "key_every_card": True})
++    assert [(c["event"], c["src"]) for c in kk] == [(1.1, ".sfx/key.wav"), (7.1, ".sfx/key.wav")], kk   # a key per card, no other cue
+     sp["durationInFrames"] = 90   # 3 s: room for one cue, the highest ranked
+     assert [c["src"] for c in place_sfx(sp, sw, kit)] == [".sfx/hit.wav"]
+     sp["cards"][1]["entrance"] = "scale"
+-- 
+2.53.0.windows.1
+

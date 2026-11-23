@@ -1,0 +1,122 @@
+[
+ {
+  "src": "images/renoir-galette.jpg",
+  "word": "pessoas",
+  "nth": 1,
+  "layout": "box",
+  "box": [
+   6,
+   46,
+   44,
+   21
+  ],
+  "hold_s": 5.1,
+  "lane": "multi1",
+  "entrance": "slide"
+ },
+ {
+  "src": "images/monet-paisagem.jpg",
+  "word": "lugares",
+  "nth": 1,
+  "layout": "box",
+  "box": [
+   50,
+   52,
+   44,
+   21
+  ],
+  "hold_s": 3.6,
+  "lane": "multi2",
+  "entrance": "scale"
+ },
+ {
+  "src": "images/klimt-beijo.jpg",
+  "word": "pessoas",
+  "nth": 2,
+  "layout": "box",
+  "box": [
+   20,
+   59,
+   44,
+   18
+  ],
+  "hold_s": 2.3,
+  "lane": "multi3",
+  "entrance": "pop"
+ },
+ {
+  "src": "images/frankenstein-1831.jpg",
+  "word": "Frankenstein",
+  "nth": 1,
+  "layout": "box",
+  "box": [
+   6,
+   48,
+   44,
+   29
+  ],
+  "hold_s": 3.6,
+  "lane": "multi4",
+  "entrance": "slide"
+ },
+ {
+  "src": "images/mary-shelley.jpg",
+  "word": "Mary",
+  "nth": 1,
+  "layout": "box",
+  "box": [
+   50,
+   48,
+   44,
+   29
+  ],
+  "hold_s": 2.8,
+  "lane": "multi5",
+  "entrance": "pop"
+ },
+ {
+  "src": "images/frankenstein-1823.jpg",
+  "word": "recusa",
+  "nth": 1,
+  "layout": "box",
+  "box": [
+   28,
+   46,
+   44,
+   31
+  ],
+  "hold_s": 1.9,
+  "entrance": "scale",
+  "lane": "multi9"
+ },
+ {
+  "src": "images/frankenstein-1818.jpg",
+  "word": "Clube",
+  "nth": 1,
+  "layout": "box",
+  "box": [
+   5,
+   46,
+   45,
+   31
+  ],
+  "hold_s": 4.4,
+  "lane": "multi6",
+  "entrance": "slide"
+ },
+ {
+  "src": "images/mary-shelley.jpg",
+  "word": "Mary",
+  "nth": 2,
+  "layout": "box",
+  "box": [
+   50,
+   48,
+   44,
+   29
+  ],
+  "hold_s": 1.7,
+  "lane": "multi7",
+  "entrance": "pop"
+ }
+]

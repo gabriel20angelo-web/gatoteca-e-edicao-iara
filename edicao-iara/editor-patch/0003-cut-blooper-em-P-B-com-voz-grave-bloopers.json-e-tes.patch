@@ -1,0 +1,125 @@
+From bf2e83dd44bf7f77052b7e068ae96045dd849865 Mon Sep 17 00:00:00 2001
+From: gabriel20angelo-web <gabriel20angelo-web@users.noreply.github.com>
+Date: Fri, 20 Nov 2026 13:10:50 -0300
+Subject: [PATCH 3/9] cut: blooper em P&B com voz grave (bloopers.json) e teste
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+---
+ .../ai-editor/skills/cut/scripts/render.py    | 26 ++++++++++++++--
+ .../skills/cut/scripts/test_media.py          | 30 +++++++++++++++++++
+ 2 files changed, 54 insertions(+), 2 deletions(-)
+
+diff --git a/plugins/ai-editor/skills/cut/scripts/render.py b/plugins/ai-editor/skills/cut/scripts/render.py
+index 5d2fbd2..8625426 100644
+--- a/plugins/ai-editor/skills/cut/scripts/render.py
++++ b/plugins/ai-editor/skills/cut/scripts/render.py
+@@ -19,6 +19,8 @@ How it stays exact on a big 4K source:
+   - Keyframe every 15 frames, so the next step (Remotion) can seek quickly.
+   - Encoded spans are kept in <edit_dir>/.segments/ (one folder per source + encoder + flip), so a
+     re-render after a fix or a review note encodes only the spans that changed.
++Optional <edit_dir>/bloopers.json {"items": [{"start": s, "end": e}]} (seconds of the take): a span that fits whole
++in an item is a blooper, rendered black and white with the voice 22% lower at the same length.
+ Never stream-copy (-c copy) across cuts: that snaps to keyframes, up to 2 s off.
+ """
+ import argparse
+@@ -113,6 +115,24 @@ def main():
+     d = Path(a.edit_dir)
+     rep = json.loads((d / "report.json").read_text(encoding="utf-8"))
+     fps, frames = rep["fps"], rep["frames"]
++    bw = set()   # spans that are a blooper (bloopers.json): black and white, low voice
++    if (d / "bloopers.json").exists():
++        tol = 1 / fps
++        for it in json.loads((d / "bloopers.json").read_text(encoding="utf-8")).get("items", []):
++            b0, b1 = it["start"], it["end"]
++            hit = [i for i, (s, e) in enumerate(frames) if min(e / fps, b1) - max(s / fps, b0) > tol]
++            whole = [i for i in hit if frames[i][0] / fps >= b0 - tol and frames[i][1] / fps <= b1 + tol]
++            if not whole or len(whole) < len(hit):
++                print(f"blooper {b0}-{b1}: not a whole span, skipped", flush=True)
++                continue
++            for i in whole:
++                print(f"blooper: span {i}", flush=True)
++            bw.update(whole)
++    sr = 48000
++    if bw:
++        pr = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a:0", "-show_entries", "stream=sample_rate",
++                             "-of", "csv=p=0", a.source], capture_output=True, text=True)
++        sr = int(pr.stdout.split()[0]) if pr.stdout.split() else 48000
+     src, out = a.source, d / "cut.mp4"
+     if a.flip:
+         print("flipping left to right (--flip)", flush=True)
+@@ -142,7 +162,7 @@ def main():
+             return d.resolve() / ".segments" / key
+ 
+         def seg_of(i):
+-            return cache() / f"{frames[i][0]}-{frames[i][1]}.mp4"
++            return cache() / f"{frames[i][0]}-{frames[i][1]}{'-bw' if i in bw else ''}.mp4"
+ 
+         def one(i):
+             s, e = frames[i]
+@@ -161,7 +181,8 @@ def main():
+             # frames over a 1/600 s source's jittered timestamps.
+             cmd = ["ffmpeg", "-v", "error", "-y", "-copyts", *(["-hwaccel", "videotoolbox"] if hw else []),
+                    "-ss", f"{max(0.0, t0 - fstart - LEAD_S):.6f}", "-i", src, "-an",
+-                   "-vf", trim_filter(s, e, fps, vstart, total) + (",hflip" if a.flip else "") + size,
++                   "-vf", trim_filter(s, e, fps, vstart, total) + (",hflip" if a.flip else "")
++                   + (",hue=s=0,eq=contrast=1.12,noise=c0s=8:c0f=t,vignette=PI/5" if i in bw else "") + size,
+                    "-r", str(fps), *enc, "-pix_fmt", "yuv420p", "-g", "15", str(part)]
+             r = subprocess.run(cmd, capture_output=True, text=True)
+             # Frames are counted once, on the finished file: a decode per segment cost a 10-minute 4K take
+@@ -207,6 +228,7 @@ def main():
+                 t0, t1 = off + s / fps, off + e / fps
+                 fo = max(0.0, t1 - t0 - FADE_S)
+                 parts.append(f"[0:a:0]atrim=start={t0:.6f}:end={t1:.6f},asetpts=PTS-STARTPTS,"
++                             + (f"asetrate={sr}*0.78,aresample={sr},atempo=1.282051," if i in bw else "") +
+                              f"afade=t=in:d={FADE_S},afade=t=out:st={fo:.6f}:d={FADE_S}[a{i}]")
+             fc = ";".join(parts) + ";" + "".join(f"[a{i}]" for i in range(len(frames))) + \
+                 f"concat=n={len(frames)}:v=0:a=1[ac]"
+diff --git a/plugins/ai-editor/skills/cut/scripts/test_media.py b/plugins/ai-editor/skills/cut/scripts/test_media.py
+index aeab0b7..bb417b1 100644
+--- a/plugins/ai-editor/skills/cut/scripts/test_media.py
++++ b/plugins/ai-editor/skills/cut/scripts/test_media.py
+@@ -241,11 +241,41 @@ def test_recheck_prints_one_line():
+     assert [w["text"] for w in got if w["type"] == "word"] == ["not", "a", "AI"], got
+ 
+ 
++def satavg(video, t):
++    """SATAVG of the frame at t seconds (ffmpeg signalstats)."""
++    r = subprocess.run(["ffmpeg", "-v", "error", "-ss", str(t), "-i", str(video), "-frames:v", "1",
++                        "-vf", "signalstats,metadata=print:key=lavfi.signalstats.SATAVG:file=-", "-f", "null", "-"],
++                       capture_output=True, text=True, check=True)
++    return float(r.stdout.split("SATAVG=")[1].split()[0])
++
++
++def test_blooper_span():
++    # bloopers.json turns a whole span black and white with a lower voice, at the same length
++    with tempfile.TemporaryDirectory() as d:
++        d = Path(d)
++        src = d / "b.mp4"
++        ff("-f", "lavfi", "-i", "testsrc2=s=64x64:r=30:d=3", "-f", "lavfi", "-i", "sine=f=440:d=3",
++           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", src)
++        ed = d / "ed"
++        ed.mkdir()
++        (ed / "report.json").write_text(json.dumps({"fps": 30, "frames": [[0, 30], [30, 60], [60, 90]]}), encoding="utf-8")
++        (ed / "bloopers.json").write_text(json.dumps({"items": [{"start": 1.0, "end": 2.0}]}), encoding="utf-8")
++        r = subprocess.run([sys.executable, HERE / "render.py", src, ed, "--no-hw"], capture_output=True, text=True)
++        assert r.returncode == 0 and "blooper: span 1" in r.stdout, (r.stdout[-400:], r.stderr[-400:])
++        cut = ed / "cut.mp4"
++        assert R.count_frames(cut) == 90
++        assert satavg(cut, 1.5) < 1 and satavg(cut, 0.5) > 5, (satavg(cut, 1.5), satavg(cut, 0.5))
++        pr = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a:0", "-show_entries", "stream=duration",
++                             "-of", "csv=p=0", cut], capture_output=True, text=True, check=True)
++        assert abs(float(pr.stdout.split()[0].strip(",")) - 3.0) <= 0.05, pr.stdout
++
++
+ if __name__ == "__main__":
+     test_recheck_prints_one_line()
+     test_first_int()
+     test_window_property()
+     test_real_renders()
++    test_blooper_span()
+     test_late_last_frame()
+     test_music_bed()
+     test_mistimed_word_is_not_clipped()
+-- 
+2.53.0.windows.1
+

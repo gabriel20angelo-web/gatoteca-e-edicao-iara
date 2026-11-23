@@ -1,0 +1,20 @@
+{
+ "transitions": [],
+ "music": false,
+ "cards": {"on": true, "per_min": 5},
+ "graphics": {
+  "hold_s": 2.5,
+  "layout": {"median_box": [6, 5, 88, 27]},
+  "entrances": [
+   {"kind": "scale", "ease": "back.out(1.6)", "duration_s": 0.45, "scale_from": 0.82, "fade": true, "share_pct": 40},
+   {"kind": "slide", "from": "bottom", "distance_pct": 6, "ease": "power3.out", "duration_s": 0.5, "fade": true, "share_pct": 35},
+   {"kind": "mask", "from": "left", "ease": "power2.inOut", "duration_s": 0.55, "share_pct": 25}
+  ],
+  "exits": [{"kind": "fade", "ease": "power2.in", "duration_s": 0.25, "fade": true, "share_pct": 100}],
+  "secondary_motion": {"push": 60, "drift": 40}
+ },
+ "sound": {"sfx_per_min": 0, "key_every_card": true},
+ "look": {"preset": "editorial", "font": "Jost", "font_display": "Cormorant Garamond", "font_serif": "Cormorant Garamond",
+  "weight": 400, "weight_display": 600, "tracking": 0, "texture": "none", "texture_amount": 0, "surface": "card",
+  "radius": 4, "shadow": "soft", "ground": "#F7F1EE", "ink": "#2B2427", "accent": "#B07D88"}
+}

@@ -1,0 +1,875 @@
+[
+ {
+  "slug": "lacre_coracao_lua_sol",
+  "nome": "Lacre coração com lua e sol dourados",
+  "cat": "1 Lacres e selos",
+  "nota": "Rosa; o mais «cartinha de amor». Bom para convite especial.",
+  "w": 209,
+  "h": 198,
+  "rel": "1 Lacres e selos/lacre_coracao_lua_sol.png"
+ },
+ {
+  "slug": "lacre_laco_rosa",
+  "nome": "Lacre de laço",
+  "cat": "1 Lacres e selos",
+  "nota": "Rosa-bebê, sem dourado: delicado.",
+  "w": 194,
+  "h": 199,
+  "rel": "1 Lacres e selos/lacre_laco_rosa.png"
+ },
+ {
+  "slug": "lacre_cisnes",
+  "nome": "Lacre de cisnes",
+  "cat": "1 Lacres e selos",
+  "nota": "Casal, par, parceria.",
+  "w": 201,
+  "h": 183,
+  "rel": "1 Lacres e selos/lacre_cisnes.png"
+ },
+ {
+  "slug": "lacre_laco_dourado",
+  "nome": "Lacre de laço dourado",
+  "cat": "1 Lacres e selos",
+  "nota": "Presente, sorteio, «ganhe».",
+  "w": 200,
+  "h": 190,
+  "rel": "1 Lacres e selos/lacre_laco_dourado.png"
+ },
+ {
+  "slug": "lacre_coracao_lua",
+  "nome": "Lacre coração com lua",
+  "cat": "1 Lacres e selos",
+  "nota": "Malva; noite e afeto.",
+  "w": 214,
+  "h": 205,
+  "rel": "1 Lacres e selos/lacre_coracao_lua.png"
+ },
+ {
+  "slug": "lacre_lua_e_sol",
+  "nome": "Lacre lua e sol",
+  "cat": "1 Lacres e selos",
+  "nota": "Rosa forte; o mais «tarô» dos rosas.",
+  "w": 196,
+  "h": 201,
+  "rel": "1 Lacres e selos/lacre_lua_e_sol.png"
+ },
+ {
+  "slug": "lacre_sol_dourado",
+  "nome": "Lacre de sol dourado",
+  "cat": "1 Lacres e selos",
+  "nota": "Celebração, manhã, «bom dia».",
+  "w": 205,
+  "h": 206,
+  "rel": "1 Lacres e selos/lacre_sol_dourado.png"
+ },
+ {
+  "slug": "lacre_lua_flores",
+  "nome": "Lacre lua com flores",
+  "cat": "1 Lacres e selos",
+  "nota": "Malva; poesia, noite calma.",
+  "w": 199,
+  "h": 197,
+  "rel": "1 Lacres e selos/lacre_lua_flores.png"
+ },
+ {
+  "slug": "lacre_ramo",
+  "nome": "Lacre de ramo",
+  "cat": "1 Lacres e selos",
+  "nota": "Natureza, Parque, leveza.",
+  "w": 194,
+  "h": 197,
+  "rel": "1 Lacres e selos/lacre_ramo.png"
+ },
+ {
+  "slug": "lacre_lilases",
+  "nome": "Lacre de lilases",
+  "cat": "1 Lacres e selos",
+  "nota": "Primavera, flores.",
+  "w": 201,
+  "h": 201,
+  "rel": "1 Lacres e selos/lacre_lilases.png"
+ },
+ {
+  "slug": "lacre_estrelas_douradas",
+  "nome": "Lacre dourado de estrelas",
+  "cat": "1 Lacres e selos",
+  "nota": "Dourado inteiro: festa, edição especial.",
+  "w": 200,
+  "h": 192,
+  "rel": "1 Lacres e selos/lacre_estrelas_douradas.png"
+ },
+ {
+  "slug": "lacre_tulipa",
+  "nome": "Lacre de tulipa",
+  "cat": "1 Lacres e selos",
+  "nota": "⭐ Use nos posts com a TULIPA.",
+  "w": 180,
+  "h": 183,
+  "rel": "1 Lacres e selos/lacre_tulipa.png"
+ },
+ {
+  "slug": "borboleta_de_ouro",
+  "nome": "Borboleta de ouro",
+  "cat": "4 Flores e asas",
+  "nota": "Joia; translúcida, fica bem sobre fundo escuro.",
+  "w": 245,
+  "h": 242,
+  "rel": "4 Flores e asas/borboleta_de_ouro.png"
+ },
+ {
+  "slug": "sol_joia",
+  "nome": "Sol de ouro (joia)",
+  "cat": "2 Astros",
+  "nota": "Sol estilizado com espiral.",
+  "w": 225,
+  "h": 225,
+  "rel": "2 Astros/sol_joia.png"
+ },
+ {
+  "slug": "hibisco_iridescente",
+  "nome": "Hibisco iridescente",
+  "cat": "4 Flores e asas",
+  "nota": "Flor perolada; cantos.",
+  "w": 214,
+  "h": 206,
+  "rel": "4 Flores e asas/hibisco_iridescente.png"
+ },
+ {
+  "slug": "lacre_orbitas",
+  "nome": "Lacre de órbitas",
+  "cat": "1 Lacres e selos",
+  "nota": "Lilás; cosmos, astrologia.",
+  "w": 224,
+  "h": 229,
+  "rel": "1 Lacres e selos/lacre_orbitas.png"
+ },
+ {
+  "slug": "lacre_coroa_de_ramos",
+  "nome": "Lacre coroa de ramos",
+  "cat": "1 Lacres e selos",
+  "nota": "Lilás; conquista, aniversário do clube.",
+  "w": 233,
+  "h": 233,
+  "rel": "1 Lacres e selos/lacre_coroa_de_ramos.png"
+ },
+ {
+  "slug": "lacre_campo_lavanda_lua",
+  "nome": "Lacre campo de lavanda e lua",
+  "cat": "1 Lacres e selos",
+  "nota": "Cena pintada; noite tranquila.",
+  "w": 203,
+  "h": 201,
+  "rel": "1 Lacres e selos/lacre_campo_lavanda_lua.png"
+ },
+ {
+  "slug": "lacre_mariposa_fases_da_lua",
+  "nome": "Lacre mariposa e fases da lua",
+  "cat": "1 Lacres e selos",
+  "nota": "⭐ Mariposa + lua: mistério, Lilith, noite.",
+  "w": 225,
+  "h": 228,
+  "rel": "1 Lacres e selos/lacre_mariposa_fases_da_lua.png"
+ },
+ {
+  "slug": "lacre_margarida",
+  "nome": "Lacre de margarida",
+  "cat": "1 Lacres e selos",
+  "nota": "Leve, alegre.",
+  "w": 215,
+  "h": 222,
+  "rel": "1 Lacres e selos/lacre_margarida.png"
+ },
+ {
+  "slug": "lacre_lavanda_ramo",
+  "nome": "Lacre ramo de lavanda",
+  "cat": "1 Lacres e selos",
+  "nota": "Calma, descanso.",
+  "w": 198,
+  "h": 204,
+  "rel": "1 Lacres e selos/lacre_lavanda_ramo.png"
+ },
+ {
+  "slug": "lacre_lavanda_clara",
+  "nome": "Lacre lavanda clara",
+  "cat": "1 Lacres e selos",
+  "nota": "Lilás muito claro: some em fundo claro.",
+  "w": 217,
+  "h": 221,
+  "rel": "1 Lacres e selos/lacre_lavanda_clara.png"
+ },
+ {
+  "slug": "lacre_umbela_magenta",
+  "nome": "Lacre de umbela (magenta)",
+  "cat": "1 Lacres e selos",
+  "nota": "Magenta vivo; destaque.",
+  "w": 223,
+  "h": 218,
+  "rel": "1 Lacres e selos/lacre_umbela_magenta.png"
+ },
+ {
+  "slug": "lacre_lavanda_dourada",
+  "nome": "Lacre lavanda com dourado",
+  "cat": "1 Lacres e selos",
+  "nota": "Mais nobre dos lilases.",
+  "w": 217,
+  "h": 220,
+  "rel": "1 Lacres e selos/lacre_lavanda_dourada.png"
+ },
+ {
+  "slug": "lacre_cogumelos",
+  "nome": "Lacre de cogumelos dourados",
+  "cat": "1 Lacres e selos",
+  "nota": "Roxo escuro; floresta, fantasia, Halloween.",
+  "w": 237,
+  "h": 226,
+  "rel": "1 Lacres e selos/lacre_cogumelos.png"
+ },
+ {
+  "slug": "lacre_arabesco_magenta",
+  "nome": "Lacre de arabesco dourado",
+  "cat": "1 Lacres e selos",
+  "nota": "Magenta com ouro; edição especial.",
+  "w": 210,
+  "h": 216,
+  "rel": "1 Lacres e selos/lacre_arabesco_magenta.png"
+ },
+ {
+  "slug": "lacre_flor_oval",
+  "nome": "Lacre oval de flor",
+  "cat": "1 Lacres e selos",
+  "nota": "Minimalista.",
+  "w": 189,
+  "h": 220,
+  "rel": "1 Lacres e selos/lacre_flor_oval.png"
+ },
+ {
+  "slug": "lacre_coracoes",
+  "nome": "Lacre de corações",
+  "cat": "1 Lacres e selos",
+  "nota": "Afeto, «a gente ama vocês».",
+  "w": 206,
+  "h": 220,
+  "rel": "1 Lacres e selos/lacre_coracoes.png"
+ },
+ {
+  "slug": "lacre_cerejas",
+  "nome": "Lacre de cerejas",
+  "cat": "1 Lacres e selos",
+  "nota": "Roxo escuro; doce, lanche.",
+  "w": 204,
+  "h": 223,
+  "rel": "1 Lacres e selos/lacre_cerejas.png"
+ },
+ {
+  "slug": "lacre_rosa_magenta",
+  "nome": "Lacre de rosa (magenta)",
+  "cat": "1 Lacres e selos",
+  "nota": "Romance.",
+  "w": 208,
+  "h": 220,
+  "rel": "1 Lacres e selos/lacre_rosa_magenta.png"
+ },
+ {
+  "slug": "lacre_vinho_lua",
+  "nome": "Lacre vinho com lua dourada",
+  "cat": "1 Lacres e selos",
+  "nota": "⭐ O lacre principal para Lilith e encontros à noite; maior resolução da coleção.",
+  "w": 736,
+  "h": 717,
+  "rel": "1 Lacres e selos/lacre_vinho_lua.png"
+ },
+ {
+  "slug": "espelho_oval_jardim",
+  "nome": "Espelho oval com jardim, fada e estrelas",
+  "cat": "5 Molduras e quadros",
+  "nota": "Composição pronta: o oval é transparente, ponha o mascote ou uma foto atrás.",
+  "w": 736,
+  "h": 1148,
+  "rel": "5 Molduras e quadros/espelho_oval_jardim.png"
+ },
+ {
+  "slug": "galho_florido",
+  "nome": "Galho de árvore com flores brancas",
+  "cat": "4 Flores e asas",
+  "nota": "Dossel para o alto da peça (entra pelo canto); tem borda branca de adesivo.",
+  "w": 731,
+  "h": 867,
+  "rel": "4 Flores e asas/galho_florido.png"
+ },
+ {
+  "slug": "lanterna_pendurada_1",
+  "nome": "Lanterna pendurada",
+  "cat": "6 Luz e mistério",
+  "nota": "Pendurar do alto da peça; noite, encontro.",
+  "w": 161,
+  "h": 341,
+  "rel": "6 Luz e mistério/lanterna_pendurada_1.png"
+ },
+ {
+  "slug": "lirios_brancos",
+  "nome": "Lírios brancos",
+  "cat": "4 Flores e asas",
+  "nota": "Canto inferior; luto leve, delicadeza.",
+  "w": 207,
+  "h": 309,
+  "rel": "4 Flores e asas/lirios_brancos.png"
+ },
+ {
+  "slug": "lanterna_pendurada_2",
+  "nome": "Lanterna pendurada (par)",
+  "cat": "6 Luz e mistério",
+  "nota": "Use junto da 1 para o par da referência.",
+  "w": 178,
+  "h": 370,
+  "rel": "6 Luz e mistério/lanterna_pendurada_2.png"
+ },
+ {
+  "slug": "poste_de_praca",
+  "nome": "Poste de praça com três lanternas",
+  "cat": "6 Luz e mistério",
+  "nota": "⭐ Parque da Jaqueira, encontro presencial à noite.",
+  "w": 307,
+  "h": 624,
+  "rel": "6 Luz e mistério/poste_de_praca.png"
+ },
+ {
+  "slug": "peonias_brancas",
+  "nome": "Peônias brancas com folhas douradas",
+  "cat": "4 Flores e asas",
+  "nota": "Canto; casamento, delicadeza.",
+  "w": 309,
+  "h": 386,
+  "rel": "4 Flores e asas/peonias_brancas.png"
+ },
+ {
+  "slug": "cabeca_estatua",
+  "nome": "Cabeça de estátua clássica",
+  "cat": "7 Arte clássica e mar",
+  "nota": "Filosofia, mito, «o que os gregos diriam».",
+  "w": 208,
+  "h": 349,
+  "rel": "7 Arte clássica e mar/cabeca_estatua.png"
+ },
+ {
+  "slug": "ceu_pintado_lua",
+  "nome": "Céu pintado com lua e nuvens",
+  "cat": "2 Astros",
+  "nota": "Canto superior direito (tem recorte em curva); noite.",
+  "w": 398,
+  "h": 449,
+  "rel": "2 Astros/ceu_pintado_lua.png"
+ },
+ {
+  "slug": "anjo_alado",
+  "nome": "Anjo alado (estátua)",
+  "cat": "7 Arte clássica e mar",
+  "nota": "Poesia, sagrado, consolo.",
+  "w": 175,
+  "h": 274,
+  "rel": "7 Arte clássica e mar/anjo_alado.png"
+ },
+ {
+  "slug": "brilho_dourado_1",
+  "nome": "Brilho dourado de 4 pontas",
+  "cat": "2 Astros",
+  "nota": "Espalhar 2 ou 3 entre as estrelas desenhadas.",
+  "w": 54,
+  "h": 64,
+  "rel": "2 Astros/brilho_dourado_1.png"
+ },
+ {
+  "slug": "coracao_anatomico_ouro",
+  "nome": "Coração anatômico dourado",
+  "cat": "3 Corações e joias",
+  "nota": "Intensidade, «livro que doeu».",
+  "w": 113,
+  "h": 163,
+  "rel": "3 Corações e joias/coracao_anatomico_ouro.png"
+ },
+ {
+  "slug": "lanterna_pequena",
+  "nome": "Lanterna pequena",
+  "cat": "6 Luz e mistério",
+  "nota": "Detalhe pendurado.",
+  "w": 107,
+  "h": 213,
+  "rel": "6 Luz e mistério/lanterna_pequena.png"
+ },
+ {
+  "slug": "coracao_broche_azul",
+  "nome": "Coração broche azul com lua",
+  "cat": "3 Corações e joias",
+  "nota": "Noite e afeto; contrasta com o jade.",
+  "w": 150,
+  "h": 156,
+  "rel": "3 Corações e joias/coracao_broche_azul.png"
+ },
+ {
+  "slug": "brilho_dourado_2",
+  "nome": "Brilho dourado de 4 pontas (2)",
+  "cat": "2 Astros",
+  "nota": "Idem.",
+  "w": 55,
+  "h": 62,
+  "rel": "2 Astros/brilho_dourado_2.png"
+ },
+ {
+  "slug": "flor_folha_dourada",
+  "nome": "Flor-folha dourada",
+  "cat": "4 Flores e asas",
+  "nota": "Joia de canto.",
+  "w": 161,
+  "h": 163,
+  "rel": "4 Flores e asas/flor_folha_dourada.png"
+ },
+ {
+  "slug": "lua_dourada_rosto",
+  "nome": "Lua dourada com rosto",
+  "cat": "2 Astros",
+  "nota": "Emblema secundário; noite, sono, sonho.",
+  "w": 174,
+  "h": 183,
+  "rel": "2 Astros/lua_dourada_rosto.png"
+ },
+ {
+  "slug": "borboleta_rosa",
+  "nome": "Borboleta rosa",
+  "cat": "4 Flores e asas",
+  "nota": "Rosa-postal: casa direto com a paleta.",
+  "w": 226,
+  "h": 212,
+  "rel": "4 Flores e asas/borboleta_rosa.png"
+ },
+ {
+  "slug": "estrela_dourada_pequena",
+  "nome": "Estrelinha dourada",
+  "cat": "2 Astros",
+  "nota": "Ponto de brilho.",
+  "w": 64,
+  "h": 61,
+  "rel": "2 Astros/estrela_dourada_pequena.png"
+ },
+ {
+  "slug": "flor_dourada",
+  "nome": "Flor dourada",
+  "cat": "4 Flores e asas",
+  "nota": "Joia de canto.",
+  "w": 161,
+  "h": 158,
+  "rel": "4 Flores e asas/flor_dourada.png"
+ },
+ {
+  "slug": "estrela_bronze_6",
+  "nome": "Estrela de bronze (6 pontas)",
+  "cat": "2 Astros",
+  "nota": "Ponto de brilho.",
+  "w": 90,
+  "h": 92,
+  "rel": "2 Astros/estrela_bronze_6.png"
+ },
+ {
+  "slug": "sagrado_coracao_ouro",
+  "nome": "Sagrado coração dourado",
+  "cat": "3 Corações e joias",
+  "nota": "Devoção ao livro, «favorito da vida».",
+  "w": 136,
+  "h": 155,
+  "rel": "3 Corações e joias/sagrado_coracao_ouro.png"
+ },
+ {
+  "slug": "rosa_papel_rasgado",
+  "nome": "Rosa em papel rasgado",
+  "cat": "5 Molduras e quadros",
+  "nota": "⭐ Papel para citação curta (escreva ao lado da rosa).",
+  "w": 146,
+  "h": 361,
+  "rel": "5 Molduras e quadros/rosa_papel_rasgado.png"
+ },
+ {
+  "slug": "lacre_escuro_agua_viva",
+  "nome": "Lacre escuro de água-viva",
+  "cat": "1 Lacres e selos",
+  "nota": "Mar, profundezas.",
+  "w": 104,
+  "h": 148,
+  "rel": "1 Lacres e selos/lacre_escuro_agua_viva.png"
+ },
+ {
+  "slug": "borboleta_verde_agua",
+  "nome": "Borboleta verde-água",
+  "cat": "4 Flores e asas",
+  "nota": "⭐ Casa com o jade da paleta.",
+  "w": 186,
+  "h": 217,
+  "rel": "4 Flores e asas/borboleta_verde_agua.png"
+ },
+ {
+  "slug": "estrelinha_bronze",
+  "nome": "Estrelinha de bronze",
+  "cat": "2 Astros",
+  "nota": "Ponto de brilho.",
+  "w": 51,
+  "h": 44,
+  "rel": "2 Astros/estrelinha_bronze.png"
+ },
+ {
+  "slug": "estrela_bronze_8",
+  "nome": "Estrela de bronze (8 pontas)",
+  "cat": "2 Astros",
+  "nota": "Ponto de brilho maior.",
+  "w": 96,
+  "h": 100,
+  "rel": "2 Astros/estrela_bronze_8.png"
+ },
+ {
+  "slug": "quadro_estreito_paisagem",
+  "nome": "Quadro estreito de paisagem",
+  "cat": "5 Molduras e quadros",
+  "nota": "Lateral da peça, «janela».",
+  "w": 91,
+  "h": 269,
+  "rel": "5 Molduras e quadros/quadro_estreito_paisagem.png"
+ },
+ {
+  "slug": "quadro_oval_flores_1",
+  "nome": "Quadro oval de flores",
+  "cat": "5 Molduras e quadros",
+  "nota": "Galeria, lembrança.",
+  "w": 194,
+  "h": 223,
+  "rel": "5 Molduras e quadros/quadro_oval_flores_1.png"
+ },
+ {
+  "slug": "lacre_escuro_navio",
+  "nome": "Lacre escuro de navio",
+  "cat": "1 Lacres e selos",
+  "nota": "Aventura, viagem, livro de mar.",
+  "w": 102,
+  "h": 101,
+  "rel": "1 Lacres e selos/lacre_escuro_navio.png"
+ },
+ {
+  "slug": "botao_sol_lua",
+  "nome": "Medalhão sol e lua",
+  "cat": "3 Corações e joias",
+  "nota": "Pequeno; ponto focal de canto.",
+  "w": 93,
+  "h": 90,
+  "rel": "3 Corações e joias/botao_sol_lua.png"
+ },
+ {
+  "slug": "medalhao_coracao",
+  "nome": "Medalhão de coração",
+  "cat": "3 Corações e joias",
+  "nota": "Lembrança, amizade.",
+  "w": 117,
+  "h": 149,
+  "rel": "3 Corações e joias/medalhao_coracao.png"
+ },
+ {
+  "slug": "concha_iridescente",
+  "nome": "Concha iridescente",
+  "cat": "7 Arte clássica e mar",
+  "nota": "Mar, sereia.",
+  "w": 109,
+  "h": 189,
+  "rel": "7 Arte clássica e mar/concha_iridescente.png"
+ },
+ {
+  "slug": "sereia_na_pedra",
+  "nome": "Sereia na pedra",
+  "cat": "7 Arte clássica e mar",
+  "nota": "⭐ Lilith, mulheres míticas, mar (pintura de domínio público).",
+  "w": 229,
+  "h": 383,
+  "rel": "7 Arte clássica e mar/sereia_na_pedra.png"
+ },
+ {
+  "slug": "quadro_de_rosas",
+  "nome": "Quadro de rosas",
+  "cat": "5 Molduras e quadros",
+  "nota": "Galeria; romance.",
+  "w": 147,
+  "h": 171,
+  "rel": "5 Molduras e quadros/quadro_de_rosas.png"
+ },
+ {
+  "slug": "brilho_dourado_3",
+  "nome": "Brilho dourado de 4 pontas (3)",
+  "cat": "2 Astros",
+  "nota": "Idem.",
+  "w": 52,
+  "h": 59,
+  "rel": "2 Astros/brilho_dourado_3.png"
+ },
+ {
+  "slug": "concha_com_perolas",
+  "nome": "Concha com pérolas",
+  "cat": "7 Arte clássica e mar",
+  "nota": "Casa com o anel de pérolas.",
+  "w": 124,
+  "h": 149,
+  "rel": "7 Arte clássica e mar/concha_com_perolas.png"
+ },
+ {
+  "slug": "quadro_oval_flores_2",
+  "nome": "Quadro oval de flores (2)",
+  "cat": "5 Molduras e quadros",
+  "nota": "Galeria.",
+  "w": 174,
+  "h": 208,
+  "rel": "5 Molduras e quadros/quadro_oval_flores_2.png"
+ },
+ {
+  "slug": "ampulheta",
+  "nome": "Ampulheta",
+  "cat": "6 Luz e mistério",
+  "nota": "⭐ Prazo, últimas vagas, contagem regressiva.",
+  "w": 103,
+  "h": 191,
+  "rel": "6 Luz e mistério/ampulheta.png"
+ },
+ {
+  "slug": "peixe_azul_bordado",
+  "nome": "Peixe azul (bordado)",
+  "cat": "7 Arte clássica e mar",
+  "nota": "Mar; detalhe exótico.",
+  "w": 177,
+  "h": 183,
+  "rel": "7 Arte clássica e mar/peixe_azul_bordado.png"
+ },
+ {
+  "slug": "garrafinha_com_rosa",
+  "nome": "Garrafinha com rosa",
+  "cat": "6 Luz e mistério",
+  "nota": "⭐ «Mensagem na garrafa»: carta, recado, CTA.",
+  "w": 157,
+  "h": 106,
+  "rel": "6 Luz e mistério/garrafinha_com_rosa.png"
+ },
+ {
+  "slug": "brilho_dourado_4",
+  "nome": "Brilho dourado de 4 pontas (4)",
+  "cat": "2 Astros",
+  "nota": "Idem.",
+  "w": 55,
+  "h": 64,
+  "rel": "2 Astros/brilho_dourado_4.png"
+ },
+ {
+  "slug": "sol_rosto_1",
+  "nome": "Sol com rosto (gravura)",
+  "cat": "2 Astros",
+  "nota": "Emblema de tarô; manhã.",
+  "w": 223,
+  "h": 226,
+  "rel": "2 Astros/sol_rosto_1.png"
+ },
+ {
+  "slug": "flor_branca_arabesco",
+  "nome": "Flor branca com arabescos",
+  "cat": "4 Flores e asas",
+  "nota": "Canto superior.",
+  "w": 157,
+  "h": 162,
+  "rel": "4 Flores e asas/flor_branca_arabesco.png"
+ },
+ {
+  "slug": "lua_prata_rosto",
+  "nome": "Lua prateada com rosto",
+  "cat": "2 Astros",
+  "nota": "Emblema de noite.",
+  "w": 160,
+  "h": 193,
+  "rel": "2 Astros/lua_prata_rosto.png"
+ },
+ {
+  "slug": "frasco_fairy_dust",
+  "nome": "Frasco «Fairy Dust»",
+  "cat": "6 Luz e mistério",
+  "nota": "Só em post lúdico (texto em inglês).",
+  "w": 96,
+  "h": 187,
+  "rel": "6 Luz e mistério/frasco_fairy_dust.png"
+ },
+ {
+  "slug": "estrela_dourada_8_longa",
+  "nome": "Estrela dourada de 8 pontas",
+  "cat": "2 Astros",
+  "nota": "⭐ Igual às estrelas da referência: estrela-guia.",
+  "w": 202,
+  "h": 255,
+  "rel": "2 Astros/estrela_dourada_8_longa.png"
+ },
+ {
+  "slug": "arabesco_dourado",
+  "nome": "Arabesco dourado",
+  "cat": "4 Flores e asas",
+  "nota": "Moldura de canto, sob título.",
+  "w": 183,
+  "h": 267,
+  "rel": "4 Flores e asas/arabesco_dourado.png"
+ },
+ {
+  "slug": "borboleta_rosa_iridescente",
+  "nome": "Borboleta rosa iridescente",
+  "cat": "4 Flores e asas",
+  "nota": "Rosa-postal; transformação.",
+  "w": 206,
+  "h": 206,
+  "rel": "4 Flores e asas/borboleta_rosa_iridescente.png"
+ },
+ {
+  "slug": "perola_no_suporte",
+  "nome": "Pérola/bola no suporte",
+  "cat": "6 Luz e mistério",
+  "nota": "Bola de cristal clara; enquete, previsão.",
+  "w": 142,
+  "h": 182,
+  "rel": "6 Luz e mistério/perola_no_suporte.png"
+ },
+ {
+  "slug": "sagrado_coracao_vermelho",
+  "nome": "Sagrado coração vermelho",
+  "cat": "3 Corações e joias",
+  "nota": "Paixão, favorito.",
+  "w": 227,
+  "h": 218,
+  "rel": "3 Corações e joias/sagrado_coracao_vermelho.png"
+ },
+ {
+  "slug": "concha_gravura",
+  "nome": "Concha (gravura)",
+  "cat": "7 Arte clássica e mar",
+  "nota": "Mar, em tom de papel.",
+  "w": 151,
+  "h": 258,
+  "rel": "7 Arte clássica e mar/concha_gravura.png"
+ },
+ {
+  "slug": "lua_prata_estrela",
+  "nome": "Lua prateada com estrela",
+  "cat": "2 Astros",
+  "nota": "Noite, boa noite.",
+  "w": 147,
+  "h": 173,
+  "rel": "2 Astros/lua_prata_estrela.png"
+ },
+ {
+  "slug": "cristal_quartzo",
+  "nome": "Cristal de quartzo",
+  "cat": "6 Luz e mistério",
+  "nota": "Mistério, clareza.",
+  "w": 210,
+  "h": 191,
+  "rel": "6 Luz e mistério/cristal_quartzo.png"
+ },
+ {
+  "slug": "flores_prensadas",
+  "nome": "Quatro quadrinhos de flores prensadas",
+  "cat": "5 Molduras e quadros",
+  "nota": "Rodapé, galeria, herbário.",
+  "w": 277,
+  "h": 98,
+  "rel": "5 Molduras e quadros/flores_prensadas.png"
+ },
+ {
+  "slug": "livro_mulherzinhas",
+  "nome": "Livro aberto «Mulherzinhas»",
+  "cat": "8 Leitura",
+  "nota": "Só quando o livro for esse (título visível).",
+  "w": 239,
+  "h": 180,
+  "rel": "8 Leitura/livro_mulherzinhas.png"
+ },
+ {
+  "slug": "gato_vintage_com_livro",
+  "nome": "Gato vintage com livro",
+  "cat": "8 Leitura",
+  "nota": "⛔ Não usar junto do mascote.",
+  "w": 205,
+  "h": 217,
+  "rel": "8 Leitura/gato_vintage_com_livro.png"
+ },
+ {
+  "slug": "sol_rosto_2",
+  "nome": "Sol com rosto (gravura, 2)",
+  "cat": "2 Astros",
+  "nota": "Par do sol 1.",
+  "w": 202,
+  "h": 213,
+  "rel": "2 Astros/sol_rosto_2.png"
+ },
+ {
+  "slug": "anel_sinete",
+  "nome": "Anel de sinete dourado",
+  "cat": "3 Corações e joias",
+  "nota": "Detalhe; compromisso.",
+  "w": 74,
+  "h": 69,
+  "rel": "3 Corações e joias/anel_sinete.png"
+ },
+ {
+  "slug": "aneis_dourados",
+  "nome": "Anéis dourados",
+  "cat": "3 Corações e joias",
+  "nota": "Romance, casamento literário.",
+  "w": 110,
+  "h": 108,
+  "rel": "3 Corações e joias/aneis_dourados.png"
+ },
+ {
+  "slug": "renda_festonada",
+  "nome": "Renda festonada",
+  "cat": "9 Rendas",
+  "nota": "Seis cores: jade, rosa, ardosia, ameixa, perola, ouro",
+  "w": 736,
+  "h": 66,
+  "rel": "9 Rendas/renda_festonada_jade.png"
+ },
+ {
+  "slug": "renda_floral_larga",
+  "nome": "Renda floral larga",
+  "cat": "9 Rendas",
+  "nota": "Seis cores: jade, rosa, ardosia, ameixa, perola, ouro",
+  "w": 736,
+  "h": 139,
+  "rel": "9 Rendas/renda_floral_larga_jade.png"
+ },
+ {
+  "slug": "renda_delicada",
+  "nome": "Renda delicada",
+  "cat": "9 Rendas",
+  "nota": "Seis cores: jade, rosa, ardosia, ameixa, perola, ouro",
+  "w": 736,
+  "h": 76,
+  "rel": "9 Rendas/renda_delicada_jade.png"
+ },
+ {
+  "slug": "renda_floral_clara",
+  "nome": "Renda floral clara",
+  "cat": "9 Rendas",
+  "nota": "Seis cores: jade, rosa, ardosia, ameixa, perola, ouro",
+  "w": 736,
+  "h": 136,
+  "rel": "9 Rendas/renda_floral_clara_jade.png"
+ },
+ {
+  "slug": "renda_floral_malva",
+  "nome": "Renda floral malva",
+  "cat": "9 Rendas",
+  "nota": "Seis cores: jade, rosa, ardosia, ameixa, perola, ouro",
+  "w": 736,
+  "h": 110,
+  "rel": "9 Rendas/renda_floral_malva_jade.png"
+ },
+ {
+  "slug": "renda_flores_pequenas",
+  "nome": "Renda flores pequenas",
+  "cat": "9 Rendas",
+  "nota": "Seis cores: jade, rosa, ardosia, ameixa, perola, ouro",
+  "w": 736,
+  "h": 110,
+  "rel": "9 Rendas/renda_flores_pequenas_jade.png"
+ }
+]

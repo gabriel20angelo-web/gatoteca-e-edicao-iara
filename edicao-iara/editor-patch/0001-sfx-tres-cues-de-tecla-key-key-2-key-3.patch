@@ -1,0 +1,40 @@
+From 6ca3c8c3fbc3aca50bf51008a8ddab80e46af801 Mon Sep 17 00:00:00 2001
+From: gabriel20angelo-web <gabriel20angelo-web@users.noreply.github.com>
+Date: Fri, 20 Nov 2026 13:08:12 -0300
+Subject: [PATCH 1/9] sfx: tres cues de tecla (key, key-2, key-3)
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+---
+ plugins/ai-editor/skills/style-edit/scripts/sfx.py | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/plugins/ai-editor/skills/style-edit/scripts/sfx.py b/plugins/ai-editor/skills/style-edit/scripts/sfx.py
+index f1c8df3..0e5578e 100644
+--- a/plugins/ai-editor/skills/style-edit/scripts/sfx.py
++++ b/plugins/ai-editor/skills/style-edit/scripts/sfx.py
+@@ -68,6 +68,10 @@ KIT = {
+     "impact": ("aevalsrc='sin(2*PI*(55*t-19*t*t))*(1-exp(-t*400))*exp(-t*7)':d=0.6:s=48000[boom];"
+                "anoisesrc=d=0.6:c=white:a=1:r=48000:seed=11,lowpass=f=9000,afade=t=out:st=0:d=0.04:curve=exp,"
+                "volume=0.9[crack];[boom][crack]amix=inputs=2:normalize=0,afade=t=out:st=0.45:d=0.15:curve=log", -2),
++    # Keystroke (style iara): one per thing that lands on screen; three timbres take turns.
++    "key": ("anoisesrc=d=0.04:c=white:a=1:r=48000:seed=101,highpass=f=1800,lowpass=f=8000,afade=t=out:st=0.002:d=0.03:curve=exp", -12),
++    "key-2": ("anoisesrc=d=0.04:c=white:a=1:r=48000:seed=202,highpass=f=1800,lowpass=f=8000,afade=t=out:st=0.002:d=0.03:curve=exp", -12),
++    "key-3": ("anoisesrc=d=0.04:c=white:a=1:r=48000:seed=303,highpass=f=1800,lowpass=f=8000,afade=t=out:st=0.002:d=0.03:curve=exp", -12),
+ }
+ 
+ 
+@@ -77,7 +81,10 @@ LABELS = {"whoosh-in": ("Card slides in", "a picture or page slides onto the scr
+           "zoom": ("Zoom", "the camera punches in"),
+           "hit": ("Big moment", "a scene's tag or a big number lands"),
+           "impact": ("Impact", "a hard cut, when the creator you copy uses booms"),
+-          "whoosh-out": ("Card leaves", "a card goes off mid-sentence")}
++          "whoosh-out": ("Card leaves", "a card goes off mid-sentence"),
++          "key": ("Keystroke", "anything lands on screen (style iara)"),
++          "key-2": ("Keystroke 2", "same, alternate key"),
++          "key-3": ("Keystroke 3", "same, alternate key")}
+ SOUND_EXT = (".wav", ".mp3", ".m4a", ".aac", ".flac", ".ogg", ".opus")
+ MAX_OWN_S = 2.0   # the user's own sound is cut to this, with a short fade, so a long file never drowns a sentence
+ 
+-- 
+2.53.0.windows.1
+

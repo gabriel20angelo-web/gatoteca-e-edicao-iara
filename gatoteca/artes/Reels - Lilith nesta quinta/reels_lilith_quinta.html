@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lilith nesta quinta · Reels</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style>
+@font-face{font-family:Italiana;src:url(assets/Italiana.ttf)}
+@font-face{font-family:Cinzel;src:url(assets/Cinzel.ttf)}
+@font-face{font-family:Cormorant;src:url(assets/CormorantGaramond.ttf)}
+@font-face{font-family:Cormorant;font-style:italic;src:url(assets/CormorantGaramond-Italic.ttf)}
+@font-face{font-family:Caveat;src:url(assets/Caveat.ttf)}
+@font-face{font-family:Elite;src:url(assets/SpecialElite.ttf)}
+:root{--jade:#5F857C;--rosa:#C799AA;--noite:#30323C;--ameixa:#624956;--perola:#F1E3E6;--ouro:#D9B36A;--vinho:#6E1F2E;--creme:#EFE2D4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#16131a;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center}
+#stage{width:1080px;height:1920px;position:relative;overflow:hidden;flex:none;transform-origin:center;
+  background:#2E2A36 url(assets/papel_noite.png) center/1080px 1920px no-repeat}
+#creme{position:absolute;inset:0;background:url(assets/papel.png) center/cover;opacity:0}
+/* moldura fina de tarô */
+#moldura{position:absolute;inset:34px;border:2px solid var(--ouro);border-radius:6px;opacity:0;pointer-events:none}
+#moldura::after{content:"";position:absolute;inset:12px;border:1px solid rgba(217,179,106,.55)}
+.estrela{position:absolute;color:var(--ouro);font-size:34px;opacity:0}
+
+/* envelope */
+#env{position:absolute;left:115px;top:640px;width:850px;height:560px;z-index:4}
+#env .corpo{position:absolute;inset:0;border-radius:10px;background:url(assets/papel.png) center/1200px;
+  box-shadow:0 30px 60px rgba(0,0,0,.45);overflow:hidden}
+#env .corpo::before{content:"";position:absolute;inset:0;border:22px solid transparent;border-radius:10px;
+  border-image:repeating-linear-gradient(135deg,var(--rosa) 0 34px,var(--creme) 34px 46px,var(--jade) 46px 80px,var(--creme) 80px 92px) 22}
+#env .tampa{position:absolute;left:0;top:0;width:850px;height:330px;transform-origin:top center;z-index:3;
+  clip-path:polygon(0 0,100% 0,50% 100%);background:url(assets/papel.png) center/1200px;filter:brightness(.93)}
+#env .para{position:absolute;left:90px;bottom:70px;font:64px Caveat;color:var(--ameixa)}
+#env .rem{position:absolute;left:62px;top:56px;font:600 22px Cinzel;letter-spacing:4px;color:var(--ameixa);line-height:1.5;opacity:0}
+#env .selo{position:absolute;right:60px;top:50px;width:120px;height:150px;background:var(--perola);
+  border:6px dotted var(--creme);outline:3px solid var(--rosa);display:flex;align-items:center;justify-content:center;transform:rotate(4deg)}
+#env .selo img{width:86px}
+#lacre{position:absolute;left:50%;top:300px;width:150px;height:150px;margin-left:-75px;z-index:5;border-radius:50%;
+  background:radial-gradient(circle at 38% 34%,#9a3a4c,var(--vinho) 55%,#4a1220);box-shadow:0 8px 18px rgba(0,0,0,.4);
+  display:flex;align-items:center;justify-content:center;font:italic 70px Cormorant;color:#c98a95;
+  clip-path:polygon(50% 0,62% 4%,74% 2%,82% 12%,94% 18%,96% 32%,100% 46%,96% 60%,98% 74%,86% 84%,78% 96%,62% 96%,50% 100%,36% 97%,22% 96%,14% 84%,3% 74%,4% 58%,0 44%,5% 30%,8% 16%,22% 8%,36% 2%)}
+
+/* carta em arco */
+#arco{position:absolute;left:50%;top:110px;width:420px;margin-left:-210px;z-index:3;opacity:0;
+  filter:drop-shadow(0 26px 40px rgba(48,50,60,.35))}
+#arco img{width:100%;display:block}
+
+/* textos */
+.bloco{position:absolute;left:0;right:0;text-align:center;z-index:6;color:var(--vinho)}
+.rot{font:600 30px Cinzel;letter-spacing:10px;text-transform:uppercase;color:var(--jade)}
+#t1{top:1250px}
+#t1 .lilith{font:230px Italiana;line-height:1;margin-top:8px}
+#t1 .lilith span{display:inline-block}
+#t1 .sub{font:italic 58px Cormorant;color:var(--ameixa);line-height:1.15;margin-top:6px}
+
+#t2{top:1250px}
+#t2 .nesta{font:italic 70px Cormorant;color:var(--ameixa)}
+#t2 .quinta{font:200px Italiana;line-height:.95;color:var(--vinho)}
+#t2 .info{font:600 46px Cinzel;letter-spacing:3px;color:var(--noite);line-height:1.5;margin-top:22px}
+#t2 .gratis{display:inline-block;position:relative;font:62px Cormorant;color:var(--noite);margin-top:22px}
+#t2 .gratis svg{position:absolute;left:-30px;top:-14px;width:calc(100% + 60px);height:calc(100% + 28px);overflow:visible}
+#t2 .gratis path{fill:none;stroke:var(--jade);stroke-width:5;stroke-linecap:round}
+#carimbo{position:absolute;right:70px;top:150px;z-index:7;width:290px;height:290px;border-radius:50%;
+  border:7px double var(--vinho);color:var(--vinho);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:Elite;opacity:0;mix-blend-mode:multiply}
+#carimbo b{font-size:110px;line-height:1;font-weight:400}
+#carimbo small{font-size:30px;letter-spacing:4px}
+
+#t3{top:1290px}
+#t3 .clube{font:600 30px Cinzel;letter-spacing:6px;color:var(--ameixa)}
+#t3 .lock{display:flex;align-items:center;justify-content:center;gap:28px;margin-top:10px}
+#t3 .entre{font:italic 120px Cormorant;color:var(--vinho);border-top:2px solid var(--ouro);border-bottom:2px solid var(--ouro);padding:0 14px}
+#t3 .x{font:50px Cormorant;color:var(--ameixa)}
+#t3 .tul{width:150px;height:150px;border-radius:50%;background:var(--perola) url(assets/tulipa.png) center/86% no-repeat;border:3px solid var(--jade)}
+#t3 .cta{display:inline-block;margin-top:60px;padding:28px 60px;background:var(--jade);color:var(--perola);font:600 38px Cinzel;letter-spacing:5px;
+  border-radius:4px;box-shadow:0 10px 0 #46655d}
+#t3 .mao{font:60px Caveat;color:var(--ameixa);margin-top:34px}
+.coruja{position:absolute;bottom:40px;width:150px;z-index:8;opacity:0}
+.bloco > *{will-change:transform}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="creme"></div>
+  <div id="moldura"></div>
+  <div class="estrela" style="left:120px;top:210px">✦</div>
+  <div class="estrela" style="right:140px;top:420px">✧</div>
+  <div class="estrela" style="left:170px;top:930px">✧</div>
+  <div class="estrela" style="right:110px;top:1010px">✦</div>
+
+  <div id="arco"><img src="assets/arco.svg" alt="A gata Lilith no arco de tarô"></div>
+
+  <div id="env">
+    <div class="corpo">
+      <div class="rem">Remetente<br>Clube de literatura<br><span style="font:italic 46px Cormorant;letter-spacing:0;text-transform:none">Entrelinhas</span></div>
+      <div class="selo"><img src="assets/coruja.svg" alt=""></div>
+      <div class="para">Para: quem lê nas entrelinhas</div>
+    </div>
+    <div class="tampa"></div>
+  </div>
+  <div id="lacre">E</div>
+
+  <div class="bloco" id="t1">
+    <div class="rot">Grupo de estudos</div>
+    <div class="lilith"><span>L</span><span>i</span><span>l</span><span>i</span><span>t</span><span>h</span></div>
+    <div class="sub">A primeira mulher,<br>a que não se curvou</div>
+  </div>
+
+  <div id="carimbo"><small>QUINTA</small><b>08</b><small>OUTUBRO</small></div>
+  <div class="bloco" id="t2">
+    <div class="nesta">é nesta</div>
+    <div class="quinta">quinta</div>
+    <div class="info">14h · Sala 713 · Bloco B<br>UNICAP</div>
+    <div class="gratis">Aberto e gratuito
+      <svg viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M8,22 C4,6 60,0 94,10 C104,16 96,36 50,38 C14,40 2,30 10,16"/></svg>
+    </div>
+  </div>
+
+  <div class="bloco" id="t3">
+    <div class="clube">Grupo de estudos · Clube de literatura</div>
+    <div class="lock"><span class="entre">Entrelinhas</span><span class="x">×</span><span class="tul"></span></div>
+    <div class="cta">Entre pelo link do WhatsApp</div>
+    <div class="mao">vem com a gente? ♡</div>
+  </div>
+
+  <img class="coruja" id="c1" src="assets/coruja.svg" style="left:60px" alt="">
+  <img class="coruja" id="c2" src="assets/coruja.svg" style="right:60px" alt="">
+</div>
+
+<script>
+function fit(){const s=Math.min(innerWidth/1080,innerHeight/1920);document.getElementById('stage').style.transform=`scale(${s})`}
+addEventListener('resize',fit);fit();
+
+const tl=gsap.timeline({repeat:-1,defaults:{ease:'power3.out'}});
+// estado inicial (repetido a cada volta)
+tl.set('#creme,#moldura,.estrela,#arco,#carimbo,.coruja',{opacity:0})
+  .set('#t1,#t2,#t3',{opacity:0,y:0}).set('#env',{y:900,rotate:-6,opacity:1}).set('#env .tampa',{rotateX:0})
+  .set('#env .rem',{opacity:0}).set('#lacre',{scale:0,opacity:1,rotate:0,y:0})
+  .set('#arco',{y:700,scale:.8}).set('#t2 .gratis path',{strokeDasharray:400,strokeDashoffset:400});
+
+// 0–3s: o envelope chega, o lacre cai, ele se abre
+tl.to('#env',{y:0,rotate:-2,duration:1,ease:'back.out(1.2)'},.1)
+  .to('#env .rem',{opacity:1,duration:.5},.8)
+  .to('#lacre',{scale:1,duration:.45,ease:'back.out(3)'},.9)
+  .to('.estrela',{opacity:.9,stagger:.12,duration:.4},.9)
+  .to('#lacre',{y:1100,rotate:200,opacity:0,duration:.8,ease:'power2.in'},2.1)
+  .to('#env .tampa',{rotateX:180,duration:.6,ease:'power2.inOut'},2.3);
+
+// 3–6s: a carta de Lilith sai do envelope; o fundo vira papel creme
+tl.set('#arco',{opacity:1,zIndex:3},2.8)
+  .to('#arco',{y:420,scale:1,duration:1,ease:'power2.out'},2.8)
+  .to('#env',{y:1500,opacity:0,rotate:8,duration:.9,ease:'power2.in'},3.5)
+  .to('#creme',{opacity:1,duration:.8},3.6)
+  .to('#moldura',{opacity:1,duration:.8},4)
+  .set('#arco',{zIndex:5},3.6)
+  .to('#arco',{y:260,scale:1.45,duration:1.2,ease:'power2.inOut'},3.8)
+  .to('.estrela',{rotate:180,scale:1.3,yoyo:true,repeat:3,duration:.5,ease:'sine.inOut'},4);
+
+// 6–9s: «Lilith», letra por letra
+tl.to('#arco',{scale:1,y:0,duration:.9,ease:'power2.inOut'},5.6)
+  .set('#t1',{opacity:1},6.1)
+  .from('#t1 .rot',{opacity:0,letterSpacing:'30px',duration:.7},6.1)
+  .from('#t1 .lilith span',{opacity:0,y:60,filter:'blur(10px)',stagger:.09,duration:.6},6.3)
+  .from('#t1 .sub',{opacity:0,y:30,duration:.7},7.1)
+  .to('#t1',{opacity:0,y:-40,duration:.4,ease:'power2.in'},8.8);
+
+// 9–12s: é nesta quinta (carimbo)
+tl.set('#t2',{opacity:1,y:0},9.2)
+  .from('#t2 .nesta',{opacity:0,x:-80,duration:.5},9.2)
+  .from('#t2 .quinta',{opacity:0,scale:1.4,duration:.6},9.35)
+  .fromTo('#carimbo',{opacity:0,scale:2.4,rotate:-30},{opacity:.92,scale:1,rotate:-12,duration:.35,ease:'power4.in'},9.7)
+  .to('#stage',{x:8,duration:.05,yoyo:true,repeat:3},10.05)
+  .from('#t2 .info',{opacity:0,y:40,duration:.6},10.1)
+  .from('#t2 .gratis',{opacity:0,duration:.4},10.6)
+  .to('#t2 .gratis path',{strokeDashoffset:0,duration:.8,ease:'power1.inOut'},10.8)
+  .to('#t2',{opacity:0,y:-40,duration:.4,ease:'power2.in'},12);
+
+// 12–15s: o clube + TULIPA + chamada
+tl.set('#t3',{opacity:1},12.4)
+  .from('#t3 .clube',{opacity:0,y:30,duration:.5},12.4)
+  .from('#t3 .entre',{opacity:0,x:-60,duration:.6},12.55)
+  .from('#t3 .x',{opacity:0,scale:0,duration:.4},12.8)
+  .from('#t3 .tul',{opacity:0,scale:0,rotate:-120,duration:.7,ease:'back.out(1.8)'},12.85)
+  .from('#t3 .cta',{opacity:0,y:50,duration:.6,ease:'back.out(2)'},13.2)
+  .from('#t3 .mao',{opacity:0,duration:.6},13.6)
+  .fromTo('.coruja',{opacity:0,y:120},{opacity:1,y:0,stagger:.15,duration:.6,ease:'back.out(2)'},13.4)
+  .to('#t3 .cta',{scale:1.06,yoyo:true,repeat:1,duration:.3,ease:'sine.inOut'},14.1)
+  .to({},{duration:.3},14.7);
+tl.timeScale(1.7);const q=new URLSearchParams(location.search).get('t');if(q){tl.pause(+q);document.body.style.background='none'}
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Halloween · ingresso</title>
+<!--ACERVO-->
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px}
+.peca{position:relative;width:1080px;height:1350px;overflow:hidden}
+.peca::before,.peca::after{content:"";position:absolute;inset:0;pointer-events:none;background-size:1080px 1440px;z-index:50}
+.peca::before{background-image:var(--grao-neg);mix-blend-mode:multiply;opacity:.85}
+.peca::after{background-image:var(--grao-pos);mix-blend-mode:plus-lighter;opacity:.6}
+.peca>*{position:absolute}
+svg{overflow:visible}
+.marca{display:flex;flex-direction:column;align-items:center}
+.marca .sobre{font-family:'Cinzel';font-weight:600;font-size:15px;letter-spacing:.42em;margin-right:-.42em}
+.marca .nome{position:relative;margin-top:9px;padding:5px 24px 8px;font-family:'Cormorant';font-style:italic;font-weight:500;font-size:48px;line-height:1}
+.marca .nome::before,.marca .nome::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,currentColor 12%,currentColor 88%,transparent);opacity:.75}
+.marca .nome::before{top:0}.marca .nome::after{bottom:0}
+.icones{display:flex;justify-content:center;align-items:flex-start}
+.ic{display:flex;flex-direction:column;align-items:center;gap:6px;width:112px}
+.ic span{font-family:'Cormorant';font-style:italic;font-weight:600;font-size:21px;line-height:1.05;text-align:center}
+.gi{position:absolute;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+
+.peca{background:radial-gradient(ellipse 80% 65% at 50% 45%,#2C5254 0%,#1E3B3D 50%,#11211F 100%)}
+.ingresso{left:60px;top:292px;width:960px;height:560px;transform:rotate(-4deg)}
+.tk{position:relative;width:960px;height:560px}
+.tk>svg{position:absolute;left:0;top:0}
+.miolo{position:absolute;left:396px;top:40px;height:480px;justify-content:center;width:318px;display:flex;flex-direction:column;align-items:flex-start;color:#2A1E24}
+.entrada{font-family:'Cinzel';font-weight:700;font-size:15px;letter-spacing:.32em;color:#A8355D}
+.t1{margin-top:26px;font-family:'Cormorant';font-style:italic;font-weight:700;font-size:52px;line-height:1}
+.t2{width:318px;white-space:nowrap;font-family:'Shrikhand';font-size:76px;line-height:1.15;color:#E8752F;text-shadow:3px 4px 0 #2A1E24}
+.sub{margin-top:16px;font-family:'Cormorant';font-weight:600;font-size:33px;line-height:1.1}
+.data{margin-top:22px;font-family:'Cinzel';font-weight:700;font-size:19px;letter-spacing:.1em;color:#A8355D}
+.canhoto{position:absolute;left:760px;top:40px;width:184px;height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#2A1E24}
+.rs{font-family:'Cinzel';font-weight:700;font-size:26px;letter-spacing:.1em}
+.n30{font-family:'Shrikhand';font-size:104px;line-height:1;color:#E8752F;text-shadow:3px 4px 0 #2A1E24}
+.vg{margin-top:16px;font-family:'Cinzel';font-weight:700;font-size:19px;letter-spacing:.14em}
+.num{margin-top:30px;font-family:'Cormorant';font-style:italic;font-weight:600;font-size:22px;color:#A8355D}
+.texto{left:30px;right:30px;top:990px;display:flex;flex-direction:column;align-items:center}
+.cta{margin-top:26px;font-family:'Cinzel';font-weight:700;font-size:15px;letter-spacing:.3em;margin-right:-.3em;color:#F2B544}
+</style></head><body><svg width="0" height="0" style="position:absolute"><defs>
+<filter id="mao" x="-5%" y="-5%" width="110%" height="110%">
+  <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="4" result="n"/>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+</filter>
+<filter id="aguada" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="3" seed="9" result="n"/>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+  <feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="2" seed="2" result="m"/>
+  <feColorMatrix in="m" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.5 1.32" result="ma"/>
+  <feComposite in="d" in2="ma" operator="in"/>
+</filter>
+<filter id="contorno" x="-5%" y="-5%" width="110%" height="110%">
+  <feMorphology in="SourceAlpha" operator="dilate" radius="1.25" result="dl"/>
+  <feComposite in="dl" in2="SourceAlpha" operator="out" result="o"/>
+  <feFlood flood-color="#2A1E24"/><feComposite in2="o" operator="in" result="c"/>
+  <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="4" result="n"/>
+  <feDisplacementMap in="c" in2="n" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+</filter>
+<filter id="papelrecortado" x="-8%" y="-8%" width="116%" height="116%">
+  <feMorphology in="SourceAlpha" operator="dilate" radius="5" result="d"/>
+  <feFlood flood-color="#F6EEDC"/><feComposite in2="d" operator="in" result="borda"/>
+  <feGaussianBlur in="d" stdDeviation="7" result="sb"/>
+  <feOffset in="sb" dx="5" dy="12" result="so"/>
+  <feFlood flood-color="#1A0E14" flood-opacity=".45"/><feComposite in2="so" operator="in" result="sombra"/>
+  <feMerge><feMergeNode in="sombra"/><feMergeNode in="borda"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="brilho" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="10"/></filter>
+<filter id="brilho2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
+<filter id="sombra" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#14080E" flood-opacity=".5"/></filter>
+<radialGradient id="luz" r=".5"><stop offset="0" stop-color="#FFD267" stop-opacity=".85"/><stop offset=".45" stop-color="#F2A93C" stop-opacity=".3"/><stop offset="1" stop-color="#F2A93C" stop-opacity="0"/></radialGradient>
+<radialGradient id="luar" r=".5"><stop offset=".55" stop-color="#F2D27E" stop-opacity=".35"/><stop offset="1" stop-color="#F2D27E" stop-opacity="0"/></radialGradient>
+<radialGradient id="lunar" cx="42%" cy="40%" r="62%"><stop offset="0" stop-color="#FDF3D6"/><stop offset=".65" stop-color="#F4DC98"/><stop offset="1" stop-color="#E6BF6E"/></radialGradient>
+<pattern id="bolinhas" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1.05" fill="#3B2A33" opacity=".5"/><circle cx="4.5" cy="4.5" r="1.05" fill="#3B2A33" opacity=".5"/></pattern>
+<pattern id="xadrez" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="skewX(-18)">
+  <rect width="14" height="14" fill="#F6DDE3"/><rect width="7" height="14" fill="#C8324F" opacity=".45"/><rect width="14" height="7" fill="#C8324F" opacity=".45"/></pattern>
+<path id="br0" d="M0,-10 Q0,0 10,0 Q0,0 0,10 Q0,0 -10,0 Q0,0 0,-10Z"/>
+
+<symbol id="arvore" viewBox="60 170 420 450" overflow="visible">
+  <path d="M222,606 C236,600 244,592 246,580 C244,560 250,500 252,440 C253,420 245,405 232,392 L250,385 C258,398 264,410 270,410 C276,410 282,398 290,385 L312,392 C297,405 289,420 290,440 C291,452 291,462 291,470 C312,462 334,450 360,436 L363,443 C338,460 314,476 292,486 C293,520 298,560 296,580 C298,592 304,600 318,606 Z" style="fill:var(--tronco,#8A6A62)" opacity=".75" filter="url(#aguada)"/>
+  <g filter="url(#mao)" fill="none" style='stroke:var(--linha,#2A1E24)' stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M222,606 C236,600 244,592 246,580 C244,560 250,500 252,440 C253,420 245,405 232,392"/>
+    <path d="M318,606 C304,600 298,592 296,580 C298,560 293,520 292,486 C314,476 338,460 363,443"/>
+    <path d="M360,436 C334,450 312,462 291,470 C291,462 291,452 290,440 C289,420 297,405 312,392"/>
+    <path d="M250,385 C258,398 264,410 270,410 C276,410 282,398 290,385"/>
+    <path d="M262,592 C259,552 266,505 263,458 M281,582 C283,546 278,512 281,494" stroke-width=".8" opacity=".7"/>
+    <path d="M232,606 C238,610 246,610 252,606 M286,607 C294,611 302,611 308,606" stroke-width=".9"/>
+  </g>
+  <g filter="url(#contorno)"><circle cx="118" cy="328" r="50"/><circle cx="422" cy="328" r="50"/><circle cx="178" cy="270" r="56"/><circle cx="362" cy="270" r="56"/><circle cx="270" cy="240" r="62"/><circle cx="220" cy="246" r="44"/><circle cx="320" cy="246" r="44"/></g>
+  <g style="fill:var(--copabase,#ECE0C6)"><circle cx="118" cy="328" r="50"/><circle cx="422" cy="328" r="50"/><circle cx="178" cy="270" r="56"/><circle cx="362" cy="270" r="56"/><circle cx="270" cy="240" r="62"/><circle cx="220" cy="246" r="44"/><circle cx="320" cy="246" r="44"/></g>
+  <g style="fill:var(--copa1,#6F8C74)" filter="url(#aguada)"><circle cx="118" cy="328" r="50"/><circle cx="422" cy="328" r="50"/><circle cx="178" cy="270" r="56"/><circle cx="362" cy="270" r="56"/><circle cx="270" cy="240" r="62"/><circle cx="220" cy="246" r="44"/><circle cx="320" cy="246" r="44"/></g>
+  <g filter="url(#contorno)"><circle cx="150" cy="374" r="46"/><circle cx="390" cy="374" r="46"/><circle cx="212" cy="318" r="60"/><circle cx="328" cy="318" r="60"/><circle cx="270" cy="296" r="62"/><circle cx="270" cy="378" r="52"/><circle cx="206" cy="392" r="42"/><circle cx="334" cy="392" r="42"/></g>
+  <g style="fill:var(--copabase,#ECE0C6)"><circle cx="150" cy="374" r="46"/><circle cx="390" cy="374" r="46"/><circle cx="212" cy="318" r="60"/><circle cx="328" cy="318" r="60"/><circle cx="270" cy="296" r="62"/><circle cx="270" cy="378" r="52"/><circle cx="206" cy="392" r="42"/><circle cx="334" cy="392" r="42"/></g>
+  <g style="fill:var(--copa2,#A9C49C)" filter="url(#aguada)"><circle cx="150" cy="374" r="46"/><circle cx="390" cy="374" r="46"/><circle cx="212" cy="318" r="60"/><circle cx="328" cy="318" r="60"/><circle cx="270" cy="296" r="62"/><circle cx="270" cy="378" r="52"/><circle cx="206" cy="392" r="42"/><circle cx="334" cy="392" r="42"/></g>
+  <g fill="#1F2A22" opacity=".22" filter="url(#aguada)"><ellipse cx="270" cy="410" rx="150" ry="24"/><ellipse cx="150" cy="400" rx="36" ry="16"/><ellipse cx="390" cy="400" rx="36" ry="16"/></g>
+  <g style="fill:var(--copaluz,#E9EFCF)" opacity=".55" filter="url(#aguada)">
+    <ellipse cx="252" cy="266" rx="34" ry="15"/><ellipse cx="196" cy="292" rx="24" ry="11"/><ellipse cx="312" cy="290" rx="24" ry="11"/>
+    <ellipse cx="146" cy="352" rx="18" ry="8"/><ellipse cx="380" cy="352" rx="18" ry="8"/></g>
+  <g fill="none" style="stroke:var(--folha,#3E5A44)" stroke-width="1" stroke-linecap="round" opacity=".6" filter="url(#mao)">
+    <path d="M150,300 q4,4 8,0 q4,4 8,0 M160,308 q4,4 8,0 M384,296 q4,4 8,0 q4,4 8,0 M394,304 q4,4 8,0 M240,232 q4,4 8,0 q4,4 8,0 M250,240 q4,4 8,0
+             M300,330 q4,4 8,0 q4,4 8,0 M196,350 q4,4 8,0 q4,4 8,0 M206,358 q4,4 8,0 M118,350 q4,4 8,0 q4,4 8,0 M412,350 q4,4 8,0 q4,4 8,0
+             M262,394 q4,4 8,0 q4,4 8,0 M340,262 q4,4 8,0 q4,4 8,0"/></g>
+  <g filter="url(#mao)" fill="none" style='stroke:var(--linha,#2A1E24)' stroke-width=".9" stroke-linecap="round" opacity=".75">
+    <path d="M236,350 C248,358 262,360 274,356 M296,344 C308,352 322,354 334,348 M174,398 C184,404 196,405 206,401 M340,404 C350,408 362,408 372,402"/></g>
+  <!-- jacas no tronco -->
+  <g fill="#E4DDA0"><ellipse cx="245" cy="482" rx="14" ry="24" transform="rotate(10 245 482)"/><ellipse cx="306" cy="528" rx="15" ry="25" transform="rotate(-10 306 528)"/><ellipse cx="262" cy="560" rx="11" ry="18" transform="rotate(5 262 560)"/></g>
+  <g style="fill:var(--jaca,#BDBF6A)" filter="url(#aguada)">
+    <ellipse cx="245" cy="482" rx="14" ry="24" transform="rotate(10 245 482)"/><ellipse cx="306" cy="528" rx="15" ry="25" transform="rotate(-10 306 528)"/><ellipse cx="262" cy="560" rx="11" ry="18" transform="rotate(5 262 560)"/></g>
+  <g fill="url(#bolinhas)"><ellipse cx="245" cy="482" rx="14" ry="24" transform="rotate(10 245 482)"/><ellipse cx="306" cy="528" rx="15" ry="25" transform="rotate(-10 306 528)"/><ellipse cx="262" cy="560" rx="11" ry="18" transform="rotate(5 262 560)"/></g>
+  <g filter="url(#mao)" fill="none" style='stroke:var(--linha,#2A1E24)' stroke-width="1.25" stroke-linecap="round">
+    <ellipse cx="245" cy="482" rx="14" ry="24" transform="rotate(10 245 482)"/><path d="M251,459 L253,455"/>
+    <ellipse cx="306" cy="528" rx="15" ry="25" transform="rotate(-10 306 528)"/><path d="M297,506 L294,502"/>
+    <ellipse cx="262" cy="560" rx="11" ry="18" transform="rotate(5 262 560)"/></g>
+  <!-- a jaca-lanterna -->
+  <circle cx="350" cy="500" r="96" fill="url(#luz)"/>
+  <path d="M350,448 L350,466" style='stroke:var(--linha,#2A1E24)' stroke-width="1.3" filter="url(#mao)"/>
+  <ellipse cx="350" cy="498" rx="22" ry="32" style="fill:var(--lanterna,#E2A23E)" filter="url(#aguada)"/>
+  <ellipse cx="350" cy="498" rx="22" ry="32" fill="url(#bolinhas)" opacity=".5"/>
+  <g fill="#FFF3C6"><path d="M337,486 L346,486 L341.5,476Z"/><path d="M354,486 L363,486 L358.5,476Z"/>
+    <path d="M335,500 L339.5,506 L344.5,501 L350,507 L355.5,501 L360.5,506 L365,500 C360,516 340,516 335,500Z"/></g>
+  <g fill="#FFE07A" opacity=".55" filter="url(#brilho2)"><circle cx="350" cy="496" r="12"/></g>
+  <ellipse cx="350" cy="498" rx="22" ry="32" fill="none" style='stroke:var(--linha,#2A1E24)' stroke-width="1.35" filter="url(#mao)"/>
+  <g fill="#FFD267" style="opacity:var(--vagalume,1)"><circle cx="402" cy="452" r="2"/><circle cx="388" cy="560" r="1.6"/><circle cx="312" cy="452" r="1.4"/><circle cx="420" cy="512" r="1.3"/></g>
+</symbol>
+
+<symbol id="gato" viewBox="376 540 92 112" overflow="visible">
+  <g filter="url(#mao)">
+    <path d="M428,644 C452,642 462,622 452,608 C449,603 443,605 445,611 C450,622 442,633 428,636" style="fill:var(--gato,#231820)"/>
+    <path d="M391,580 C379,598 379,628 386,646 L426,646 C433,628 432,598 420,580 C412,588 398,588 391,580 Z" style="fill:var(--gato,#231820)"/>
+    <path d="M390,577 C387,567 390,557 394,549 L401,560 C405,558 409,558 413,560 L420,549 C424,557 426,567 422,577 C419,590 393,590 390,577 Z" style="fill:var(--gato,#231820)"/>
+    <g style="fill:var(--olho,#F2B544)"><ellipse cx="400" cy="571" rx="3.2" ry="2.7"/><ellipse cx="412" cy="571" rx="3.2" ry="2.7"/></g>
+    <g style="fill:var(--gato,#231820)"><ellipse cx="399.2" cy="570.6" rx=".9" ry="2.2"/><ellipse cx="411.2" cy="570.6" rx=".9" ry="2.2"/></g>
+  </g>
+</symbol>
+
+<symbol id="piquenique" viewBox="44 600 182 66" overflow="visible">
+  <path d="M62,630 L194,624 L218,654 L48,662 Z" fill="url(#xadrez)" filter="url(#aguada)"/>
+  <path d="M62,630 L194,624 L218,654 L48,662 Z" fill="none" style='stroke:var(--linha,#2A1E24)' stroke-width="1.2" stroke-linejoin="round" filter="url(#mao)"/>
+  <g filter="url(#mao)" style='stroke:var(--linha,#2A1E24)' stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M94,640 C107,629 120,629 131,636 L131,653 C120,646 107,646 94,655 Z" fill="#FBF6EA"/>
+    <path d="M131,636 C142,629 155,629 168,640 L168,655 C155,646 142,646 131,653 Z" fill="#FBF6EA"/>
+    <path d="M100,642 C108,637 117,637 125,640 M100,647 C108,642 117,642 125,645 M137,640 C145,637 153,637 161,642 M137,645 C145,642 153,642 161,647" fill="none" stroke-width=".7" opacity=".6"/>
+    <path d="M176,630 L194,630 L192,646 C190,650 180,650 178,646 Z" fill="#F4ECDC"/>
+    <path d="M194,634 C201,634 201,642 193,642" fill="none"/>
+    <path d="M182,624 C178,618 186,614 182,606 M189,624 C186,619 192,615 189,609" fill="none" stroke-width=".9" opacity=".75"/>
+    <path d="M64,648 L86,640 L88,652 L66,658 Z" fill="#F4DDB0"/><path d="M64,648 L86,640 L86,644 L64,652Z" fill="#D9734E"/>
+    <circle cx="80" cy="636" r="2.4" fill="#C8324F"/>
+    <circle cx="200" cy="652" r="2.6" fill="#C8324F"/><circle cx="206" cy="648" r="2.4" fill="#7A3E8E"/><circle cx="205" cy="655" r="2.2" fill="#C8324F"/>
+  </g>
+</symbol>
+
+<symbol id="abobora" viewBox="-24 -26 48 42" overflow="visible">
+  <g style="fill:var(--abobora,#E8752F)" filter="url(#aguada)"><ellipse cx="-9" cy="0" rx="12" ry="11"/><ellipse cx="9" cy="0" rx="12" ry="11"/><ellipse cx="0" cy="0" rx="12" ry="12"/></g>
+  <g fill="none" style='stroke:var(--linha,#2A1E24)' stroke-width="1.1" filter="url(#mao)"><ellipse cx="-9" cy="0" rx="12" ry="11"/><ellipse cx="9" cy="0" rx="12" ry="11"/><ellipse cx="0" cy="0" rx="9" ry="12"/>
+    <path d="M0,-12 C0,-17 2,-19 5,-20" stroke-linecap="round" stroke-width="1.6" style="stroke:var(--talo,#4E6B3A)"/></g>
+</symbol>
+
+<symbol id="morcego" viewBox="-12 -7 24 12" overflow="visible">
+  <path d="M-11,0 Q-7,-6 -3.5,-1.5 Q-1.5,-4 0,-3 Q1.5,-4 3.5,-1.5 Q7,-6 11,0 Q7,-1.6 4.5,1.8 Q2,0 0,1.6 Q-2,0 -4.5,1.8 Q-7,-1.6 -11,0Z" style="fill:var(--morcego,#231820)"/>
+</symbol>
+<symbol id="br" viewBox="-10 -10 20 20" overflow="visible"><use href="#br0"/></symbol>
+<symbol id="folha" viewBox="-6 -8 12 16" overflow="visible">
+  <path d="M0,-7 C5,-3 5,3 0,7 C-5,3 -5,-3 0,-7Z" style="fill:var(--cor,#7DB87A)" style='stroke:var(--linha,#2A1E24)' stroke-width=".8"/><path d="M0,-6 L0,6" style='stroke:var(--linha,#2A1E24)' stroke-width=".6"/>
+</symbol>
+
+<!-- icones do que esta incluso -->
+<symbol id="ic_ecobag" viewBox="-30 -30 60 60" overflow="visible"><g filter="url(#mao)" style='stroke:var(--linha,#2A1E24)' stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M-10,-6 C-10,-22 10,-22 10,-6" fill="none"/><path d="M-17,-6 L17,-6 L15,22 L-15,22 Z" fill="#EAD9B8"/>
+  <path d="M-4,8 a6,6 0 1 0 6,-6 a4.6,4.6 0 1 1 -6,6Z" fill="#E8752F" stroke-width="1.1"/></g></symbol>
+<symbol id="ic_marcador" viewBox="-30 -30 60 60" overflow="visible"><g filter="url(#mao)" style='stroke:var(--linha,#2A1E24)' stroke-width="1.6" stroke-linejoin="round">
+  <path d="M-9,-23 L9,-23 L9,23 L0,15 L-9,23Z" fill="#C8324F"/><use href="#br0" transform="translate(0 -6) scale(.6)" fill="#FBEFD0" stroke="none"/>
+  <circle cx="0" cy="-17" r="2.4" fill="#FBEFD0" stroke-width="1"/></g></symbol>
+<symbol id="ic_cafe" viewBox="-30 -30 60 60" overflow="visible"><g filter="url(#mao)" style='stroke:var(--linha,#2A1E24)' stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M-16,-2 L12,-2 L10,16 C8,22 -12,22 -14,16 Z" fill="#F4ECDC"/><path d="M12,2 C21,2 21,12 10,12" fill="none"/>
+  <path d="M-22,22 L18,22" /><path d="M-8,-8 C-11,-13 -5,-16 -8,-22 M0,-8 C-3,-13 3,-16 0,-22" fill="none" stroke-width="1.2"/>
+  <path d="M-13,3 L9,3" stroke="#8A5A3A" stroke-width="3" opacity=".7"/></g></symbol>
+<symbol id="ic_bolo" viewBox="-30 -30 60 60" overflow="visible"><g filter="url(#mao)" style='stroke:var(--linha,#2A1E24)' stroke-width="1.6" stroke-linejoin="round">
+  <path d="M-20,4 L18,-12 L20,14 L-18,20 Z" fill="#F4DDB0"/><path d="M-20,4 L18,-12 L18.6,-4 L-19.4,12 Z" fill="#D9734E"/>
+  <path d="M-19,13 L19.4,0" stroke="#FBEFD0" stroke-width="3"/><circle cx="6" cy="-14" r="4.5" fill="#C8324F"/></g></symbol>
+<symbol id="ic_frutinhas" viewBox="-30 -30 60 60" overflow="visible"><g filter="url(#mao)" style='stroke:var(--linha,#2A1E24)' stroke-width="1.5">
+  <path d="M-2,-10 C4,-24 16,-22 18,-16 C10,-18 2,-14 -2,-10Z" fill="#7DB87A"/>
+  <circle cx="-10" cy="4" r="9" fill="#C8324F"/><circle cx="8" cy="6" r="8" fill="#7A3E8E"/><circle cx="-1" cy="17" r="7.5" fill="#C8324F"/>
+  <path d="M-2,-10 C-6,-4 -9,-2 -10,-5 M-2,-10 C2,-4 6,-2 8,-2" fill="none" stroke-width="1.1"/></g></symbol>
+<symbol id="ic_livro" viewBox="-30 -30 60 60" overflow="visible"><g filter="url(#mao)" style='stroke:var(--linha,#2A1E24)' stroke-width="1.6" stroke-linejoin="round">
+  <path d="M-18,-20 L14,-20 L14,20 L-18,20 Z" fill="#3F6E8C"/><path d="M14,-20 L19,-15 L19,24 L-13,24 L-18,20 L14,20Z" fill="#F4ECDC"/>
+  <path d="M-12,-20 L-12,20" stroke-width="1"/><use href="#br0" transform="translate(1 0) scale(.75)" fill="#F2B544" stroke="none"/>
+  <path d="M8,-20 L8,-6 L11,-9 L14,-6" fill="#C8324F" stroke-width="1"/></g></symbol>
+</defs></svg><div class="peca"><svg style="left:0;top:0" width="1080" height="1350"><g fill="#F4E9D5"><circle cx="255" cy="139" r="1.15" opacity="0.38"/><circle cx="72" cy="542" r="1.89" opacity="0.70"/><circle cx="826" cy="300" r="1.35" opacity="0.44"/><circle cx="186" cy="143" r="0.90" opacity="0.76"/><circle cx="895" cy="1089" r="1.72" opacity="0.40"/><circle cx="335" cy="846" r="1.62" opacity="0.73"/><circle cx="950" cy="117" r="1.45" opacity="0.64"/><circle cx="546" cy="240" r="1.26" opacity="0.34"/><circle cx="1009" cy="1168" r="1.37" opacity="0.45"/><circle cx="982" cy="773" r="1.84" opacity="0.72"/><circle cx="549" cy="559" r="1.44" opacity="0.52"/><circle cx="174" cy="412" r="1.74" opacity="0.32"/><circle cx="50" cy="846" r="0.99" opacity="0.57"/><circle cx="509" cy="463" r="2.00" opacity="0.40"/><circle cx="446" cy="274" r="1.49" opacity="0.44"/><circle cx="384" cy="1008" r="1.05" opacity="0.58"/><circle cx="977" cy="136" r="0.69" opacity="0.41"/><circle cx="826" cy="831" r="0.93" opacity="0.47"/><circle cx="192" cy="620" r="0.66" opacity="0.65"/><circle cx="968" cy="1289" r="1.63" opacity="0.78"/><circle cx="20" cy="390" r="1.95" opacity="0.69"/><circle cx="443" cy="1273" r="1.47" opacity="0.71"/><circle cx="317" cy="258" r="1.22" opacity="0.37"/><circle cx="412" cy="1298" r="1.06" opacity="0.30"/><circle cx="48" cy="229" r="1.70" opacity="0.48"/><circle cx="314" cy="131" r="1.97" opacity="0.51"/><circle cx="225" cy="80" r="0.68" opacity="0.38"/><circle cx="731" cy="202" r="0.66" opacity="0.55"/><circle cx="269" cy="1347" r="0.77" opacity="0.56"/><circle cx="836" cy="553" r="1.98" opacity="0.54"/><circle cx="261" cy="554" r="0.65" opacity="0.51"/><circle cx="268" cy="1201" r="1.76" opacity="0.55"/><circle cx="34" cy="343" r="0.94" opacity="0.40"/><circle cx="250" cy="1174" r="0.80" opacity="0.33"/><circle cx="1002" cy="763" r="1.99" opacity="0.50"/><circle cx="973" cy="883" r="1.71" opacity="0.67"/><circle cx="534" cy="125" r="0.90" opacity="0.74"/><circle cx="972" cy="1248" r="1.07" opacity="0.63"/><circle cx="863" cy="867" r="1.74" opacity="0.56"/><circle cx="707" cy="926" r="0.98" opacity="0.76"/><circle cx="1033" cy="100" r="1.96" opacity="0.78"/><circle cx="722" cy="60" r="1.86" opacity="0.36"/><circle cx="1046" cy="901" r="0.68" opacity="0.38"/><circle cx="686" cy="768" r="1.65" opacity="0.76"/><circle cx="236" cy="4" r="1.89" opacity="0.31"/><circle cx="947" cy="156" r="1.73" opacity="0.69"/><circle cx="948" cy="743" r="1.83" opacity="0.40"/><circle cx="725" cy="446" r="1.85" opacity="0.69"/><circle cx="509" cy="711" r="0.64" opacity="0.32"/><circle cx="642" cy="660" r="1.81" opacity="0.60"/><circle cx="150" cy="489" r="1.67" opacity="0.56"/><circle cx="11" cy="1131" r="1.76" opacity="0.34"/><circle cx="587" cy="515" r="1.70" opacity="0.46"/><circle cx="252" cy="657" r="1.95" opacity="0.35"/><circle cx="124" cy="838" r="1.84" opacity="0.56"/><circle cx="469" cy="1158" r="1.69" opacity="0.33"/><circle cx="952" cy="264" r="1.02" opacity="0.72"/><circle cx="456" cy="1078" r="0.83" opacity="0.74"/><circle cx="190" cy="202" r="1.29" opacity="0.47"/><circle cx="585" cy="1220" r="1.59" opacity="0.30"/><circle cx="337" cy="736" r="1.28" opacity="0.66"/><circle cx="523" cy="102" r="0.94" opacity="0.72"/><circle cx="385" cy="1035" r="1.98" opacity="0.61"/><circle cx="731" cy="823" r="1.04" opacity="0.76"/><circle cx="504" cy="1230" r="1.03" opacity="0.73"/><circle cx="850" cy="828" r="1.22" opacity="0.37"/><circle cx="833" cy="489" r="1.53" opacity="0.37"/><circle cx="89" cy="194" r="1.73" opacity="0.39"/><circle cx="974" cy="502" r="1.41" opacity="0.48"/><circle cx="670" cy="126" r="1.16" opacity="0.77"/></g><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(62 940) rotate(199) scale(2.57)" style="--cor:#C8324F"/><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(529 198) rotate(32) scale(3.78)" style="--cor:#C8324F"/><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(772 220) rotate(173) scale(2.99)" style="--cor:#F2B544"/><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(1058 425) rotate(72) scale(2.80)" style="--cor:#D9734E"/><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(76 1000) rotate(75) scale(3.08)" style="--cor:#D9734E"/><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(934 1196) rotate(146) scale(3.51)" style="--cor:#D9734E"/><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(1013 1031) rotate(158) scale(2.90)" style="--cor:#F2B544"/><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(358 1346) rotate(85) scale(2.35)" style="--cor:#E8752F"/><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(27 779) rotate(87) scale(2.22)" style="--cor:#D9734E"/><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(855 164) rotate(147) scale(2.81)" style="--cor:#E8752F"/><use href="#folha" x="-6" y="-8" width="12" height="16" transform="translate(69 174) rotate(266) scale(2.99)" style="--cor:#D9734E"/></svg><div class="marca" style="left:0;right:0;top:40px"><div class="sobre" style="color:#F2B544">Clube do livro</div><div class="nome" style="color:#F4E9D5">Entrelinhas</div></div><div class="ingresso"><div class="tk"><svg width="960" height="560" viewBox="0 0 960 560"><defs><linearGradient id="ceuIngresso" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2048"/><stop offset=".8" stop-color="#5A3C6E"/></linearGradient><clipPath id="janela4"><circle cx="200" cy="280" r="172"/></clipPath></defs><g transform="translate(600 12)"><path d="M-48,14 C-54,-18 -44,-42 -32,-52 L-30,-86 L-8,-58 C-3,-60 3,-60 8,-58 L30,-86 L32,-52 C44,-42 54,-18 48,14 Z" fill="#231820" filter="url(#mao)"/><path d="M-26,-70 L-22,-58 L-14,-62 Z M26,-70 L22,-58 L14,-62 Z" fill="#7A3E5A" opacity=".8"/><ellipse cx="-17" cy="-24" rx="10" ry="9" fill="#F2B544"/><ellipse cx="17" cy="-24" rx="10" ry="9" fill="#F2B544"/><ellipse cx="-16" cy="-24" rx="2.6" ry="7.5" fill="#231820"/><ellipse cx="18" cy="-24" rx="2.6" ry="7.5" fill="#231820"/><circle cx="-14" cy="-27" r="1.8" fill="#FFF6DD"/><circle cx="20" cy="-27" r="1.8" fill="#FFF6DD"/><path d="M-4,-10 L4,-10 L0,-5 Z" fill="#E59AA8"/><g stroke="#F4E9D5" stroke-width=".9" opacity=".75" fill="none"><path d="M-12,-6 L-44,-12 M-12,-3 L-44,0 M12,-6 L44,-12 M12,-3 L44,0"/></g></g><path d="M22,0 H722 A22,22 0 0 0 766,0 H938 A22,22 0 0 1 960,22 V538 A22,22 0 0 1 938,560 H766 A22,22 0 0 0 722,560 H22 A22,22 0 0 1 0,538 V22 A22,22 0 0 1 22,0 Z" fill="#F5E9CF" filter="url(#sombra)"/><g fill="none" stroke="#3B2A33" filter="url(#mao)"><rect x="16" y="16" width="712" height="528" rx="10" stroke-width="1.4"/><rect x="24" y="24" width="696" height="512" rx="6" stroke-width=".7"/><rect x="760" y="16" width="184" height="528" rx="10" stroke-width="1.4"/><path d="M744,30 V530" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/></g><g clip-path="url(#janela4)"><svg x="28" y="108" width="344" height="344" viewBox="30 150 510 510" preserveAspectRatio="xMidYMid slice"><rect x="0" y="0" width="540" height="760" fill="url(#ceuIngresso)"/><g fill="#F4E9D5"><circle cx="516" cy="474" r="0.68" opacity="0.34"/><circle cx="451" cy="368" r="1.54" opacity="0.45"/><circle cx="327" cy="303" r="1.41" opacity="0.38"/><circle cx="233" cy="197" r="1.61" opacity="0.80"/><circle cx="513" cy="272" r="1.22" opacity="0.43"/><circle cx="19" cy="14" r="1.25" opacity="0.46"/><circle cx="205" cy="446" r="1.34" opacity="0.58"/><circle cx="128" cy="12" r="1.06" opacity="0.37"/><circle cx="276" cy="499" r="1.54" opacity="0.39"/><circle cx="483" cy="398" r="1.63" opacity="0.75"/><circle cx="412" cy="395" r="1.10" opacity="0.79"/><circle cx="519" cy="81" r="1.66" opacity="0.66"/><circle cx="249" cy="265" r="1.29" opacity="0.76"/><circle cx="270" cy="416" r="1.10" opacity="0.74"/><circle cx="486" cy="231" r="1.39" opacity="0.76"/><circle cx="391" cy="243" r="0.91" opacity="0.46"/><circle cx="378" cy="83" r="1.87" opacity="0.43"/><circle cx="492" cy="155" r="1.94" opacity="0.65"/><circle cx="272" cy="259" r="1.51" opacity="0.59"/><circle cx="168" cy="104" r="1.32" opacity="0.77"/><circle cx="337" cy="38" r="1.75" opacity="0.66"/><circle cx="490" cy="96" r="1.64" opacity="0.33"/><circle cx="353" cy="137" r="0.92" opacity="0.74"/><circle cx="57" cy="261" r="1.80" opacity="0.42"/><circle cx="114" cy="440" r="1.19" opacity="0.66"/><circle cx="17" cy="181" r="0.84" opacity="0.64"/><circle cx="45" cy="477" r="0.64" opacity="0.66"/><circle cx="11" cy="128" r="1.74" opacity="0.38"/><circle cx="99" cy="346" r="1.14" opacity="0.32"/><circle cx="535" cy="76" r="0.65" opacity="0.47"/><circle cx="332" cy="371" r="0.76" opacity="0.47"/><circle cx="17" cy="224" r="1.67" opacity="0.67"/><circle cx="487" cy="378" r="1.81" opacity="0.65"/><circle cx="255" cy="113" r="1.53" opacity="0.46"/><circle cx="55" cy="224" r="1.82" opacity="0.36"/><circle cx="316" cy="196" r="1.32" opacity="0.37"/><circle cx="518" cy="130" r="1.45" opacity="0.51"/><circle cx="10" cy="279" r="0.80" opacity="0.33"/><circle cx="18" cy="81" r="0.73" opacity="0.62"/><circle cx="274" cy="492" r="1.91" opacity="0.80"/></g><g transform="translate(390 210)"><circle r="101.5" fill="url(#luar)"/><g stroke="#F2D27E" stroke-width="0.8" opacity="0.55" filter="url(#mao)"><line x1="90.3" y1="0.0" x2="115.5" y2="0.0"/><line x1="89.5" y1="11.8" x2="104.1" y2="13.7"/><line x1="87.2" y1="23.4" x2="111.6" y2="29.9"/><line x1="83.4" y1="34.6" x2="97.0" y2="40.2"/><line x1="78.2" y1="45.1" x2="100.0" y2="57.7"/><line x1="71.6" y1="55.0" x2="83.3" y2="63.9"/><line x1="63.9" y1="63.9" x2="81.7" y2="81.7"/><line x1="55.0" y1="71.6" x2="63.9" y2="83.3"/><line x1="45.2" y1="78.2" x2="57.8" y2="100.0"/><line x1="34.6" y1="83.4" x2="40.2" y2="97.0"/><line x1="23.4" y1="87.2" x2="29.9" y2="111.6"/><line x1="11.8" y1="89.5" x2="13.7" y2="104.1"/><line x1="0.0" y1="90.3" x2="0.0" y2="115.5"/><line x1="-11.8" y1="89.5" x2="-13.7" y2="104.1"/><line x1="-23.4" y1="87.2" x2="-29.9" y2="111.6"/><line x1="-34.6" y1="83.4" x2="-40.2" y2="97.0"/><line x1="-45.1" y1="78.2" x2="-57.7" y2="100.0"/><line x1="-55.0" y1="71.6" x2="-63.9" y2="83.3"/><line x1="-63.9" y1="63.9" x2="-81.7" y2="81.7"/><line x1="-71.6" y1="55.0" x2="-83.3" y2="63.9"/><line x1="-78.2" y1="45.1" x2="-100.0" y2="57.7"/><line x1="-83.4" y1="34.6" x2="-97.0" y2="40.2"/><line x1="-87.2" y1="23.4" x2="-111.6" y2="29.9"/><line x1="-89.5" y1="11.8" x2="-104.1" y2="13.7"/><line x1="-90.3" y1="0.0" x2="-115.5" y2="0.0"/><line x1="-89.5" y1="-11.8" x2="-104.1" y2="-13.7"/><line x1="-87.2" y1="-23.4" x2="-111.6" y2="-29.9"/><line x1="-83.4" y1="-34.6" x2="-97.0" y2="-40.2"/><line x1="-78.2" y1="-45.2" x2="-100.0" y2="-57.8"/><line x1="-71.6" y1="-55.0" x2="-83.3" y2="-63.9"/><line x1="-63.9" y1="-63.9" x2="-81.7" y2="-81.7"/><line x1="-55.0" y1="-71.6" x2="-63.9" y2="-83.3"/><line x1="-45.2" y1="-78.2" x2="-57.8" y2="-100.0"/><line x1="-34.6" y1="-83.4" x2="-40.2" y2="-97.0"/><line x1="-23.4" y1="-87.2" x2="-29.9" y2="-111.6"/><line x1="-11.8" y1="-89.5" x2="-13.7" y2="-104.1"/><line x1="-0.0" y1="-90.3" x2="-0.0" y2="-115.5"/><line x1="11.8" y1="-89.5" x2="13.7" y2="-104.1"/><line x1="23.4" y1="-87.2" x2="29.9" y2="-111.6"/><line x1="34.6" y1="-83.4" x2="40.2" y2="-97.0"/><line x1="45.2" y1="-78.2" x2="57.8" y2="-100.0"/><line x1="55.0" y1="-71.6" x2="63.9" y2="-83.3"/><line x1="63.9" y1="-63.9" x2="81.7" y2="-81.7"/><line x1="71.6" y1="-55.0" x2="83.3" y2="-63.9"/><line x1="78.2" y1="-45.2" x2="100.0" y2="-57.8"/><line x1="83.4" y1="-34.6" x2="97.0" y2="-40.2"/><line x1="87.2" y1="-23.4" x2="111.6" y2="-29.9"/><line x1="89.5" y1="-11.8" x2="104.1" y2="-13.7"/></g><circle r="70" fill="#F1D88E"/><circle r="70" fill="url(#lunar)" filter="url(#aguada)"/><g fill="#D9B46A" opacity=".33" filter="url(#aguada)"><circle cx="-23.1" cy="-20.3" r="10.5"/><circle cx="14.7" cy="-32.2" r="7"/><circle cx="26.6" cy="-5.6" r="8.75"/></g></g><use href="#morcego" x="-12" y="-7" width="24" height="12" transform="translate(150 200) scale(1.4) rotate(-8)" style="--morcego:#1B1426"/><use href="#morcego" x="-12" y="-7" width="24" height="12" transform="translate(470 300) scale(1) rotate(6)" style="--morcego:#1B1426"/><path d="M0,606 C120,599 200,602 270,604 C350,606 430,600 540,606 V760 H0Z" fill="#4E8A5C" opacity="0.95" filter="url(#aguada)"/><path d="M0,606 C120,599 200,602 270,604 C350,606 430,600 540,606" fill="none" stroke="#2A1E24" stroke-width="1.15" filter="url(#mao)"/><use href="#arvore" x="40" y="174" width="420" height="450" style="--copa1:#3F7A5A;--copa2:#78B27A;--copaluz:#D6EBAA;--copabase:#6FA678;--tronco:#7E5244;--jaca:#BFC85E;--lanterna:#F2A03D;--folha:#28503A" /><use href="#gato" x="387" y="533.4" width="101.2" height="123.2" style="" /><use href="#abobora" x="464" y="626" width="48" height="42" style="" /><use href="#abobora" x="98.4" y="626.6" width="43.2" height="37.8" style="--abobora:#F2B544" /></svg></g><g fill="none" filter="url(#mao)"><circle cx="200" cy="280" r="172" stroke="#3B2A33" stroke-width="2"/><circle cx="200" cy="280" r="182" stroke="#E8752F" stroke-width="1.4" stroke-dasharray="2 6"/></g><g fill="#231820" filter="url(#mao)"><ellipse cx="572" cy="10" rx="17" ry="11"/><ellipse cx="628" cy="10" rx="17" ry="11"/></g><g stroke="#F4E9D5" stroke-width="1" opacity=".55"><path d="M566,13 v6 M574,13 v6 M622,13 v6 M630,13 v6"/></g></svg><div class="miolo"><div class="entrada">Entrada · um leitor</div><div class="t1">Edição de</div><div class="t2 caber">Halloween</div><div class="sub">Piquenique literário <br>no Parque da Jaqueira</div><div class="data">Sáb, 31 de outubro · 15h</div></div><div class="canhoto"><div class="rs">R$</div><div class="n30">30</div><div class="vg">20 vagas</div><div class="num">Nº 01 / 20</div></div></div></div><svg style="left:0;top:0" width="1080" height="1350"><use href="#abobora" x="13.2" y="1226.8" width="153.6" height="134.4" style="--abobora:#E8752F" /><use href="#abobora" x="152" y="1274" width="96" height="84" style="--abobora:#F2B544" /><use href="#abobora" x="898.4" y="1215.6" width="163.2" height="142.8" style="--abobora:#E8752F" /><use href="#abobora" x="819.6" y="1273.4" width="100.8" height="88.2" style="--abobora:#C8324F" /><use href="#abobora" x="1006.8" y="1293.2" width="86.4" height="75.6" style="--abobora:#F2B544" /></svg><div class="texto"><div class="icones" style="gap:14px;color:#F4E9D5"><div class="ic"><svg width="56" height="56" viewBox="-30 -30 60 60" style="--linha:#2A1E24"><use href="#ic_ecobag" x="-30" y="-30" width="60" height="60"/></svg><span>Ecobag</span></div><div class="ic"><svg width="56" height="56" viewBox="-30 -30 60 60" style="--linha:#2A1E24"><use href="#ic_marcador" x="-30" y="-30" width="60" height="60"/></svg><span>Marcador</span></div><div class="ic"><svg width="56" height="56" viewBox="-30 -30 60 60" style="--linha:#2A1E24"><use href="#ic_cafe" x="-30" y="-30" width="60" height="60"/></svg><span>Café</span></div><div class="ic"><svg width="56" height="56" viewBox="-30 -30 60 60" style="--linha:#2A1E24"><use href="#ic_bolo" x="-30" y="-30" width="60" height="60"/></svg><span>Bolo</span></div><div class="ic"><svg width="56" height="56" viewBox="-30 -30 60 60" style="--linha:#2A1E24"><use href="#ic_frutinhas" x="-30" y="-30" width="60" height="60"/></svg><span>Frutinhas</span></div><div class="ic"><svg width="56" height="56" viewBox="-30 -30 60 60" style="--linha:#2A1E24"><use href="#ic_livro" x="-30" y="-30" width="60" height="60"/></svg><span>Sorteio de livro</span></div></div><div class="cta">Comunidade no WhatsApp · link na bio</div></div><script>
+document.fonts.ready.then(()=>{document.querySelectorAll('.caber').forEach(e=>{let f=parseFloat(getComputedStyle(e).fontSize);
+  while(e.scrollWidth>e.clientWidth+1&&f>10){f-=1;e.style.fontSize=f+'px'}})});
+</script></div></body></html>

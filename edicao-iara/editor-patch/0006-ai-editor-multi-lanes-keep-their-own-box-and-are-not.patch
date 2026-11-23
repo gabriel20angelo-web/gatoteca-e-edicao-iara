@@ -1,0 +1,56 @@
+From 57f8eeb493fc5d6927edbc8aabe756eeae89562a Mon Sep 17 00:00:00 2001
+From: gabriel20angelo-web <gabriel20angelo-web@users.noreply.github.com>
+Date: Sun, 22 Nov 2026 15:42:47 -0300
+Subject: [PATCH 6/9] ai-editor: multi* lanes keep their own box and are not
+ thinned by cards.per_min
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+---
+ .../ai-editor/skills/style-edit/scripts/plan.py   | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
+
+diff --git a/plugins/ai-editor/skills/style-edit/scripts/plan.py b/plugins/ai-editor/skills/style-edit/scripts/plan.py
+index f57d62a..9bcb87b 100644
+--- a/plugins/ai-editor/skills/style-edit/scripts/plan.py
++++ b/plugins/ai-editor/skills/style-edit/scripts/plan.py
+@@ -491,10 +491,14 @@ def place_pans(cam, duration):
+ PAN_S, PAN_PCT = 1.5, 2.5    # visual.py counts a pan at 2% of the width a second for 1 s
+ 
+ 
+-def safe_box(box, aspect):
+-    """Move then shrink a card box so none of it sits under the app's UI."""
++def safe_box(box, aspect, own=False):
++    """Move then shrink a card box so none of it sits under the app's UI. own=True (a box the user wrote in
++    images.json): kept where it is, only pulled inside the safe edges (no centring, no top-card height cap)."""
+     l, t, r, b = SAFE[aspect]
+     x, y, w, h = box
++    if own:
++        w, h = min(w, 100 - l - r), min(h, 100 - t - b)
++        return [min(max(x, l), 100 - r - w), min(max(y, t), 100 - b - h), w, h]
+     if aspect == "9:16":    # vertical cards are centred on the frame, not on the gap between the UI
+         l = r = max(l, r)
+     # ponytail: fixed height cap, not a head measurement; measure the head if framings vary a lot
+@@ -955,6 +959,11 @@ def thin_cards(cards, duration, cards_cfg):
+     creator's style the user has not changed): every card stays. Each card left out is named on stderr."""
+     cfg = cards_cfg or {}
+     pm = cfg.get("per_min")
++    # pictures the user put together on purpose ("multi*" lanes of images.json) are not thinned
++    pinned = [c for c in cards if str(c.get("lane") or "").startswith("multi")]
++    if pinned and cfg.get("on") is not False:
++        rest = thin_cards([c for c in cards if c not in pinned], duration, cards_cfg)
++        return [c for c in cards if c in pinned or c in rest]
+     cap = 0 if cfg.get("on") is False else None if pm is None else max(0, math.ceil(duration / 60 * pm)) if pm > 0 else 0
+     if cap is None or len(cards) <= cap:
+         return cards
+@@ -1150,7 +1159,7 @@ def _place(images, words, duration, hold, ent, box, aspect):
+             end = min(end, nxt) if nxt is not None else end
+         card.update({"start": start, "end": round(end, 3),
+                      "_word_t": hits[0]["start"], "trigger_word": im["word"], "entrance": im.get("entrance") or ent or FORMAT_ENTRANCE.get(kind, "pop"),
+-                     "box": safe_box(im.get("box") or box or DEFAULT_BOX[aspect], aspect)})
++                     "box": safe_box(im.get("box") or box or DEFAULT_BOX[aspect], aspect, bool(im.get("box") and str(im.get("lane") or "").startswith("multi")))})
+         cards.append(card)
+         after = start
+     return cards
+-- 
+2.53.0.windows.1
+

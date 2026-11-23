@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<!--ACERVO-->
+<style>
+:root{--papel:#ECDFC5;--vinho:#5C2230;--vinho2:#3D1820;--ouro:#C19E5A;--salvia:#6B7E55;--tinta:#2A1418}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;background:var(--papel)}
+.peca{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--vinho2);
+  background:radial-gradient(ellipse 80% 60% at 30% 30%,#F3E8D2 0%,#ECDFC5 55%,#E2D2B3 100%)}
+.peca::before,.peca::after{content:"";position:absolute;inset:0;pointer-events:none;background-size:1080px 1440px;z-index:50}
+.peca::before{background-image:var(--grao-neg);mix-blend-mode:multiply;opacity:.85}
+.peca::after{background-image:var(--grao-pos);mix-blend-mode:plus-lighter;opacity:.6}
+.peca>*{position:absolute}
+svg{overflow:visible}
+
+.carta{left:56px;top:56px;width:500px;height:1300px;filter:drop-shadow(0 22px 34px rgba(42,13,20,.35))}
+
+.col{left:604px;width:420px;top:74px;bottom:72px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start}
+.grupo{display:flex;flex-direction:column;align-items:flex-start}
+.lockup{display:flex;align-items:center;gap:18px}
+.marca{display:flex;flex-direction:column;align-items:flex-start}
+.marca .sobre{font-family:'Cinzel';font-weight:600;font-size:14px;letter-spacing:.4em;color:var(--vinho)}
+.marca .nome{position:relative;margin-top:8px;padding:5px 2px 8px;font-family:'Cormorant';font-style:italic;font-weight:500;font-size:46px;line-height:1;color:var(--vinho2)}
+.marca .nome::before,.marca .nome::after{content:"";position:absolute;left:-6px;right:-14px;height:1px;background:linear-gradient(90deg,var(--vinho2) 0%,var(--vinho2) 82%,transparent);opacity:.7}
+.marca .nome::before{top:0}.marca .nome::after{bottom:0}
+.vezes{font-family:'Cormorant';font-weight:300;font-size:40px;color:var(--vinho);margin-top:22px}
+.logo{width:104px;height:104px;background:var(--logo-tulipa) center/contain no-repeat;margin-top:16px}
+
+.tema{margin-top:0;font-family:'Cinzel';font-weight:600;font-size:15px;letter-spacing:.42em;color:var(--salvia)}
+.lilith{margin-top:4px;margin-left:-8px;font-family:'Italiana';font-size:184px;line-height:.92;color:var(--vinho);letter-spacing:-.01em}
+.sub{margin-top:18px;font-family:'Cormorant';font-style:italic;font-weight:500;font-size:36px;line-height:1.12;color:var(--vinho2)}
+.fio{margin:0 0 26px;display:flex;align-items:center;gap:14px;color:var(--ouro)}
+.fio i{display:block;width:120px;height:1px;background:currentColor}
+.livre{font-family:'Cormorant';font-weight:600;font-size:46px;line-height:1.05;color:var(--vinho2)}
+.marcada{position:relative;display:inline-block;padding:0 4px;margin-left:12px}
+.marcada .gi{position:absolute;left:-8%;top:-26%;width:118%;height:152%;background:var(--salvia);opacity:.9;
+  -webkit-mask:var(--G-circulo) center/100% 100% no-repeat;mask:var(--G-circulo) center/100% 100% no-repeat}
+.info{margin-top:34px;font-family:'Cinzel';font-weight:600;font-size:21px;letter-spacing:.1em;line-height:1.7;color:var(--vinho2)}
+.info span{color:var(--vinho)}
+.desc{margin-top:20px;font-family:'Cormorant';font-weight:500;font-size:25px;line-height:1.25;color:rgba(61,24,32,.82);max-width:400px}
+.rodape{}
+.parceria{font-family:'Cormorant';font-style:italic;font-weight:500;font-size:23px;line-height:1.25;color:var(--vinho2)}
+.cta{margin-top:12px;font-family:'Cinzel';font-weight:600;font-size:13.5px;letter-spacing:.24em;color:var(--salvia)}
+</style></head>
+<body><div class="peca">
+
+<!-- elemento grande e transparente: aneis da lua negra saindo da carta para o papel -->
+<svg style="left:0;top:0" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <g fill="none" stroke="#5C2230" transform="translate(306 376)">
+    <circle r="452" stroke-width="1.1" opacity=".16"/>
+    <circle r="466" stroke-width=".6" opacity=".12"/>
+    <circle r="560" stroke-width="1" stroke-dasharray="2 10" opacity=".16"/>
+    <g id="raios-fundo" stroke-width="1" opacity=".1"></g>
+  </g>
+</svg>
+
+<svg class="carta" viewBox="0 0 500 1300">
+  <defs>
+    <filter id="mao" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="aguada" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="3" seed="5" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="2" seed="3" result="m"/>
+      <feColorMatrix in="m" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.3 1.3" result="ma"/>
+      <feComposite in="d" in2="ma" operator="in"/>
+    </filter>
+    <filter id="brilho" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+    <linearGradient id="noite" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#47202B"/><stop offset=".45" stop-color="#3D1820"/><stop offset="1" stop-color="#2A0D14"/></linearGradient>
+    <radialGradient id="halo" r=".5"><stop offset=".55" stop-color="#C19E5A" stop-opacity=".22"/><stop offset="1" stop-color="#C19E5A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="pele" cx="60%" cy="40%" r="70%"><stop offset="0" stop-color="#F2E3D2"/><stop offset="1" stop-color="#E2C8B2"/></radialGradient>
+    <pattern id="ceu" width="46" height="52" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="10" r="1" fill="#C19E5A" opacity=".55"/><circle cx="31" cy="36" r=".8" fill="#EDDFC2" opacity=".45"/></pattern>
+    <clipPath id="janela"><path d="M19,1300 V250 A231,231 0 0 1 481,250 V1300 Z"/></clipPath>
+    <path id="br" d="M0,-10 Q0,0 10,0 Q0,0 0,10 Q0,0 -10,0 Q0,0 0,-10Z"/>
+    <g id="pena"><path d="M0,0 C-7,10 -7,26 0,34 C7,26 7,10 0,0Z"/></g>
+  </defs>
+
+  <path d="M0,1300 V250 A250,250 0 0 1 500,250 V1300 Z" fill="url(#noite)"/>
+
+  <g clip-path="url(#janela)">
+    <rect x="0" y="0" width="500" height="1300" fill="url(#ceu)"/>
+
+    <!-- a lua negra com aureola -->
+    <g transform="translate(250 320)">
+      <circle r="250" fill="url(#halo)"/>
+      <g id="raioslua" stroke="#C19E5A" stroke-width=".8" opacity=".6"></g>
+      <circle r="156" fill="#1B080D"/>
+      <path d="M-118,-102 A156,156 0 0 0 -118,102 A170,170 0 0 1 -118,-102Z" fill="#5A2A3A" opacity=".55" filter="url(#aguada)"/>
+      <g fill="none" stroke="#C19E5A">
+        <circle r="156" stroke-width="1.4"/>
+        <circle r="168" stroke-width=".7" opacity=".8"/>
+        <circle r="178" stroke-width=".9" stroke-dasharray="1.5 6" opacity=".8"/>
+      </g>
+    </g>
+
+    <!-- estrelas -->
+    <g fill="#C19E5A">
+      <use href="#br" transform="translate(70 170) scale(.8)"/><use href="#br" transform="translate(436 160) scale(.65)"/>
+      <use href="#br" transform="translate(110 92) scale(.42)"/><use href="#br" transform="translate(400 86) scale(.42)"/>
+      <use href="#br" transform="translate(452 560) scale(.5)"/><use href="#br" transform="translate(48 600) scale(.45)"/>
+    </g>
+    <g fill="#EDDFC2"><use href="#br" transform="translate(250 48) scale(.7)"/></g>
+
+    <!-- ASAS de coruja, caidas como no relevo de Burney (penas geradas no script) -->
+    <g id="asa">
+      <path d="M182,500 C150,420 90,370 44,388 C30,400 34,440 40,520 L168,620 Z" fill="#5C2230"/>
+      <g id="penas"></g>
+      <path d="M184,500 C152,424 92,372 46,388 C34,394 32,410 38,424" fill="none" stroke="#C19E5A" stroke-width="1.4" stroke-linecap="round" filter="url(#mao)"/>
+    </g>
+    <use href="#asa" transform="translate(520 0) scale(-1 1)"/>
+
+    <!-- cabelo, por tras do rosto, caindo pelas costas -->
+    <path d="M298,252 C302,230 292,210 272,202 C240,190 198,198 180,228 C160,260 158,302 168,342 C176,374 170,410 156,446
+             C138,494 110,540 102,600 C94,660 116,720 106,780 C98,830 76,862 84,904 C104,882 120,852 132,822
+             C150,772 140,722 150,672 C160,622 180,582 196,542 C210,502 230,472 246,442 C256,422 262,402 264,382
+             C266,352 270,322 278,300 C284,280 292,264 298,252 Z" fill="#14050A"/>
+    <g fill="none" stroke="#C19E5A" stroke-width=".9" stroke-linecap="round" opacity=".85" filter="url(#mao)">
+      <path d="M270,214 C236,214 206,236 196,276 C186,318 196,360 184,404 C170,454 140,500 128,560 C118,620 136,680 124,750 C116,800 100,840 98,880"/>
+      <path d="M246,236 C222,250 214,286 214,322 C214,370 206,412 190,452 C172,500 150,560 148,620"/>
+      <path d="M284,236 C262,240 242,262 236,296"/>
+      <path d="M176,300 C166,350 178,398 160,450 C146,490 126,530 118,580"/>
+    </g>
+    <g fill="#EDDFC2"><use href="#br" transform="translate(98 884) scale(.45)"/><use href="#br" transform="translate(148 626) scale(.35)"/><use href="#br" transform="translate(118 584) scale(.3)"/></g>
+
+    <!-- VESTIDO de noite estrelada -->
+    <path d="M166,528 C200,544 236,588 266,606 C298,590 334,548 370,534 C382,600 392,700 404,820 C414,960 428,1140 444,1300 L84,1300 C98,1140 112,960 124,820 C136,700 150,600 166,528Z" fill="#4A1B27"/>
+    <path d="M166,528 C200,544 236,588 266,606 C298,590 334,548 370,534 C382,600 392,700 404,820 C414,960 428,1140 444,1300 L84,1300 C98,1140 112,960 124,820 C136,700 150,600 166,528Z" fill="url(#ceu)"/>
+    <g fill="none" stroke="#C19E5A" stroke-width="1.1" stroke-linecap="round" filter="url(#mao)">
+      <path d="M166,528 C150,600 136,700 124,820 C112,960 98,1140 84,1300"/>
+      <path d="M370,534 C382,600 392,700 404,820 C414,960 428,1140 444,1300"/>
+      <path d="M232,620 C224,760 210,960 196,1300 M300,622 C310,760 324,960 340,1300" stroke-width=".7" opacity=".6"/>
+    </g>
+
+    <!-- pele: rosto, pescoco e colo -->
+    <path d="M298,252 C308,258 314,276 314,296 C314,302 312,306 313,310 C318,322 326,336 332,346 C334,350 331,354 325,354
+             C322,354 320,356 321,360 C325,362 327,366 324,369 C322,370 320,371 322,373 C325,376 324,381 319,383
+             C316,385 316,388 318,392 C320,398 318,406 310,410 C300,413 292,412 286,414
+             C288,430 290,452 294,478 C312,494 340,506 366,516 C372,522 372,530 370,534
+             C334,548 298,590 266,606 C236,588 200,544 166,528 C166,520 170,514 176,512 C204,504 230,490 246,470
+             C250,440 252,410 264,382 C266,352 270,322 278,300 C284,280 292,264 298,252Z" fill="url(#pele)"/>
+    <g fill="#D68E9A" opacity=".35" filter="url(#brilho)"><ellipse cx="300" cy="350" rx="11" ry="7"/></g>
+    <g fill="#A97E70" opacity=".38" filter="url(#brilho)"><ellipse cx="276" cy="424" rx="18" ry="9"/></g>
+    <g fill="none" stroke="#2A0D14" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" filter="url(#mao)">
+      <path d="M298,252 C308,258 314,276 314,296 C314,302 312,306 313,310 C318,322 326,336 332,346 C334,350 331,354 325,354
+               C322,354 320,356 321,360 C325,362 327,366 324,369 C322,370 320,371 322,373 C325,376 324,381 319,383
+               C316,385 316,388 318,392 C320,398 318,406 310,410 C300,413 292,412 286,414 C288,430 290,452 294,478"/>
+      <path d="M294,478 C312,494 340,506 366,516 C372,522 372,530 370,534"/>
+      <path d="M246,470 C230,490 204,504 176,512 C170,514 166,520 166,528"/>
+      <path d="M166,528 C200,544 236,588 266,606 C298,590 334,548 370,534" stroke="#C19E5A" stroke-width="1.2"/>
+      <path d="M306,411 C292,409 279,401 270,390" stroke-width=".9" opacity=".65"/>
+      <!-- olho fechado, sobrancelha, labio -->
+      <path d="M289,318 C294,323 301,324 307,320"/>
+      <path d="M292,322 l-2,4 M297,324 l-1,4.5 M302,324 l0,4.5" stroke-width=".9"/>
+      <path d="M287,304 C294,299 302,299 309,303" stroke-width="1.1"/>
+      <path d="M313,372 L321,372" stroke-width="1"/>
+      <path d="M262,500 C252,506 246,510 238,512 M290,500 C300,506 308,510 316,512" stroke-width=".8" opacity=".55"/>
+    </g>
+
+    <!-- mecha da frente, sobre a tempora -->
+    <path d="M298,252 C290,262 282,280 278,300 C276,316 280,330 284,338 C276,318 280,290 292,268Z" fill="#14050A"/>
+
+    <!-- diadema de lua -->
+    <g transform="translate(262 210) rotate(-14)" fill="none" stroke="#C19E5A" stroke-width="1.2" filter="url(#mao)">
+      <path d="M-14,-6 A14,14 0 1 0 6,-16 A11,11 0 1 1 -14,-6Z" fill="#C19E5A"/>
+    </g>
+
+    <!-- SERPENTE: espiral descendo pelo vestido; a cabeca sobe e sussurra perto do rosto -->
+    <g id="serpente" filter="url(#mao)"></g>
+    <g transform="translate(353 488) rotate(-17) scale(1.32)" filter="url(#mao)">
+      <path d="M-9,2 C-12,-6 -11,-14 -7,-20 C-4,-26 -2,-29 0,-29 C2,-29 4,-26 7,-20 C11,-14 12,-6 9,2 Z" fill="#8B9C75" stroke="#C19E5A" stroke-width=".9"/>
+      <path d="M-4,-6 L0,-10 L4,-6 M-3,-1 L0,-4 L3,-1" fill="none" stroke="#4A5C36" stroke-width=".7" opacity=".8"/>
+      <ellipse cx="-5" cy="-15" rx="1.9" ry="2.2" fill="#EDDFC2"/><ellipse cx="-4.8" cy="-15" rx=".6" ry="1.7" fill="#14050A"/>
+      <circle cx="-1.6" cy="-25" r=".6" fill="#14050A"/>
+      <path d="M0,-29 L0,-37 M0,-37 l-3,-4.5 M0,-37 l3,-4.5" stroke="#D0607F" stroke-width="1" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <!-- duas corujas aos pes -->
+    <g id="coruja" transform="translate(98 1178)">
+      <path d="M-26,26 C-32,-4 -24,-30 0,-34 C24,-30 32,-4 26,26 C14,36 -14,36 -26,26Z" fill="#5C2230" filter="url(#aguada)"/>
+      <g fill="none" stroke="#C19E5A" stroke-width="1.2" stroke-linecap="round" filter="url(#mao)">
+        <path d="M-26,26 C-32,-4 -24,-30 0,-34 C24,-30 32,-4 26,26 C14,36 -14,36 -26,26Z"/>
+        <path d="M-20,-28 L-24,-42 L-10,-33 M20,-28 L24,-42 L10,-33"/>
+        <path d="M-22,0 C-18,12 -16,20 -14,28 M22,0 C18,12 16,20 14,28" stroke-width=".9"/>
+        <path d="M-6,8 q3,3 6,0 q3,3 6,0 M-9,15 q3,3 6,0 q3,3 6,0 q3,3 6,0" stroke-width=".8"/>
+        <path d="M-6,32 v6 M6,32 v6" stroke-width="1.4"/>
+      </g>
+      <circle cx="-10" cy="-14" r="9" fill="#EDDFC2"/><circle cx="10" cy="-14" r="9" fill="#EDDFC2"/>
+      <circle cx="-10" cy="-14" r="9" fill="none" stroke="#C19E5A" stroke-width="1.2"/><circle cx="10" cy="-14" r="9" fill="none" stroke="#C19E5A" stroke-width="1.2"/>
+      <circle cx="-9" cy="-13" r="3.6" fill="#14050A"/><circle cx="9" cy="-13" r="3.6" fill="#14050A"/>
+      <path d="M0,-8 L-3,-3 L0,0 L3,-3Z" fill="#C19E5A"/>
+    </g>
+    <use href="#coruja" transform="translate(304 0) scale(1 1)"/>
+    <path d="M30,1222 C120,1212 200,1220 250,1218 C320,1216 400,1212 470,1222" fill="none" stroke="#C19E5A" stroke-width="1.6" filter="url(#mao)"/>
+  </g>
+
+  <!-- molduras -->
+  <g fill="none" stroke="#C19E5A" filter="url(#mao)">
+    <path d="M12,1300 V250 A238,238 0 0 1 488,250 V1300" stroke-width="1.6"/>
+    <path d="M19,1300 V250 A231,231 0 0 1 481,250 V1300" stroke-width=".7"/>
+  </g>
+</svg>
+
+<div class="col">
+  <div class="lockup">
+    <div class="marca"><div class="sobre">Clube do livro</div><div class="nome">Entrelinhas</div></div>
+    <div class="vezes">×</div>
+    <div class="logo"></div>
+  </div>
+
+  <div class="grupo">
+  <div class="tema">Tema do encontro</div>
+  <div class="lilith">Lilith</div>
+  <div class="sub">A primeira mulher,<br>a que não se curvou</div>
+  <div class="desc">Uma conversa sobre o mito e o que ele<br>ainda diz sobre desejo, recusa e sombra</div>
+  </div>
+  <div class="grupo">
+  <div class="fio"><i></i><svg width="14" height="14" viewBox="-10 -10 20 20"><path d="M0,-10 Q0,0 10,0 Q0,0 0,10 Q0,0 -10,0 Q0,0 0,-10Z" fill="currentColor"/></svg><i></i></div>
+  <div class="livre">Aberto e <span class="marcada">gratuito<i class="gi"></i></span></div>
+  <div class="info">Quarta, 28 de outubro<br>18h <span>·</span> UNICAP, bloco B</div>
+  </div>
+  <div class="rodape">
+    <div class="parceria">Em parceria com a TULIPA, extensão<br>em psicologia analítica da UNICAP</div>
+    <div class="cta">Comunidade no WhatsApp · link na bio</div>
+  </div>
+</div>
+
+</div>
+<script>
+const rl=document.getElementById('raioslua');
+for(let a=0;a<360;a+=6){const t=a*Math.PI/180,l=(a%18===0)?232:206;
+  rl.insertAdjacentHTML('beforeend',`<line x1="${Math.cos(t)*188}" y1="${Math.sin(t)*188}" x2="${Math.cos(t)*l}" y2="${Math.sin(t)*l}"/>`)}
+const NS='http://www.w3.org/2000/svg';
+function add(par,html){par.insertAdjacentHTML('beforeend',html)}
+// penas: pena(x,y,angulo,comprimento,largura)
+const pg=document.getElementById('penas');
+function pena(x,y,a,L,w,cor){add(pg,`<g transform="translate(${x} ${y}) rotate(${a})"><path d="M0,0 C${-w},${L*.2} ${-w},${L*.8} 0,${L} C${w},${L*.8} ${w},${L*.2} 0,0Z" fill="${cor}" stroke="#C19E5A" stroke-width=".9" opacity=".98"/><path d="M0,${L*.1} L0,${L*.9}" stroke="#C19E5A" stroke-width=".55" opacity=".55"/></g>`)}
+const fileira=(n,x0,y0,x1,y1,L0,L1,a0,a1,w)=>{for(let i=0;i<n;i++){const t=i/(n-1);pena(x0+(x1-x0)*t,y0+(y1-y0)*t,a0+(a1-a0)*t,L0+(L1-L0)*t,w,i%2?'#5C2230':'#662A3A')}};
+fileira(7,168,600,60,520,330,390,-4,3,13);
+fileira(6,172,540,56,452,190,150,-2,8,12.5);
+fileira(7,176,512,50,412,92,80,0,12,10.5);
+fileira(7,180,498,62,394,56,50,6,18,9);
+// serpente: tubos afilados ao longo de curvas (so os trechos na frente do corpo)
+const sp=document.getElementById('serpente');
+function tubo(d,w0,w1){const p=document.createElementNS(NS,'path');p.setAttribute('d',d);sp.appendChild(p);
+  const L=p.getTotalLength(),N=48,E=[],D=[],C=[];
+  for(let i=0;i<=N;i++){const s=L*i/N,a=p.getPointAtLength(Math.max(0,s-.6)),b=p.getPointAtLength(Math.min(L,s+.6)),c=p.getPointAtLength(s);
+    let tx=b.x-a.x,ty=b.y-a.y,m=Math.hypot(tx,ty)||1;tx/=m;ty/=m;const w=(w0+(w1-w0)*i/N)/2;
+    E.push([c.x-ty*w,c.y+tx*w]);D.push([c.x+ty*w,c.y-tx*w]);C.push([c.x,c.y,tx,ty,w]);}
+  sp.removeChild(p);
+  const pts=E.concat(D.reverse()).map(q=>q[0].toFixed(1)+','+q[1].toFixed(1)).join(' L');
+  add(sp,`<path d="M${pts}Z" fill="#8B9C75"/>`);
+  // barriga mais clara de um lado
+  add(sp,`<path d="M${E.map(q=>q[0].toFixed(1)+','+q[1].toFixed(1)).join(' L')}" fill="none" stroke="#B5C29C" stroke-width="2.4" opacity=".7"/>`);
+  // escamas em V
+  let esc='';for(let i=2;i<C.length-1;i+=2){const [x,y,tx,ty,w]=C[i];const k=w*.62;
+    esc+=`M${(x-ty*k-tx*k*.6).toFixed(1)},${(y+tx*k-ty*k*.6).toFixed(1)} L${x.toFixed(1)},${y.toFixed(1)} L${(x+ty*k-tx*k*.6).toFixed(1)},${(y-tx*k-ty*k*.6).toFixed(1)} `}
+  add(sp,`<path d="${esc}" fill="none" stroke="#4A5C36" stroke-width=".8" opacity=".75"/>`);
+  add(sp,`<path d="M${pts}Z" fill="none" stroke="#C19E5A" stroke-width="1"/>`);
+}
+tubo('M353,486 C360,508 376,530 372,558 C362,630 214,690 144,666',12,19);
+tubo('M400,766 C352,852 204,894 120,870',18,16);
+tubo('M411,908 C372,992 212,1034 108,1014',15,12);
+tubo('M112,1012 C92,1022 78,1044 79,1066 C80,1082 90,1092 101,1090',12,1.6);
+const rf=document.getElementById('raios-fundo');
+for(let a=0;a<360;a+=5){const t=a*Math.PI/180,l=(a%15===0)?520:496;
+  rf.insertAdjacentHTML('beforeend',`<line x1="${Math.cos(t)*476}" y1="${Math.sin(t)*476}" x2="${Math.cos(t)*l}" y2="${Math.sin(t)*l}"/>`)}
+</script>
+</body></html>

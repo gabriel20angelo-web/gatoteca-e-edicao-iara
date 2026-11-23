@@ -1,0 +1,31 @@
+From e29bcb59e83788da7ec24525184e75a65a4715a6 Mon Sep 17 00:00:00 2001
+From: gabriel20angelo-web <gabriel20angelo-web@users.noreply.github.com>
+Date: Fri, 20 Nov 2026 13:10:59 -0300
+Subject: [PATCH 4/9] cut: secao Blooper no SKILL.md
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+---
+ plugins/ai-editor/skills/cut/SKILL.md | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/plugins/ai-editor/skills/cut/SKILL.md b/plugins/ai-editor/skills/cut/SKILL.md
+index a87dccb..c801e02 100644
+--- a/plugins/ai-editor/skills/cut/SKILL.md
++++ b/plugins/ai-editor/skills/cut/SKILL.md
+@@ -158,6 +158,13 @@ cut first", say they can ask for the style. Never start style-edit on your own.
+ the page opens, start `visual-prep` in the background; its `motion_briefs`: a background
+ `clip-builder` each at once; say a `motion_note` once.
+ 
++## Blooper
++
++When the user asks to keep a mistake as a blooper, that mistake becomes a span of its own (cut at both ends,
++followed by the right take), and `edits/<name>/bloopers.json` gets the take's seconds:
++`{"items": [{"start": s, "end": e}]}`. `render.py` then renders that span black and white, with the voice 22%
++lower at the same length (a span only partly inside an item is skipped, with a warning). At most one per video.
++
+ ## If a script stops
+ 
+ | message | do |
+-- 
+2.53.0.windows.1
+

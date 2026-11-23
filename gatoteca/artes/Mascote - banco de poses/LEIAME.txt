@@ -1,0 +1,87 @@
+BANCO DE POSES DO GATO · Clube do Livro Entrelinhas
+
+Mascote: o frajola de pelúcia de traços (rodada 3, versão A).
+Cores: preto #2A2226, branco #F6F0E4, olhos #C9D86A, orelha #E99AA6, feijõezinhos #F0A3B0.
+Motor: C:\Users\gabri\clube_entrelinhas\mascote\gato_banco.py  (py gato_banco.py [códigos]); cada pose é uma função @pose.
+Pastas: «png (fundo transparente)» para colar em qualquer arte; «svg (para o Canva)» para ampliar sem perder.
+
+DESCANSO
+  01  Sentado                    A pose-base, de pudim, olhando para quem lê. Serve para assinatura, perfil e quando o post só precisa da presença dele.
+  02  Pão                        Deitado de pão, patinhas escondidas, olhos de contentamento. Bom para «aconchego», leitura calma, aviso de pausa.
+  03  Bolinha dormindo           Enrolado como uma bolinha, o rabo cobrindo o queixo. Para «boa noite», «até o próximo encontro», textos de descanso.
+  04  Barriga pra cima           De barriga pra cima, patinhas no ar e os feijõezinhos à mostra. O post de carinho, de alegria boba, de «chegou o livro».
+  05  Sentado largado            Sentado «de gente», barriguinha redonda e solas viradas pra frente. A pose mais dele: para «chegou sexta», «terminei o livro», conversa.
+
+MOVIMENTO
+  06  Em pé comemorando          Em pé nas patas de trás, bracinhos pra cima, barriguinha à mostra. Anúncio, conquista, «inscrições abertas».
+  07  De lado andando            De perfil, andando com o rabo em gancho e o rosto virado pra quem lê. Para «a caminho do encontro», transições, setas de «arraste».
+  08  Olhando pra trás           De costas, virando a cabeça por cima do ombro. Para «e você, já leu?», chamadas de continuação, «deixa eu te contar».
+  09  Espreguiçando              Bumbum pra cima, patas da frente esticadas, bocejo. Para «bom dia», «segunda-feira», começo de leitura.
+  10  Deitado esticado           Deitado de lado, comprido, a cabeça apoiada nas patinhas. Para «domingo», «tempo de ler», textos longos.
+
+SEGURANDO
+  11  Lendo                      Sentado largado lendo um livro de capa vermelha, olhos nas páginas e as solas aparecendo. O mascote em serviço: indicação de leitura, «livro do mês».
+  12  Abraçando o livro          Em pé, abraçado num livro, olhos fechados de quem ama a história. Para «livro favorito», resenha, «a gente amou».
+  13  Xícara de café             Sentado largado com a xícara quentinha nas duas patas. Para os encontros, o café do clube, «bora conversar».
+  14  Cartaz em branco           Em pé segurando um cartaz vazio por cima da cabeça: é o espaço para escrever o recado do post (data, livro, aviso).
+  15  Com a lanterna             Em pé com a lanterna acesa numa pata e acenando com a outra. Para «vem que o encontro é hoje à noite», Halloween, guia de leitura.
+
+ESCONDIDO
+  16  Espiando atrás do livro    Só olhos, orelhas e patinhas aparecendo por cima de um livro em pé. Para spoiler, mistério, «adivinha o próximo livro».
+  17  Pendurado na borda         Pendurado pelas patinhas na borda de um livro deitado, barriguinha e solas no ar. Para «quase acabando», «segura aí», suspense.
+  18  Na ecobag                  Saindo de dentro da ecobag do clube. Para divulgar o kit (ecobag, marcador), sorteio, «vem com a gente».
+  19  Espiando de baixo          Só orelhas, olhos e patinhas subindo pela borda de baixo. Sticker de canto, fim de carrossel, «tô de olho».
+
+HUMORES
+  20  Feliz                      Olhinhos fechados de alegria, boquinha aberta, rabo pra cima. Comemorações, boas notícias, «obrigado».
+  21  Assustado                  Pelo todo arrepiado (o pelo de risquinhos eriça de verdade), olhos arregalados, orelhas baixas, gota de suor. Para «prazo acabando», «últimas vagas», susto.
+  22  Bravo                      Orelhas pra trás, chiando de dentinhos, marca de raiva. Para «spoiler não!», regras do clube, humor.
+  23  Triste                     Orelhas caídas, lágrima e nuvenzinha de chuva. Para «acabou o livro», «encontro adiado», fim de série.
+  24  Curioso                    Cabeça inclinada, olhar de lado e um ponto de interrogação. Para perguntas, enquetes, «qual livro vocês querem?».
+  25  Sonolento                  Bocejo enorme de olhos espremidos. Para «leitura até tarde», «modo sono», posts da noite.
+  26  Apaixonado                 Olhos de coração, bochechas vermelhas e coraçõezinhos flutuando. Para livro favorito, depoimentos, «a gente ama vocês».
+
+ACESSÓRIOS
+  27  De óculos                  Óculos redondos dourados de leitor, ao lado de uma pilha de livros. O jeito «professor» do clube: indicação, curiosidade, «você sabia?».
+  28  Chapéu de bruxa            Chapéu de bruxa roxo com faixa laranja e uma abóbora ao lado. Halloween, edições temáticas, leitura de terror.
+  29  De lenço e óculos escuros  Lenço de bolinhas amarrado no queixo e óculos escuros de gatinho: a diva. Para fofoca literária, «spoiler? não sei de nada», looks de evento.
+  30  Coroado                    Coroinha dourada, capa vermelha e gola de arminho: o rei (ou rainha) do clube. Para «leitor do mês», vencedor do sorteio, aniversário do clube.
+  31  Poeta de boina             Boina vermelha e cachecol listrado: o poeta. Para poesia, citações, sarau, leitura em voz alta.
+  32  De gala                    Gravata-borboleta de bolinhas e cara de satisfeito. Para eventos especiais, convite formal, encerramento de ciclo.
+  33  Ouvindo audiolivro         Fone de ouvido e notas musicais em volta. Para audiolivro, podcast, playlist de leitura.
+  34  Com florzinha              Florzinha rosa atrás da orelha e bochechas coradas. Para primavera, carinho, «mês das mulheres», delicadeza.
+
+OBJETOS
+  35  No alto da pilha           Sentado no topo de uma pilha de livros coloridos. Para «metas de leitura», listas, «quantos livros você leu?».
+  36  Comendo docinhos           Brigadeiro na boca, pratinho de doces do lado. Para o lanche do encontro, «tem docinho!», Dia das Crianças.
+  37  Com cupcake                Cupcake de cereja nas duas patinhas. Para aniversário, comemoração, café com bolo do encontro.
+  38  Com a bússola              Bússola dourada nas patas, olhando para ela. Para aventura, «qual o próximo destino de leitura?», roteiros.
+  39  Mago do castiçal           Chapéu de mago azul de estrelas e um castiçal de três velas acesas. Para mistério, fantasia, encontros à noite.
+  40  Bola de cristal            As patinhas sobre uma bola de cristal que brilha. Para «previsões do mês», «adivinha o livro», sorteios.
+  41  Tirando cartas             Leque de três cartas de tarô (lua, sol, estrela) na pata e uma piscadinha. Para enquetes, «escolha uma carta», dinâmicas.
+  42  Brincando com novelo       De barriga pra cima segurando um novelo vermelho, o fio solto pela barriga. Para fim de semana, preguiça boa, «modo brincadeira».
+  43  Escrevendo                 Escrevendo com pena numa folha, tinteiro do lado. Para «escreva com a gente», resenhas, oficinas de escrita.
+  44  Detetive de lupa           Lupa no olho direito, que aparece gigante através da lente. Para «lendo nas entrelinhas», pistas, livro de mistério.
+  45  Na chuva                   Em pé debaixo de um guarda-chuva vermelho, gotas em volta. Para dia de chuva em Recife, «encontro mantido», aconchego.
+  46  Dentro da abóbora          Saindo de dentro de uma abóbora de Halloween entalhada e acesa. Para a edição de Halloween, convite de festa, «doces ou travessuras».
+
+COM AMIGOS
+  47  Com o filhote              Ele e um filhotinho laranja que olha pra cima, com um coração entre os dois. Para família, «traga um amigo», cuidado.
+  48  A turma                    Três gatos lado a lado: ele no meio, um cinza contente e um laranja feliz. Para «somos um clube», boas-vindas, fotos de grupo.
+  49  Juntinhos                  Dois gatos de bochecha colada, o frajola e um cinza, com um coração em cima. Para amizade, parceria (TULIPA!), «obrigado por virem».
+  50  Hora da história           Lendo em voz alta para dois filhotes que escutam. Para leitura coletiva, clube infantil, «roda de leitura».
+
+PENSANDO E BRINCANDO
+  51  Pensando                   Patinha no queixo, olhar pro alto e um balão de pensamento com um livro dentro. Para perguntas, reflexões, «o que você achou?».
+  52  Teve uma ideia             Lâmpada acesa sobre a cabeça e a patinha erguida. Para dicas, «ideia de leitura», sugestões do público.
+  53  Olhando as estrelas        Olhando pra cima, para a lua e uma constelação. Para «boa noite», poesia, sonhos, leitura de fantasia.
+  54  Dançando                   Dançando numa perna só, bracinhos abertos, notas no ar. Para festa, sexta-feira, comemoração, «bora!».
+  55  Caçando mariposa           Pulando com os bracinhos pra cima atrás de uma mariposa. Para curiosidade, «corre que acaba», energia.
+  56  Na caixa                   Dentro de uma caixa de papelão escrita «livros», as abas abertas. Para chegada de livros, doações, mudança, «caixa de surpresas».
+
+FIGURAS DE POST
+  57  Lilith de vestido          De pé, gigante, num vestido longo de noite com mangas e patas brancas na cintura; rosto de Bastet (olhos amendoados meio fechados, delineado, sem bochecha rosada: a versão «menos fofa»), lua crescente entre as orelhas, asas de coruja caídas, serpente enrolada no vestido e três corujinhas no chão. Feita para o post de Lilith (post_lilith5.py), que ele ADOROU; serve para mito, sombra, temas noturnos e qualquer arte em arco de tarô.
+  58  Carta de Lilith em arco    A carta inteira, sem o texto: arco vinho com moldura dupla de ouro, céu de pontinhos, lua clara com raios atrás da cabeça e a Lilith de vestido (57) com as corujinhas. Para stories, capa de destaque, ou para pôr outro texto ao lado no Canva.
+  59  Rosto de Bastet            Só a cabeça da versão «menos fofa»: olhos amendoados meio fechados, pupila em fenda, delineado de Bastet, sem bochecha rosada, com a lua crescente entre as orelhas. Para mito, mistério, ironia, «leitura de sombra», avatar sério do clube.
+  60  Corujinha de ouro          Corujinha no traço de ouro da arte 02 (corpo vinho, olhos creme e âmbar). Enfeite noturno: sabedoria, Lilith, leitura de madrugada; fica bem em par ou trio no pé de uma moldura.
+  61  Asas de coruja caídas      Par de asas de coruja caídas (Relevo de Burney), penas vinho com contorno de ouro. Vai ATRÁS de qualquer figura (gato, pessoa, livro) para dar ar de ícone; foi usado atrás da 57.

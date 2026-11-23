@@ -1,0 +1,9 @@
+Keyboard Soundpack 1 - Typing and Single Keystrokes (unicaegames)
+URL: https://opengameart.org/content/keyboard-soundpack-1-typing-and-single-keystrokes
+Zip: https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip
+Licenca: CC0 (dominio publico)
+Originais em LIB\_downloads\keyboard-soundpack-1\Single Keys\
+tecla-1.wav <- keypress-004.wav
+tecla-2.wav <- keypress-014.wav
+tecla-3.wav <- keypress-026.wav
+Conversao: highpass 300, lowpass 9000, silenceremove, atrim 0.25, fade 0.07, 48 kHz mono

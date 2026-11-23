@@ -1,0 +1,21 @@
+{"fps": 29.97,
+ "blocos": [
+  {"nome": "pedacos", "tipo": "pecas", "t0": 2.14, "t1": 3.48, "texto": "pedaços", "fonte": "PlayfairItalic.ttf", "peso": 600, "tam": 210, "cor": "#FFFFFF", "y": 58},
+  {"nome": "monstro", "tipo": "linhas", "t0": 13.82, "t1": 16.68, "y_top": 52, "saida": 0.28, "paginas": [
+    {"ate": 16.68, "linhas": [
+      {"ts": [13.86, 13.96, 14.08], "texto": "E o que,", "fonte": "Quicksand.ttf", "peso": 600, "tam": 68},
+      {"t": 14.26, "texto": "afinal,", "fonte": "PlayfairItalic.ttf", "peso": 500, "tam": 100},
+      {"ts": [14.80, 14.86, 14.96], "texto": "faz de alguém", "fonte": "Quicksand.ttf", "peso": 600, "tam": 72},
+      {"ts": [15.14, 15.30], "texto": "um monstro?", "fonte": "PlayfairItalic.ttf", "peso": 700, "tam": 156, "cor": "#FFC4D6", "soco": true}]}]},
+  {"nome": "reconhecer", "tipo": "linhas", "t0": 31.90, "t1": 38.62, "y_top": 49, "saida": 0.26, "paginas": [
+    {"ate": 35.76, "linhas": [
+      {"ts": [31.94, 31.98, 32.10], "texto": "O que é", "fonte": "Quicksand.ttf", "peso": 600, "tam": 66},
+      {"ts": [32.26, 32.46], "texto": "tão difícil", "fonte": "PlayfairItalic.ttf", "peso": 600, "tam": 124, "cor": "#FFC4D6"},
+      {"t": 32.88, "texto": "reconhecer", "fonte": "Quicksand.ttf", "peso": 600, "tam": 72},
+      {"ts": [33.84, 34.08], "texto": "a monstruosidade", "fonte": "PlayfairItalic.ttf", "peso": 600, "tam": 108},
+      {"ts": [34.82, 35.10, 35.24], "texto": "em nós mesmos", "fonte": "Quicksand.ttf", "peso": 600, "tam": 72}]},
+    {"ate": 38.62, "linhas": [
+      {"ts": [35.78, 35.94, 36.14], "texto": "e tão fácil", "fonte": "PlayfairItalic.ttf", "peso": 600, "tam": 128, "cor": "#FFC4D6"},
+      {"ts": [36.58, 37.06], "texto": "reconhecer isso", "fonte": "Quicksand.ttf", "peso": 600, "tam": 74},
+      {"ts": [37.22, 37.34], "texto": "no outro?", "fonte": "PlayfairItalic.ttf", "peso": 700, "tam": 160, "cor": "#FFC4D6", "soco": true}]}]}
+ ]}

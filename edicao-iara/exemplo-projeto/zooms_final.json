@@ -1,0 +1,16 @@
+[
+ {"start":0.0,"end":2.4,"scale":1.18,"kind":"out","ease_s":0,"origin":[50,20],"_":"abertura: zoom out no gancho"},
+ {"start":9.4,"end":10.75,"scale":1.10,"kind":"push","ease_s":0.6,"origin":[50,20],"_":"tudo aquilo que nos atravessa"},
+ {"start":11.4,"end":13.85,"scale":1.12,"kind":"punch","ease_s":0,"travel_s":1.6,"ease":"sine.inOut","origin":[50,20],"_":"empurra até 'somos?' e solta seco"},
+ {"start":13.85,"end":15.25,"scale":1.14,"kind":"out","ease_s":0,"origin":[50,20],"_":"zoom out antes do monstro"},
+ {"start":15.3,"end":16.7,"scale":1.12,"kind":"punch","ease_s":0,"travel_s":0.1,"origin":[50,20],"_":"monstro? + vine boom"},
+ {"start":21.2,"end":22.15,"scale":1.10,"kind":"punch","ease_s":0,"travel_s":0.12,"origin":[50,20],"_":"Mas, talvez"},
+ {"start":23.0,"end":25.9,"scale":1.08,"kind":"push","ease_s":0.9,"origin":[50,20],"_":"não esteja exatamente naquilo"},
+ {"start":26.3,"end":28.6,"scale":1.14,"kind":"out","ease_s":0,"origin":[50,20],"_":"mas do que fizeram de nós"},
+ {"start":31.1,"end":31.85,"scale":1.10,"kind":"punch","ease_s":0,"travel_s":0.12,"origin":[50,20],"_":"pensa comigo"},
+ {"start":31.9,"end":37.9,"scale":1.15,"kind":"punch","ease_s":0,"travel_s":4.5,"ease":"sine.inOut","origin":[50,20],"_":"empurrão lento até 'no outro?'"},
+ {"start":38.7,"end":39.2,"scale":1.20,"kind":"punch","ease_s":0,"travel_s":0.06,"origin":[50,20],"_":"Aliás + record scratch"},
+ {"start":39.2,"end":40.6,"scale":1.20,"kind":"out","ease_s":0,"origin":[50,20],"_":"oi, eu sou Iara: zoom out + brilho"},
+ {"start":43.9,"end":44.6,"scale":1.08,"kind":"punch","ease_s":0,"travel_s":0.12,"origin":[50,20],"_":"psicologia"},
+ {"start":46.2,"end":48.1,"scale":1.10,"kind":"push","ease_s":0.8,"origin":[50,20],"_":"E se você gosta disso"}
+]

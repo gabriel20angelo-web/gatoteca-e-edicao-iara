@@ -1,0 +1,11 @@
+{
+ "whoosh-in": "default",
+ "whoosh-out": "default",
+ "pop": "default",
+ "hit": "default",
+ "zoom": "default",
+ "impact": "default",
+ "key": "tecla-1.wav",
+ "key-2": "tecla-2.wav",
+ "key-3": "tecla-3.wav"
+}

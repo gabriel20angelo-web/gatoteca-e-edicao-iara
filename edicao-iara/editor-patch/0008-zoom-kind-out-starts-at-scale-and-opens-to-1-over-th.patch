@@ -1,0 +1,64 @@
+From 0b20e2af305a39a19e5e5c1863c979a6a1f0c8b7 Mon Sep 17 00:00:00 2001
+From: gabriel20angelo-web <gabriel20angelo-web@users.noreply.github.com>
+Date: Sun, 22 Nov 2026 17:09:54 -0300
+Subject: [PATCH 8/9] zoom kind "out": starts at scale and opens to 1 over the
+ span (sine.out); check.py mirrors it
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+---
+ plugins/ai-editor/remotion/src/StyleEdit.tsx         | 9 ++++++---
+ plugins/ai-editor/skills/style-edit/scripts/check.py | 7 +++++--
+ 2 files changed, 11 insertions(+), 5 deletions(-)
+
+diff --git a/plugins/ai-editor/remotion/src/StyleEdit.tsx b/plugins/ai-editor/remotion/src/StyleEdit.tsx
+index a0a3c06..5bb6267 100644
+--- a/plugins/ai-editor/remotion/src/StyleEdit.tsx
++++ b/plugins/ai-editor/remotion/src/StyleEdit.tsx
+@@ -29,7 +29,7 @@ import { BoardFrame, BoardLayout } from "./Board";
+ 
+ // Shapes follow skills/style-edit/references/contracts.md "plan.json". Times are seconds on the cut's timeline.
+ // origin: the top centre of the head over the zoom, % of the frame (plan.py from face.json): the face holds its place, the hair never rises into a card.
+-type Zoom = { start: number; end: number; scale: number; kind: "punch" | "push"; ease_s: number; ease?: string; origin?: [number, number];
++type Zoom = { start: number; end: number; scale: number; kind: "punch" | "push" | "out"; ease_s: number; ease?: string; origin?: [number, number];
+   travel_s?: number };
+ // A slow sideways drift of the footage (the creator's camera.pan_per_min): from -> to, % of the width.
+ type Pan = { start: number; end: number; from: number; to: number };
+@@ -151,10 +151,13 @@ export const zoomAt = (t: number, zooms: Zoom[]): { k: number; origin: string }
+     const origin = z.origin ? `${z.origin[0]}% ${z.origin[1]}%` : ZOOM_ORIGIN;
+     const push = z.kind === "push" && z.ease_s > 0;
+     const travel = z.travel_s ?? PUNCH_S;   // a copied creator's measured punch is near-instant (plan.py CREATOR_PUNCH_S)
+-    const tail = push ? 0 : Math.min(travel, Math.max(0, next - z.end));
++    const out = z.kind === "out";   // zoom out: starts at scale, opens to 1 over the whole span (edicao-iara)
++    const tail = push || out ? 0 : Math.min(travel, Math.max(0, next - z.end));
+     if (t < z.start || t >= z.end + tail) continue;
+     let p: number;
+-    if (push) {
++    if (out) {
++      p = 1 - ease(z.ease ?? "sine.out")(Math.min(1, (t - z.start) / Math.max(0.01, z.end - z.start)));
++    } else if (push) {
+       const e = Math.min(Math.max(PUSH_MIN_S, z.ease_s), (z.end - z.start) / 2);
+       const f = ease(z.ease ?? PUSH_EASE);
+       p = t < z.start + e ? f((t - z.start) / e) : t > z.end - e ? f((z.end - t) / e) : 1;
+diff --git a/plugins/ai-editor/skills/style-edit/scripts/check.py b/plugins/ai-editor/skills/style-edit/scripts/check.py
+index 35138cf..2f6a017 100644
+--- a/plugins/ai-editor/skills/style-edit/scripts/check.py
++++ b/plugins/ai-editor/skills/style-edit/scripts/check.py
+@@ -92,10 +92,13 @@ def zoom_state(t, zooms):
+         nxt = zs[i + 1]["start"] if i + 1 < len(zs) else float("inf")
+         push = z.get("kind") == "push" and z.get("ease_s", 0) > 0
+         travel = z.get("travel_s") or PUNCH_S
+-        tail = 0 if push else min(travel, max(0, nxt - z["end"]))
++        out = z.get("kind") == "out"
++        tail = 0 if push or out else min(travel, max(0, nxt - z["end"]))
+         if not z["start"] <= t < z["end"] + tail:
+             continue
+-        if push:
++        if out:   # zoom out (StyleEdit.tsx): from scale to 1 over the span, sine.out
++            p = 1 - math.sin(math.pi / 2 * min(1, (t - z["start"]) / max(0.01, z["end"] - z["start"])))
++        elif push:
+             e = min(max(PUSH_MIN_S, z["ease_s"]), (z["end"] - z["start"]) / 2)
+             p = sine((t - z["start"]) / e) if t < z["start"] + e else sine((z["end"] - t) / e) if t > z["end"] - e else 1
+         else:
+-- 
+2.53.0.windows.1
+
