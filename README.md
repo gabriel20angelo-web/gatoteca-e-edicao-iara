@@ -7,7 +7,28 @@ Tudo o que é preciso para reproduzir, em outro computador, duas coisas:
 
 O repositório já traz as instruções para o agente de IA (Antigravity, Claude Code, Gemini CLI, Codex) em `AGENTS.md`, com cópias em `GEMINI.md` e `CLAUDE.md`. O instalador também grava essas instruções na memória global do agente.
 
-## Instalar (Windows)
+## Começo rápido (para quem não é da área)
+
+Você não precisa entender de programação. O jeito mais fácil:
+
+1. Abra o **Antigravity**.
+2. Cole esta mensagem para o agente e envie:
+   > Instale para mim o repositório https://github.com/gabriel20angelo-web/gatoteca-e-edicao-iara seguindo o README dele. Instale o que faltar no computador, rode o instalar.ps1 e me avise, em palavras simples, quando terminar.
+3. Ele vai pedir permissão algumas vezes para rodar comandos: pode aceitar. A instalação do editor de vídeo demora (pode levar mais de meia hora).
+4. Quando ele disser que terminou, **feche e abra o Antigravity de novo**. A partir daí ele já sabe as regras (estão gravadas na memória dele).
+5. Depois é só pedir em português, por exemplo:
+   - "Faz um post de divulgação da Gatoteca com o gatinho lendo."
+   - "Edita este vídeo no estilo Iara: C:\Users\...\meu-video.mp4"
+
+**O que o agente vai fazer sempre, sem você pedir:**
+- falar com você de um jeito simples e fazer o trabalho técnico sozinho;
+- pesquisar na internet, em várias fontes, antes de responder, e mostrar os links;
+- procurar no GitHub e em outros repositórios se já existe uma ferramenta pronta antes de criar uma nova;
+- perguntar antes de apagar, publicar ou gastar dinheiro, e nunca mexer nos seus vídeos originais.
+
+**Para atualizar** quando houver novidade, peça ao agente: "Atualize o repositório gatoteca-e-edicao-iara (git pull) e rode o instalar.ps1 de novo."
+
+## Instalar (Windows), passo a passo técnico
 
 1. Instale o **Git**, o **Python 3.12+**, o **Node 20+** e o **ffmpeg**, se ainda não tiver:
    ```powershell

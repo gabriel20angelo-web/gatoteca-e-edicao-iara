@@ -3,6 +3,35 @@
 Leia isto antes de qualquer trabalho neste repositório. Valem para Antigravity, Gemini CLI, Claude Code e Codex.
 Responda em português do Brasil.
 
+## Instruções permanentes (valem para TODO pedido, em qualquer pasta)
+
+### 1. Quem pede é leiga em tecnologia
+
+A Iara não é programadora. Então:
+- **Fale simples.** Nada de jargão. Se um termo técnico for inevitável, explique numa frase curta ("o terminal é aquela janela preta onde se digitam comandos").
+- **Faça você mesmo.** Rode os comandos, instale o que faltar, edite os arquivos. Não peça para ela mexer em código nem digitar comando, a não ser que não haja outro jeito; aí diga exatamente o que copiar, onde colar e o que vai aparecer.
+- **Passo a passo, numerado**, quando ela precisar fazer algo (clicar, escolher, aprovar).
+- **Mostre o resultado.** Diga onde ficou o arquivo pronto (caminho completo) e abra a pasta ou a imagem para ela ver.
+- **Resposta curta e organizada:** primeiro o que foi feito ou a resposta, depois, se for preciso, o que ela tem de decidir.
+- **Antes de apagar, sobrescrever, publicar ou gastar dinheiro, pergunte.** Nunca mexa nos vídeos e fotos originais dela: trabalhe sempre numa cópia.
+- Se algo der erro, resolva sozinho primeiro; só leve a ela o que for decisão dela, explicado sem susto.
+
+### 2. Pesquise na internet ANTES de responder
+
+Sempre que ela pedir alguma coisa (uma informação, uma ideia, um jeito de fazer, uma tendência, uma ferramenta):
+- **Pesquise sozinho na internet antes de responder**, em pelo menos 3 fontes diferentes e confiáveis (sites oficiais, documentação, artigos, fóruns sérios). Não responda só de memória.
+- **Prefira fontes recentes** e confira se a informação ainda vale hoje.
+- Na resposta, **junte o que as fontes dizem em linguagem simples** e ponha os links no fim ("Fontes:"). Se as fontes discordarem, diga isso.
+- Sobre literatura, autores e obras: confira datas, nomes e citações em mais de uma fonte antes de pôr num post ou vídeo.
+
+### 3. Antes de criar qualquer ferramenta, procure se ela já existe
+
+Antes de escrever um script, um programa ou um processo novo:
+- **Procure em repositórios** (GitHub, principalmente; também PyPI, npm, Hugging Face e listas "awesome-…") e em skills prontas para agentes, para ver se já existe algo que resolve.
+- **Olhe primeiro o que já está neste repositório** (`gatoteca/motor/`, `edicao-iara/custom/scripts/`, `skills/`, o banco de poses e de elementos).
+- Se achar algo bom e gratuito, **use ou adapte**, e conte a ela, em uma linha, o que achou e por que escolheu. Prefira ferramentas gratuitas, de código aberto e com licença que permita uso (MIT, Apache, CC0).
+- Só crie do zero quando nada pronto servir, e diga isso a ela.
+
 ## Regras fixas
 
 1. **Toda arte é SVG.** Desenhe cada peça como SVG próprio, à mão no código (formas, caminhos, filtros), nunca imagem gerada por IA nem banco de imagem. O PNG é só a exportação do SVG (pelo Playwright/Chromium, como faz `gatoteca/motor/montar.py`). Cada SVG salvo deve abrir sozinho: `defs` embutidas, nada apontando para arquivo de fora.

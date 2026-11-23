@@ -60,6 +60,7 @@ foreach ($d in $destinos) {
 
 Write-Host '[5/6] Gravando memoria global (GEMINI.md e CLAUDE.md)...'
 $Marca = '<!-- gatoteca-e-edicao-iara -->'
+$Fim = '<!-- /gatoteca-e-edicao-iara -->'
 $agentes = [IO.File]::ReadAllText((Join-Path $Repo 'AGENTS.md'), $Utf8)
 $memorias = @((Join-Path $HOME '.gemini\GEMINI.md'), (Join-Path $HOME '.claude\CLAUDE.md'))
 foreach ($m in $memorias) {
@@ -67,10 +68,17 @@ foreach ($m in $memorias) {
     if (-not (Test-Path $pasta)) { New-Item -ItemType Directory -Path $pasta -Force | Out-Null }
     $atual = ''
     if (Test-Path $m) { $atual = [IO.File]::ReadAllText($m, $Utf8) }
-    if (-not $atual.Contains($Marca)) {
-        $bloco = "`r`n" + $Marca + "`r`nRepositório gatoteca-e-edicao-iara instalado em: " + $Repo + "`r`n" + $agentes + "`r`n"
-        [IO.File]::WriteAllText($m, $atual + $bloco, $Utf8)
+    $bloco = $Marca + "`r`nRepositório gatoteca-e-edicao-iara instalado em: " + $Repo + "`r`n" + $agentes + "`r`n" + $Fim
+    $i = $atual.IndexOf($Marca)
+    if ($i -ge 0) {
+        # ja instalado antes: troca o bloco antigo pelo novo (assim uma atualizacao vale)
+        $j = $atual.IndexOf($Fim, $i)
+        if ($j -ge 0) { $depois = $atual.Substring($j + $Fim.Length) } else { $depois = '' }
+        $novo = $atual.Substring(0, $i) + $bloco + $depois
+    } else {
+        $novo = $atual + "`r`n" + $bloco + "`r`n"
     }
+    [IO.File]::WriteAllText($m, $novo, $Utf8)
 }
 
 Write-Host "[6/6] Pronto. Abra o agente na pasta $Repo e peça: edita meu vídeo no estilo Iara / faz um post da Gatoteca."
